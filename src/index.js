@@ -1,16 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter } from "react-router-dom";
-import "./index.css";
+import logger from "./services/logService";
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "font-awesome/css/font-awesome.css";
-import * as Sentry from "@sentry/browser";
+import "./index.css";
 
-Sentry.init({
-  dsn: "https://6faaa107d9904496b509d133aa406aac@sentry.io/5174689"
-});
+logger.init();
 
 ReactDOM.render(
   <BrowserRouter>

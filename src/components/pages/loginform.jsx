@@ -3,7 +3,6 @@ import Joi from "joi-browser";
 import Form from "../common/form";
 import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
-import { PostData } from "../../services/PostData";
 
 class LoginForm extends Form {
   state = {

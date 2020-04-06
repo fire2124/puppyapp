@@ -25,6 +25,9 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   },
+  "devDependencies": {
+    "case-sensitive-paths-webpack-plugin": "^2.3.0"
+  },
   "browserslist": {
     "production": [
       ">0.2%",

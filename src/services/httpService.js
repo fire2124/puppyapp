@@ -1,8 +1,10 @@
 import axios from "axios";
-import { toast } from "react-toastify";
 import logger from "./logService";
+import { toast } from "react-toastify";
 
-axios.interceptors.response.use(null, error => {
+axios.interceptors.response.use(null, (error) => {
+  console.log(error);
+
   const expectedError =
     error.response &&
     error.response.status >= 400 &&
@@ -10,16 +12,21 @@ axios.interceptors.response.use(null, error => {
 
   if (!expectedError) {
     logger.log(error);
-    toast.error("An unexpected error occred");
-    //toast.info("An unexpected error occred");
+    toast.error("An unexpected error occurrred.");
   }
 
   return Promise.reject(error);
 });
 
+function setJwt(jwt) {
+  axios.defaults.headers.common["x-auth-token"] = jwt;
+  //axios.defaults.headers.post["Content-Type"] = "application/json";
+}
+
 export default {
   get: axios.get,
   post: axios.post,
   put: axios.put,
-  delete: axios.delete
+  delete: axios.delete,
+  setJwt,
 };

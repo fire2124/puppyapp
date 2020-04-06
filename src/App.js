@@ -1,76 +1,48 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import Movies from "./components/movies";
+import MovieForm from "./components/movieForm";
 import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
-import RegisterForm from "./components/pages/registerform";
-import LoginForm from "./components/pages/loginform";
-import RegisterFormShelter from "./components/pages/registerFormShelter";
-
-import http from "./services/httpService";
-import config from "./config.json";
+import LoginForm from "./components/loginForm";
+import Logout from "./components/logout";
+import RegisterForm from "./components/registerForm";
+import RegisterShelter from "./components/registerShelter";
+import auth from "./services/authService";
+import ProtectedRoute from "./components/common/protectedRoute";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 
 class App extends Component {
-  state = {
-    posts: []
-  };
+  state = {};
 
-  async componentDidMount() {
-    // pending > resolved (success) OR rejected (failure)
-    const { data: posts } = await http.get(config.apiEndpoint); //
-    this.setState({ posts });
+  componentDidMount() {
+    const user = auth.getCurrentUser();
+    this.setState({ user });
   }
 
-  handleAdd = async () => {
-    const obj = { title: "a", body: "b" };
-    const { data: post } = await http.post(config.apiEndpoint, obj); // creating data
-    console.log(post);
-
-    const posts = [post, ...this.state.posts]; // adding data to table
-    this.setState({ posts });
-  };
-
-  handleUpdate = async post => {
-    post.title = "UPDATED";
-    await http.put(config.apiEndpoint + "/" + post.id, post);
-    const posts = [...this.state.posts];
-    const index = posts.indexOf(post);
-    posts[index] = { ...post };
-    this.setState({ posts });
-  };
-
-  handleDelete = async post => {
-    const originalPosts = this.state.posts;
-
-    const posts = this.state.posts.filter(p => p.id !== post.id);
-    this.setState({ posts });
-    try {
-      await http.delete(config.apiEndpoint + "/" + post.id);
-      throw new Error("");
-    } catch (ex) {
-      //Expected (404: notFound, 400: bad request) - client ERRORS
-      //- Display a specific error message
-      if (ex.response && ex.response.status === 404)
-        alert("This post has already beed deleted");
-      this.setState({ posts: originalPosts });
-
-      //Unexpected (network down, server down, database down, bug)
-      //- Log them
-      //- Display a generic and friendly error message
-    }
-  };
-
   render() {
+    const { user } = this.state;
+
     return (
       <React.Fragment>
-        <NavBar />
+        <ToastContainer />
+        <NavBar user={user} />
         <main className="container">
           <Switch>
             <Route path="/register" component={RegisterForm} />
             <Route path="/login" component={LoginForm} />
+            <Route path="/logout" component={Logout} />
+            <Route path="/shelter" component={RegisterShelter} />
+
+            <ProtectedRoute path="/movies/:id" component={MovieForm} />
+            <Route
+              path="/movies"
+              render={(props) => <Movies {...props} user={this.state.user} />} //schovanie componentov
+            />
             <Route path="/not-found" component={NotFound} />
-            <Route path="/shelter" component={RegisterFormShelter} />
-            <Redirect from="/" exact to="/login" />
+            <Redirect from="/" exact to="/movies" />
             <Redirect to="/not-found" />
           </Switch>
         </main>

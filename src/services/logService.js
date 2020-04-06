@@ -1,13 +1,11 @@
-import * as Sentry from "@sentry/browser";
+// For simplicity, I changed the implementation of this module
+// and removed Raven. We can always add that in the future
+// and this module is the only module we need to modify.
 
-function init() {
-  Sentry.init({
-    dsn: "https://cf18dc0e69f94698b0daa1ec5aacc95b@sentry.io/5174495"
-  });
-}
+function init() {}
 
 function log(error) {
-  Sentry.captureException(error);
+  console.error(error);
 }
 
 export default {

@@ -4,9 +4,9 @@ import Form from "./common/form";
 import auth from "../services/authService";
 import * as userService from "../services/userService";
 
-class RegisterForm extends Form {
+class RegisterShelter extends Form {
   state = {
-    data: { email: "", password: "" },
+    data: { username: "", password: "", name: "" },
     errors: {},
   };
 
@@ -14,7 +14,9 @@ class RegisterForm extends Form {
     mail: Joi.string().email().min(5).max(256).required().label("Mail"),
     password: Joi.string().min(5).max(256).required().label("Password"),
     name: Joi.string().required().min(4).max(256).label("Name"),
-    surname: Joi.string().required().min(4).max(256).label("Surname"),
+    address: Joi.string().required().min(4).max(256).label("Address"),
+    icoDic: Joi.string().required().min(4).max(256).label("Ico/Dic"),
+    ID: Joi.string().required().min(4).max(256).label("ID"),
   };
 
   doSubmit = async () => {
@@ -42,10 +44,12 @@ class RegisterForm extends Form {
   render() {
     return (
       <div>
-        <h1>Registrácia používateľa</h1>
+        <h1>Registrácia útulku</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("name", "Meno")}
-          {this.renderInput("surname", "Priezvisko")}
+          {this.renderInput("name", "Meno útulku")}
+          {this.renderInput("address", "Adresa")}
+          {this.renderInput("icoDic", "Ičo/Dič")}
+          {this.renderInput("ID", "ID")}
           {this.renderInput("mail", "Email")}
           {this.renderInput("password", "Heslo", "password")}
           {this.renderButton("Registrovať")}
@@ -55,4 +59,4 @@ class RegisterForm extends Form {
   }
 }
 
-export default RegisterForm;
+export default RegisterShelter;

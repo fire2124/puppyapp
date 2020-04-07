@@ -11,10 +11,10 @@ class RegisterForm extends Form {
   };
 
   schema = {
-    mail: Joi.string().email().min(5).max(256).required().label("Mail"),
-    password: Joi.string().min(5).max(256).required().label("Password"),
     name: Joi.string().required().min(4).max(256).label("Name"),
     surname: Joi.string().required().min(4).max(256).label("Surname"),
+    email: Joi.string().email().min(5).max(256).required().label("Mail"),
+    password: Joi.string().min(8).max(256).required().label("Password"),
   };
 
   doSubmit = async () => {
@@ -23,13 +23,10 @@ class RegisterForm extends Form {
       console.log(this.state.data);
 
       const response = await userService.register(this.state.data);
-      console.log("heres");
+      console.log(response);
 
       auth.loginWithJwt(response.headers["x-auth-token"]);
-      const log = auth.loginWithJwt(response.headers["x-auth-token"]);
-      console.log(log);
-
-      window.location = "/";
+      //window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
@@ -46,7 +43,7 @@ class RegisterForm extends Form {
         <form onSubmit={this.handleSubmit}>
           {this.renderInput("name", "Meno")}
           {this.renderInput("surname", "Priezvisko")}
-          {this.renderInput("mail", "Email")}
+          {this.renderInput("email", "Email")}
           {this.renderInput("password", "Heslo", "password")}
           {this.renderButton("Registrovať")}
         </form>

@@ -1,8 +1,6 @@
 import React from "react";
 
 const Input = ({ name, label, error, ...rest }) => {
-  console.log(error);
-
   return (
     <div className="form-group">
       <label htmlFor={name}>{label}</label>

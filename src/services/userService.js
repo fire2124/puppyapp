@@ -2,6 +2,7 @@ import http from "./httpService";
 import { apiUrl } from "../config.json";
 
 const apiEndpoint = apiUrl + "/auth/register/user";
+const apiEndpoint2 = apiUrl + "/auth/register/shelter";
 
 export function register(user) {
   console.log(user);
@@ -24,5 +25,5 @@ export function registerShelter(user) {
     email: user.email,
     password: user.password,
   };
-  return http.post(apiEndpoint, auth);
+  return http.post(apiEndpoint2, auth);
 }

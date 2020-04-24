@@ -7,45 +7,86 @@ import authService from "../services/authService";
 class MoviesTable extends Component {
   columns = [
     {
-      path: "title",
-      label: "Title",
-      content: movie => <Link to={`/movies/${movie._id}`}>{movie.title}</Link>
+      path: "id",
+      label: "ID",
+      content: (movie) => (
+        <Link to={`/dog/detail/${movie.id}`}>{movie.id}</Link>
+      ),
     },
-    { path: "genre.name", label: "Genre" },
-    { path: "numberInStock", label: "Stock" },
-    { path: "dailyRentalRate", label: "Rate" },
     {
-      key: "like",
-      content: movie => (
-        <Like liked={movie.liked} onClick={() => this.props.onLike(movie)} />
-      )
-    }
+      path: "gender",
+      label: "Pohlavie",
+    },
+    {
+      path: "breed",
+      label: "Plemeno",
+    },
+    {
+      path: "age",
+      label: "Vek",
+    },
+    {
+      path: "weight",
+      label: "Váha",
+    },
+    {
+      path: "height",
+      label: "Výška",
+    },
+    {
+      path: "vaccinated",
+      label: "Očkovaný",
+    },
+    {
+      path: "castrated",
+      label: "Vykastrovaný",
+    },
+    {
+      path: "dateRescued",
+      label: "Dátum nájdenia psa",
+    },
+    {
+      path: "placeRescued",
+      label: "Miesto nájdenia",
+    },
+    {
+      path: "rescueInfo",
+      label: "Informácie k nájdeniu",
+    },
+    {
+      path: "appearanceDescription",
+      label: "Opis výzoru psa",
+    },
+    {
+      path: "behaviorDescription",
+      label: "Opis povahy",
+    },
   ];
 
   deleteColumn = {
     key: "delete",
-    content: movie => (
+    content: (movie) => (
       <button
         onClick={() => this.props.onDelete(movie)}
         className="btn btn-danger btn-sm"
       >
         Delete
       </button>
-    )
+    ),
   };
   constructor() {
     super();
     const user = authService.getCurrentUser();
-    if (user && user.isAdmin) this.columns.push(this.deleteColumn);
+    //if (user && user.isAdmin) this.columns.push(this.deleteColumn);
+    this.columns.push(this.deleteColumn);
   }
 
   render() {
     const { movies, onSort, sortColumn } = this.props;
-
     return (
       <Table
         columns={this.columns}
-        data={movies}
+        data={movies[0]}
         sortColumn={sortColumn}
         onSort={onSort}
       />

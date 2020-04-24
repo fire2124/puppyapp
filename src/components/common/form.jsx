@@ -21,7 +21,10 @@ class Form extends Component {
 
   validateProperty = ({ name, value }) => {
     const obj = { [name]: value };
+    //console.log(obj);
+
     const schema = { [name]: this.schema[name] };
+    //console.log(schema);
     const { error } = Joi.validate(obj, schema);
     return error ? error.details[0].message : null;
   };
@@ -40,13 +43,38 @@ class Form extends Component {
   handleChange = ({ currentTarget: input }) => {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
+
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
 
     const data = { ...this.state.data };
-    data[input.name] = input.value;
+    console.log("---------------------------------");
+    //console.log(data);
+    console.log(input);
+    console.log(input.type);
+    console.log(input.value);
+
+    switch (input.type) {
+      case "boolean":
+        data[input.name] = Boolean(input.value);
+        break;
+      case "number":
+        data[input.name] = Number(input.value);
+        break;
+      case "date":
+        data[input.name] = Date(input.value);
+        break;
+      case "text":
+        data[input.name] = String(input.value);
+        break;
+      case "password":
+        data[input.name] = String(input.value);
+        break;
+    }
+    console.log(data);
 
     this.setState({ data, errors });
+    //console.log(data);
   };
 
   renderButton(label) {
@@ -72,8 +100,9 @@ class Form extends Component {
     );
   }
 
-  renderInput(name, label, type = "text") {
+  renderInput(name, label, type) {
     const { data, errors } = this.state;
+    console.log(type);
 
     return (
       <Input

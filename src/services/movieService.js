@@ -1,30 +1,43 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
+import { getJwt } from "./authService";
 
-const apiEndpoint = apiUrl + "/movies";
+const apiEndpoint = apiUrl;
+const config = {
+  headers: { Authorization: `Bearer ${getJwt()}` },
+};
 
 function movieUrl(id) {
+  //done
   return `${apiEndpoint}/${id}`;
 }
 
 export function getMovies() {
-  return http.get(apiEndpoint);
+  //done
+  return http.get(apiEndpoint + "/dog/allDogs");
 }
 
 export function getMovie(movieId) {
+  //done
   return http.get(movieUrl(movieId));
 }
 
 export function saveMovie(movie) {
-  if (movie._id) {
-    const body = { ...movie };
-    delete body._id;
-    return http.put(movieUrl(movie._id), body);
-  }
+  console.log(movie);
 
-  return http.post(apiEndpoint, movie);
+  if (movie.id) {
+    const body = { ...movie };
+    delete body.id;
+    return http.put(
+      `${apiEndpoint}` + "/dog/update/" + `${movie.id}`,
+      body,
+      config
+    );
+  }
+  return http.post(apiEndpoint + "/dog/add/", movie, config);
 }
 
 export function deleteMovie(movieId) {
-  return http.delete(movieUrl(movieId));
+  //done
+  return http.delete(apiEndpoint + "/dog/delete/" + movieId, config);
 }

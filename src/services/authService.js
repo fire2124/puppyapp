@@ -12,7 +12,9 @@ export async function login(userName, password) {
     userName,
     password,
   });
-  localStorage.setItem(tokenKey, jwt);
+
+  const jwt2 = jwt["accessToken"];
+  return localStorage.setItem(tokenKey, jwt2);
 }
 
 export function loginWithJwt(jwt) {

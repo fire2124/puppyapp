@@ -9,12 +9,12 @@ class DogForm extends Form {
     data: {
       Gender: "",
       Breed: "",
-      Age: Number,
-      Weight: Number,
-      Height: Number,
-      Vaccinated: Boolean,
-      Castrated: Boolean,
-      DateRescued: Date,
+      Age: null,
+      Weight: null,
+      Height: null,
+      Vaccinated: false,
+      Castrated: false,
+      DateRescued: "",
       PlaceRescued: "",
       RescueInfo: "",
       AppearanceDescription: "",
@@ -71,21 +71,7 @@ class DogForm extends Form {
     const dog = dogModel.dog;
     console.log(dog);
 
-    return {
-      Id: dog.Id,
-      Gender: dog.Gender,
-      Breed: dog.Breed,
-      Age: dog.Age,
-      Weight: dog.Weightinteger,
-      Height: dog.Height,
-      Vaccinated: dog.Vaccinated,
-      Castrated: dog.Castrated,
-      DateRescued: dog.DateRescued,
-      PlaceRescued: dog.PlaceRescued,
-      RescueInfo: dog.RescueInfo,
-      AppearanceDescription: dog.AppearanceDescription,
-      BehaviorDescription: dog.BehaviorDescription,
-    };
+    return dog;
   }
 
   doSubmit = async () => {
@@ -93,6 +79,7 @@ class DogForm extends Form {
     console.log(this.state.data);
 
     this.props.history.push("/add");
+    window.location = "/";
   };
 
   render() {
@@ -105,8 +92,8 @@ class DogForm extends Form {
           {this.renderInput("Age", "Vek", "number")}
           {this.renderInput("Weight", "Váha", "number")}
           {this.renderInput("Height", "Výška", "number")}
-          {this.renderInput("Vaccinated", "Zaočkovaný", "boolean")}
-          {this.renderInput("Castrated", "Kastrovaný", "boolean")}
+          {this.renderCheckbox("Vaccinated", "Zaočkovaný")}
+          {this.renderCheckbox("Castrated", "Kastrovaný")}
           {this.renderInput("DateRescued", "Dátum nájdenia", "text")}
           {this.renderInput("PlaceRescued", "Miesto nájdenia", "text")}
           {this.renderInput("RescueInfo", "RescueInfo", "text")}

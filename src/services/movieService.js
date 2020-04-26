@@ -28,11 +28,7 @@ export function saveMovie(movie) {
   if (movie.id) {
     const body = { ...movie };
     delete body.id;
-    return http.put(
-      `${apiEndpoint}` + "/dog/update/" + `${movie.id}`,
-      body,
-      config
-    );
+    return http.put(apiEndpoint + "/dog/update/" + movie.id, body, config);
   }
   return http.post(apiEndpoint + "/dog/add/", movie, config);
 }

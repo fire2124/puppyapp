@@ -33,7 +33,7 @@ class RegisterShelter extends Form {
     try {
       //console.log(this.state.data);
 
-      const response = await userService.register(this.state.data);
+      const response = await userService.registerShelter(this.state.data);
       //console.log("heres");
 
       auth.loginWithJwt(response.headers["x-auth-token"]);

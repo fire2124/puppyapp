@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Joi from "joi-browser";
 import Input from "./input";
 import Select from "./select";
+import CheckBox from "./checkBox";
 
 class Form extends Component {
   state = {
@@ -28,7 +29,7 @@ class Form extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    //console.log(this.state);
+    console.log(this.state);
 
     const errors = this.validate();
     this.setState({ errors: errors || {} });
@@ -40,13 +41,44 @@ class Form extends Component {
   handleChange = ({ currentTarget: input }) => {
     const errors = { ...this.state.errors };
     const errorMessage = this.validateProperty(input);
+
     if (errorMessage) errors[input.name] = errorMessage;
     else delete errors[input.name];
 
     const data = { ...this.state.data };
-    data[input.name] = input.value;
+    console.log("---------------------------------");
+    // console.log(data);
+    // console.log(input);
+    //console.log(input.type);
+    console.log(input.value);
+
+    switch (input.type) {
+      case "number":
+        data[input.name] = Number(input.value);
+        break;
+      case "date":
+        data[input.name] = Date(input.value);
+        break;
+      case "text":
+        data[input.name] = String(input.value);
+        break;
+      case "password":
+        data[input.name] = String(input.value);
+        break;
+    }
+
+    //data[input.name] = input.value;
+    console.log(data);
 
     this.setState({ data, errors });
+  };
+
+  handleCheckbox = (data) => {
+    console.log(data);
+    const d = { ...this.state.data };
+    //data[input.name] = d;
+
+    this.setState({ data });
   };
 
   renderButton(label) {
@@ -74,7 +106,6 @@ class Form extends Component {
 
   renderInput(name, label, type = "text") {
     const { data, errors } = this.state;
-
     return (
       <Input
         type={type}
@@ -83,6 +114,27 @@ class Form extends Component {
         label={label}
         onChange={this.handleChange}
         error={errors[name]}
+      />
+    );
+  }
+
+  renderCheckbox(selected, label) {
+    const { data, errors } = this.state;
+
+    const { Vaccinated, Castrated } = this.state.data;
+    // if (label === "Zaočkovaný") {
+    //   selected = { Vaccinated };
+    // } else if (label === "Kastrovaný") {
+    //   selected = { Castrated };
+    // }
+    //console.log(data.Vaccinated);
+
+    return (
+      <CheckBox
+        label={label}
+        value={data[Vaccinated]}
+        onChange={this.handleCheckbox}
+        selected={selected}
       />
     );
   }

@@ -9,6 +9,9 @@ import RegisterForm from "./components/registerForm";
 import RegisterShelter from "./components/registerShelter";
 import auth from "./services/authService";
 import ProtectedRoute from "./components/common/protectedRoute";
+import MoviesTable from "./components/moviesTable";
+import DogForm from "./components/dogForm";
+import Dogs from "./components/dogs";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import axios from "axios";
@@ -19,6 +22,7 @@ class App extends Component {
   componentDidMount() {
     const user = auth.getCurrentUser();
     this.setState({ user });
+    console.log(user);
   }
 
   render() {
@@ -34,14 +38,17 @@ class App extends Component {
             <Route path="/login" component={LoginForm} />
             <Route path="/logout" component={Logout} />
             <Route path="/shelter" component={RegisterShelter} />
+            {/*<Route path="/movieTable" component={MoviesTable} />*/}
+            <Route path="/dog" component={DogForm} />
+            {/*<ProtectedRoute path="/dog/:id" component={DogForm} />*/}
+            <Route path="/dogs" component={Dogs} />
+            <Redirect from="/" exact to="/dogs" />
 
-            {/* <ProtectedRoute path="/" component={MovieForm} />
-            <Route
-              path="/movies"
-              render={(props) => <Movies {...props} user={this.state.user} />} //schovanie componentov
+            {/* <Route
+              path="/dogs"
+              render={(props) => <Dogs {...props} user={this.state.user} />} //schovanie componentov
             /> */}
-            <Route path="/not-found" component={NotFound} />
-            {/*<Redirect from="/" exact to="/" />
+            {/*<Route path="/not-found" component={NotFound} />
             <Redirect to="/not-found" />*/}
           </Switch>
         </main>

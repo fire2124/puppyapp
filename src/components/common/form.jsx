@@ -47,9 +47,9 @@ class Form extends Component {
 
     const data = { ...this.state.data };
     console.log("---------------------------------");
-    //console.log(data);
+    // console.log(data);
     // console.log(input);
-    // console.log(input.type);
+    //console.log(input.type);
     console.log(input.value);
 
     switch (input.type) {
@@ -66,18 +66,19 @@ class Form extends Component {
         data[input.name] = String(input.value);
         break;
     }
+
+    //data[input.name] = input.value;
     console.log(data);
 
     this.setState({ data, errors });
   };
 
-  handleCheckbox = (data, attribute) => {
+  handleCheckbox = (data) => {
     console.log(data);
     const d = { ...this.state.data };
+    //data[input.name] = d;
 
-    this.setState({ d });
-
-    console.log(d);
+    this.setState({ data });
   };
 
   renderButton(label) {
@@ -103,7 +104,7 @@ class Form extends Component {
     );
   }
 
-  renderInput(name, label, type) {
+  renderInput(name, label, type = "text") {
     const { data, errors } = this.state;
     return (
       <Input
@@ -119,16 +120,19 @@ class Form extends Component {
 
   renderCheckbox(selected, label) {
     const { data, errors } = this.state;
+
     const { Vaccinated, Castrated } = this.state.data;
-    if (label === "Zaočkovaný") {
-      selected = { Vaccinated };
-    } else if (label === "Kastrovaný") {
-      selected = { Castrated };
-    }
+    // if (label === "Zaočkovaný") {
+    //   selected = { Vaccinated };
+    // } else if (label === "Kastrovaný") {
+    //   selected = { Castrated };
+    // }
+    //console.log(data.Vaccinated);
 
     return (
       <CheckBox
         label={label}
+        value={data[Vaccinated]}
         onChange={this.handleCheckbox}
         selected={selected}
       />

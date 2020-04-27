@@ -14,7 +14,7 @@ function movieUrl(id) {
 
 export function getMovies() {
   //done
-  return http.get(apiEndpoint + "/dog/allDogs");
+  return http.get(`${apiEndpoint}/dog/allDogs`);
 }
 
 export function getMovie(movieId) {
@@ -28,12 +28,12 @@ export function saveMovie(movie) {
   if (movie.id) {
     const body = { ...movie };
     delete body.id;
-    return http.put(apiEndpoint + "/dog/update/" + movie.id, body, config);
+    return http.put(`${apiEndpoint}/dog/update/` + movie.id, body, config);
   }
-  return http.post(apiEndpoint + "/dog/add/", movie, config);
+  return http.post(`${apiEndpoint}/dog/add/`, movie, config);
 }
 
 export function deleteMovie(movieId) {
   //done
-  return http.delete(apiEndpoint + "/dog/delete/" + movieId, config);
+  return http.delete(`${apiEndpoint}/dog/delete/` + movieId, config);
 }

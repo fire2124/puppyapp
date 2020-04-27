@@ -21,12 +21,10 @@ class LoginForm extends Form {
     try {
       const { data } = this.state;
       const { data: jwt } = await auth.login(data.username, data.password);
-      console.log(jwt);
+      //console.log(jwt);
 
-      window.location = "/";
-
-      // const { state } = this.props.location;
-      // window.location = state ? state.from.pathname : "/"; // redirect to homepage after login
+      const { state } = this.props.location;
+      window.location = state ? state.from.pathname : "/"; // redirect to homepage after login
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
@@ -42,8 +40,8 @@ class LoginForm extends Form {
       <div>
         <h1>Prihlásanie</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("username", "Meno", "text")}
-          {this.renderInput("password", "Heslo", "password", "password")}
+          {this.renderInput("username", "Meno")}
+          {this.renderInput("password", "Heslo", "password")}
           {this.renderButton("Prihlásiť")}
         </form>
       </div>

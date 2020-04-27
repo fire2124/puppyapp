@@ -7,39 +7,39 @@ import { getGenres } from "../services/genreService";
 class DogForm extends Form {
   state = {
     data: {
-      Gender: "",
-      Breed: "",
-      Age: null,
-      Weight: null,
-      Height: null,
-      Vaccinated: false,
-      Castrated: false,
-      DateRescued: "",
-      PlaceRescued: "",
-      RescueInfo: "",
-      AppearanceDescription: "",
-      BehaviorDescription: "",
+      gender: "",
+      breed: "",
+      age: null,
+      weight: null,
+      height: null,
+      vaccinated: false,
+      castrated: false,
+      dateRescued: "",
+      placeRescued: "",
+      rescueInfo: "",
+      appearanceDescription: "",
+      behaviorDescription: "",
     },
     genres: [],
     errors: {},
   };
 
   schema = {
-    Id: Joi.string(),
-    Gender: Joi.string().required().label("Gender"),
-    Breed: Joi.string().required().label("Breed"),
-    Age: Joi.number().integer().required().min(0).max(100).label("Age"),
-    Weight: Joi.number().integer().required().min(0).max(100).label("Weight"),
-    Height: Joi.number().integer().required().min(0).max(100).label("Height"),
-    Vaccinated: Joi.boolean().required().label("Vaccinated"),
-    Castrated: Joi.boolean().required().label("Castrated"),
-    DateRescued: Joi.date().required().label("DateRescued"),
-    PlaceRescued: Joi.string().required().label("PlaceRescued"),
-    RescueInfo: Joi.string().required().label("RescueInfo"),
-    AppearanceDescription: Joi.string()
+    id: Joi.string(),
+    gender: Joi.string().required().label("Gender"),
+    breed: Joi.string().required().label("Breed"),
+    age: Joi.number().integer().required().min(0).max(100).label("Age"),
+    weight: Joi.number().integer().required().min(0).max(100).label("Weight"),
+    height: Joi.number().integer().required().min(0).max(100).label("Height"),
+    vaccinated: Joi.boolean().required().label("Vaccinated"),
+    castrated: Joi.boolean().required().label("Castrated"),
+    dateRescued: Joi.date().required().label("DateRescued"),
+    placeRescued: Joi.string().required().label("PlaceRescued"),
+    rescueInfo: Joi.string().required().label("RescueInfo"),
+    appearanceDescription: Joi.string()
       .required()
       .label("AppearanceDescription"),
-    BehaviorDescription: Joi.string().required().label("BehaviorDescription"),
+    behaviorDescription: Joi.string().required().label("BehaviorDescription"),
   };
 
   async populateGenres() {
@@ -47,7 +47,7 @@ class DogForm extends Form {
     this.setState({ genres });
   }
 
-  async populateMovie() {
+  async populateDogs() {
     try {
       //const movieId = this.props.match.params.id;
       const movieId = this.props.location.pathname;
@@ -56,6 +56,8 @@ class DogForm extends Form {
 
       const { data: movie } = await getMovie(movieId);
       this.setState({ data: this.mapToViewModel(movie) });
+
+      // console.log(this.state.data);
     } catch (ex) {
       if (ex.response && ex.response.status === 404)
         this.props.history.replace("/not-found");
@@ -64,13 +66,11 @@ class DogForm extends Form {
 
   async componentDidMount() {
     await this.populateGenres();
-    await this.populateMovie();
+    await this.populateDogs();
   }
 
   mapToViewModel(dogModel) {
     const dog = dogModel.dog;
-    console.log(dog);
-
     return dog;
   }
 
@@ -87,22 +87,21 @@ class DogForm extends Form {
       <div>
         <h1>Profil psa</h1>
         <form onSubmit={this.handleSubmit}>
-          {this.renderInput("Gender", "Pohlavie psa", "text")}
-          {this.renderInput("Breed", "Plemeno", "text")}
-          {this.renderInput("Age", "Vek", "number")}
-          {this.renderInput("Weight", "Váha", "number")}
-          {this.renderInput("Height", "Výška", "number")}
-          {this.renderCheckbox("Vaccinated", "Zaočkovaný")}
-          {this.renderCheckbox("Castrated", "Kastrovaný")}
-          {this.renderInput("DateRescued", "Dátum nájdenia", "text")}
-          {this.renderInput("PlaceRescued", "Miesto nájdenia", "text")}
-          {this.renderInput("RescueInfo", "RescueInfo", "text")}
+          {this.renderInput("gender", "Pohlavie psa")}
+          {this.renderInput("breed", "Plemeno")}
+          {this.renderInput("age", "Vek", "number")}
+          {this.renderInput("weight", "Váha", "number")}
+          {this.renderInput("height", "Výška", "number")}
+          {this.renderCheckbox("vaccinated", "Zaočkovaný")}
+          {this.renderCheckbox("castrated", "Kastrovaný")}
+          {this.renderInput("dateRescued", "Dátum nájdenia")}
+          {this.renderInput("placeRescued", "Miesto nájdenia")}
+          {this.renderInput("rescueInfo", "RescueInfo")}
           {this.renderInput(
-            "AppearanceDescription",
-            "Základný opis výzoru / Farba srsti",
-            "text"
+            "appearanceDescription",
+            "Základný opis výzoru / Farba srsti"
           )}
-          {this.renderInput("BehaviorDescription", "Opis povahy", "text")}
+          {this.renderInput("behaviorDescription", "Opis povahy")}
 
           {this.renderButton("Uložiť")}
         </form>

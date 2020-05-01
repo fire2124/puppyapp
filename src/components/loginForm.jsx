@@ -20,11 +20,12 @@ class LoginForm extends Form {
 
     try {
       const { data } = this.state;
-      const { data: jwt } = await auth.login(data.username, data.password);
+      await auth.login(data.username, data.password);
       //console.log(jwt);
-
-      const { state } = this.props.location;
-      window.location = state ? state.from.pathname : "/"; // redirect to homepage after login
+      this.setState({});
+      //window.location = "/";
+      //const { state } = this.props.location;
+      //window.location = state ? state.from.pathname : "/"; // redirect to homepage after login
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };

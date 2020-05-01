@@ -22,15 +22,16 @@ class Dogs extends Component {
   };
 
   async componentDidMount() {
-    const { data: movies } = await getMovies();
+    const { data } = await getMovies();
     //console.log(movies);
+    console.log(data);
 
     //this.setState({ movies, genres });
-    this.setState({ movies });
+    this.setState({ movies: data.dogs });
   }
 
   handleDelete = async (movie) => {
-    const originalMovies = this.state.movies.dogs;
+    const originalMovies = this.state.movies;
     const movies = originalMovies.filter((m) => m.id !== movie.id);
     console.log(movie.id);
     console.log(movies);
@@ -89,10 +90,12 @@ class Dogs extends Component {
   };
 
   render() {
-    const { length: count } = this.state.movies;
+    console.log(this.state);
+
     const { pageSize, currentPage, sortColumn, searchQuery } = this.state;
     const { user } = this.props;
-    if (count === 0) return <p>Nie sú žiadne psy v databáze.</p>;
+    if (this.state.movies.length === 0)
+      return <p>Nie sú žiadne psy v databáze.</p>;
 
     const { totalCount, data: movies } = this.getPagedData();
     return (
@@ -124,7 +127,7 @@ class Dogs extends Component {
           {/* <p> Zoznam {totalCount} psov v databáze.</p> 
           <SearchBox value={searchQuery} onChange={this.handleSearch} />*/}
           <MoviesTable
-            movies={movies}
+            movies={this.state.movies}
             sortColumn={sortColumn}
             onLike={this.handleLike}
             onDelete={this.handleDelete}

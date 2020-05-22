@@ -1,20 +1,17 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
 import LoginForm from "./components/loginForm";
 import Logout from "./components/logout";
 import RegisterForm from "./components/registerForm";
 import RegisterShelter from "./components/registerShelter";
 import auth from "./services/authService";
-import ProtectedRoute from "./components/common/protectedRoute";
-import MoviesTable from "./components/moviesTable";
-import DogForm from "./components/dogForm";
+import AddDogForm from "./components/addDogForm";
 import Dogs from "./components/dogs";
+import DogDetail from "./components/dogDetail"
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import axios from "axios";
 
 class App extends Component {
   state = {};
@@ -38,10 +35,9 @@ class App extends Component {
             <Route path="/login" component={LoginForm} />
             <Route path="/logout" component={Logout} />
             <Route path="/shelter" component={RegisterShelter} />
-            {/*<Route path="/movieTable" component={MoviesTable} />*/}
-            <Route path="/dog" component={DogForm} />
-            {/*<ProtectedRoute path="/dog/:id" component={DogForm} />*/}
+            <Route path="/addDogForm" component={AddDogForm} />
             <Route path="/dogs" component={Dogs} />
+            <Route path="/dogDetail" component={DogDetail} />
             <Redirect from="/" exact to="/dogs" />
 
             {/* <Route

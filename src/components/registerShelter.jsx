@@ -31,15 +31,8 @@ class RegisterShelter extends Form {
   doSubmit = async () => {
     // Call the server
     try {
-      //console.log(this.state.data);
-
       const response = await userService.registerShelter(this.state.data);
-      //console.log("heres");
-
       auth.loginWithJwt(response.headers["x-auth-token"]);
-      //const log = auth.loginWithJwt(response.headers["x-auth-token"]);
-      //console.log(log);
-
       window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {

@@ -1,54 +1,25 @@
 import React, { Component } from "react";
-import { getDogDetail, saveDog } from "../services/dogService";
+import { saveDog } from "../services/dogService";
 import { Form, Field } from "react-final-form";
-import lookupTablesService from "../services/lookupTablesService";
 import DatePicker from "react-datepicker";
+import FormTextField from "../components/common/formTextField"
+import FormCheckBox from "./common/formCheckBoxField"
+import FormOptionField from "./common/formOptionField"
+import { LookupDataContext } from "../lookupDataProvider"
 
 class AddDogForm extends Component {
   state = {
-    colorOptions: [],
-    behaviorOptions: [],
-    ageOptions: [],
-    breedOptions: [],
-    genderOptions: [],
-    sizeOptions: [],
-    attentionReqirementOptions: [],
-    vaccinationOptions: [],
-    compatibilityOptions: [],
-    furOptions: [],
+    lookupData: null
   };
 
-  async componentDidMount() {
-    const colorOptions = await lookupTablesService.getAllColors();
-    const behaviorOptions = await lookupTablesService.getAllBehaviorTraits();
-    const furOptions = await lookupTablesService.getAllFurTypes();
-    const ageOptions = await lookupTablesService.getAllAgeCategories();
-    const genderOptions = await lookupTablesService.getAllGenders();
-    const sizeOptions = await lookupTablesService.getAllSizeCategories();
-    const attentionReqirementOptions = await lookupTablesService.getAllAttentionRequirements();
-    const vaccinationOptions = await lookupTablesService.getAllVaccinationTypes();
-    const compatibilityOptions = await lookupTablesService.getAllCompatibilities();
+  async componentWillMount() {
+    console.log(this.context.lookupData)
     this.setState({
-      colorOptions: colorOptions.data,
-      behaviorOptions: behaviorOptions.data,
-      furOptions: furOptions.data,
-      ageOptions: ageOptions.data,
-      genderOptions: genderOptions.data,
-      sizeOptions: sizeOptions.data,
-      attentionReqirementOptions: attentionReqirementOptions.data,
-      vaccinationOptions: vaccinationOptions.data,
-      compatibilityOptions: compatibilityOptions.data,
+      lookupData: this.context.lookupData
     });
-    console.log(this.state);
-  }
-
-  mapToViewModel(dogModel) {
-    const dog = dogModel.dog;
-    return dog;
   }
 
   onSubmit = async values => {
-    console.log(values);
     await saveDog(values);
 
     this.props.history.push("/add");
@@ -61,239 +32,61 @@ class AddDogForm extends Component {
 
   render() {
     return (
-      <Form
-        DatePickerAdapter={this.DatePickerAdapter}
-        onSubmit={this.onSubmit}
-        // initialValues={{ Age: this.state.ageOptions[1],
-        //   Gender: this.state.genderOptions[1],
-        //   FurType: this.state.furOptions[1],
-        //   Size: this.state.sizeOptions[1],
-        //   VaccinationType: this.state.vaccinationOptions[1],
-        //   RequiredAttention: this.state.attentionReqirementOptions[1] }}
-        render={({ handleSubmit, form, submitting, pristine, values }) => (
-          <form onSubmit={handleSubmit}>
-            <div>
-              <label>Meno</label>
-              <Field
-                name="Name"
-                component="input"
-                type="text"
-                placeholder="Meno"
-              />
-            </div>
-            <div>
-              <label>Akútna adopcia </label>
-              <Field name="AcuteAdoption" component="input" type="checkbox" />
-            </div>
-            <div>
-              <label>Pes si vyžaduje skúseného chovateľa </label>
-              <Field name="RequiresExperiencedOwner" component="input" type="checkbox" />
-            </div>
-            <div>
-              <label>Popis </label>
-              <Field name="AdditionalInfo" component="textarea" placeholder="Sem zadajte bližšie informácie, ktoré by mal používateľ vediet o danom psovi." />
-            </div>
-            <div>
-              <label>Miesto nájdenia </label>
-              <Field
-                name="PlaceRescued"
-                component="input"
-                type="text"
-                placeholder="Meno"
-              />
-            </div>
-            {/* <div>
-              <label>Date: </label>
-              <Field
-                name="DateRescued"
-                dateFormat="yyyy/MM/dd"
-                component={DatePickerAdapter}
-              />
-          </div> */}
-    
-            <div>
-              <label>Vek </label>
+      <React.Fragment>
+        <Form
+          DatePickerAdapter={this.DatePickerAdapter}
+          onSubmit={this.onSubmit}
+          // TODO: use initial values when display edit dog profile page
+
+          initialValues={{
+            AcuteAdoption: false,
+            RequiresExperiencedOwner: false,
+            Castrated: false,
+            Dewormed: false,
+            Chipped: false,
+            RequiresGarden: false
+          }}
+          render={({ handleSubmit, form, submitting, pristine, values }) => (
+            <form onSubmit={handleSubmit}>
               <div>
-                {this.state.ageOptions.map(option =>
-                  <label>
-                    {console.log()}
-                    <Field
-                      name="AgeId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />{' '}
-                    {option.name}
-                  </label>
-                )}
+                <FormTextField name={'Name'} label={'Meno'} />
+                <FormTextField name={'PlaceRescued'} label={'Miesto nájdenia'} />
+
+                <FormCheckBox name={'AcuteAdoption'} label={'Akútna adopcia'} />
+                <FormCheckBox name={'RequiresExperiencedOwner'} label={'Pes si vyžaduje skúseného chovateľa'} />
+                <FormCheckBox name={'Castrated'} label={'Kastrovaný'} />
+                <FormCheckBox name={'Dewormed'} label={'Odčervený'} />
+                <FormCheckBox name={'Chipped'} label={'Čipovaný'} />
+                <FormCheckBox name={'RequiresGarden'} label={'Vyžaduje si záhradu'} />
+
+                <FormOptionField type={"radio"} options={this.state.lookupData.ageOptions} label={'Vek'} name={'AgeId'} />
+                <FormOptionField type={"radio"} options={this.state.lookupData.furTypeOptions} label={'Dĺžka srsti'} name={'FurTypeId'} />
+                <FormOptionField type={"radio"} options={this.state.lookupData.genderOptions} label={'Pohlavie'} name={'GenderId'} />
+                <FormOptionField type={"radio"} options={this.state.lookupData.sizeOptions} label={'Výška'} name={'SizeId'} />
+                <FormOptionField type={"radio"} options={this.state.lookupData.vaccinationTypeOptions} label={'Očkovanie'} name={'VaccinationTypeId'} />
+                <FormOptionField type={"radio"} options={this.state.lookupData.attentionRequirementOptions} label={'Vyžaduje si pozornosť'} name={'RequiredAttentionId'} />
+
+                <FormOptionField type={"checkbox"} options={this.state.lookupData.colorOptions} label={'Farba'} name={'ColorIds'} />
+                <FormOptionField type={"checkbox"} options={this.state.lookupData.behaviorTraitOptions} label={'Povahové črty'} name={'BehaviorTraitIds'} />
+                <FormOptionField type={"checkbox"} options={this.state.lookupData.compatibilityOptions} label={'Vhodný ku '} name={'CompatibilityIds'} />
+
+                <div>
+                  <label>Popis </label>
+                  <Field name="AdditionalInfo" component="textarea" placeholder="Sem zadajte bližšie informácie, ktoré by mal používateľ vediet o danom psovi." />
+                </div>
               </div>
-            </div>
 
-            <div>
-              <label>Dĺžka srsti </label>
-              <div>
-                {this.state.furOptions.map(option =>
-                  <label>
-                    <Field
-                      name="FurTypeId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />{' '}
-                    {option.name}
-                  </label>
-                )}
-              </div>
-            </div>
 
-            <div>
-              <label>Pohlavie </label>
-              <div>
-                {this.state.genderOptions.map(option =>
-                  <label>
-                    <Field
-                      name="GenderId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />{' '}
-                    {option.name}
-                  </label>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label>Výška </label>
-              <div>
-                {this.state.sizeOptions.map(option =>
-                  <label>
-                    <Field
-                      name="SizeId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />{' '}
-                    {option.name}
-                  </label>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label>Očkovanie </label>
-              <div>
-                {this.state.vaccinationOptions.map(option =>
-                  <label>
-                    <Field
-                      name="VaccinationTypeId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />{' '}
-                    {option.name}
-                  </label>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label>Vyžaduje si pozornosť </label>
-              <div>
-                {this.state.attentionReqirementOptions.map(option =>
-                  <label>
-                    <Field
-                      name="RequiredAttentionId"
-                      component="input"
-                      type="radio"
-                      value={option.id}
-                    />
-                    {option.name}
-                  </label>
-                )}
-              </div>
-            </div>
-
-            <div>
-              <label>Kastrovaný </label>
-              <Field name="Castrated" component="input" type="checkbox" />
-            </div>
-
-            <div>
-              <label>Odčervený </label>
-              <Field name="Dewormed" component="input" type="checkbox" />
-            </div>
-
-            <div>
-              <label>Čipovaný </label>
-              <Field name="Chipped" component="input" type="checkbox" />
-            </div>
-
-            <div>
-              <label>Vyžaduje si záhradu </label>
-              <Field name="RequiresGarden" component="input" type="checkbox" />
-            </div>
-
-            <div>
-              <label>Farba </label>
-              {this.state.colorOptions.map(option =>
-                <label>
-                  <Field
-                    name="ColorIds"
-                    component="input"
-                    type="checkbox"
-                    value={option.id}
-                  />{' '}
-                  {option.name}
-                </label>
-              )}
-            </div>
-
-            <div>
-              <label>Povahové črty </label>
-              {this.state.behaviorOptions.map(option =>
-                <label>
-                  <Field
-                    name="BehaviorTraitIds"
-                    component="input"
-                    type="checkbox"
-                    value={option.id}
-                  />{' '}
-                  {option.name}
-                </label>
-              )}
-            </div>
-
-            <div>
-              <label>Vhodný ku </label>
-              {this.state.compatibilityOptions.map(option =>
-                <label>
-                  <Field
-                    name="CompatibilityIds"
-                    component="input"
-                    type="checkbox"
-                    value={option.id}
-                  />{' '}
-                  {option.name}
-                </label>
-              )}
-            </div>
-            <button type="submit" disabled={submitting || pristine}>
-              Uložiť
+              <button type="submit" disabled={submitting || pristine}>
+                Uložiť
             </button>
-            <button
-              type="button"
-              onClick={form.reset}
-              disabled={submitting || pristine}
-            >
-              Reset
-            </button>
-            <pre>{JSON.stringify(values, 0, 2)}</pre>
-          </form>
-        )}
-      />
+              <pre>{JSON.stringify(values, 0, 2)}</pre>
+            </form>
+          )}
+        />
+      </React.Fragment>
     );
   }
 }
-
+AddDogForm.contextType = LookupDataContext;
 export default AddDogForm;

@@ -8,10 +8,11 @@ import RegisterForm from "./components/registerForm";
 import RegisterShelter from "./components/registerShelter";
 import auth from "./services/authService";
 import AddDogForm from "./components/addDogForm";
-import Dogs from "./components/dogs";
+import AllDogs from "./components/allDogs";
 import DogDetail from "./components/dogDetail"
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import {LookupDataProvider} from "./lookupDataProvider"
 
 class App extends Component {
   state = {};
@@ -26,29 +27,26 @@ class App extends Component {
     const { user } = this.state;
 
     return (
+
       <React.Fragment>
         <ToastContainer />
         <NavBar user={user} />
         <main className="container">
-          <Switch>
-            <Route path="/register" component={RegisterForm} />
-            <Route path="/login" component={LoginForm} />
-            <Route path="/logout" component={Logout} />
-            <Route path="/shelter" component={RegisterShelter} />
-            <Route path="/addDogForm" component={AddDogForm} />
-            <Route path="/dogs" component={Dogs} />
-            <Route path="/dogDetail" component={DogDetail} />
-            <Redirect from="/" exact to="/dogs" />
-
-            {/* <Route
-              path="/dogs"
-              render={(props) => <Dogs {...props} user={this.state.user} />} //schovanie componentov
-            /> */}
-            {/*<Route path="/not-found" component={NotFound} />
-            <Redirect to="/not-found" />*/}
-          </Switch>
+          <LookupDataProvider>
+            <Switch>
+              <Route path="/register" component={RegisterForm} />
+              <Route path="/login" component={LoginForm} />
+              <Route path="/logout" component={Logout} />
+              <Route path="/shelter" component={RegisterShelter} />
+              <Route path="/addDogForm" component={AddDogForm} />
+              <Route path="/dogs" component={AllDogs} />
+              <Route path="/dogDetail" component={DogDetail} />
+              <Redirect from="/" exact to="/dogs" />
+            </Switch>
+          </LookupDataProvider>
         </main>
       </React.Fragment>
+
     );
   }
 }

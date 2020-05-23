@@ -3,6 +3,7 @@ import { Redirect } from "react-router-dom";
 import Joi, { stringify } from "joi-browser";
 import Form from "./common/form";
 import auth from "../services/authService";
+import {LookupDataContext} from "../lookupDataProvider"
 
 class LoginForm extends Form {
   state = {
@@ -19,10 +20,10 @@ class LoginForm extends Form {
     // Call the server
 
     try {
+      this.context.loadLookupData();
       const { data } = this.state;
       await auth.login(data.username, data.password);
       this.setState({});
-      window.location = "/";
     } catch (ex) {
       if (ex.response && ex.response.status === 400) {
         const errors = { ...this.state.errors };
@@ -46,5 +47,5 @@ class LoginForm extends Form {
     );
   }
 }
-
+LoginForm.contextType = LookupDataContext;
 export default LoginForm;

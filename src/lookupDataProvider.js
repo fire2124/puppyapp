@@ -7,6 +7,12 @@ class LookupDataProvider extends Component {
         lookupData: null
     }
 
+    async componentDidMount() {
+        const data = await lookupTablesService.getAllLookupData();
+        this.setState({
+            lookupData: data.data
+        });
+    }
     render() {
         return (
             <LookupDataContext.Provider value={{
@@ -23,5 +29,4 @@ class LookupDataProvider extends Component {
         )
     }
 }
-
 export { LookupDataProvider, LookupDataContext };

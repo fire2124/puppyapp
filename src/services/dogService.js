@@ -1,10 +1,9 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
-import { getJwt } from "./authService";
 
 const apiEndpoint = apiUrl;
 const config = {
-  headers: { Authorization: `Bearer ${getJwt()}` },
+  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
 };
 
 export function getAllDogs() {
@@ -15,14 +14,7 @@ export function getDogDetail(dogId) {
   return http.get(`${apiEndpoint}/dog/${dogId}`);
 }
 
-export function saveDog(dog) {
-  console.log(dog);
-
-  // if (dog.id) {
-  //   const body = { ...dog };
-  //   delete body.id;
-  //   return http.put(`${apiEndpoint}/dog/update/` + dog.id, body, config);
-  // }
+export function addDog(dog) {
   return http.post(`${apiEndpoint}/dog/add/`, dog, config);
 }
 

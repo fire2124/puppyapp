@@ -1,14 +1,13 @@
 import { Component } from "react";
-import auth from "../services/authService";
+import { AuthorizationContext } from "../authorizationProvider";
 
 class Logout extends Component {
-  componentDidMount() {
-    auth.logout();
-    window.location = "/";
+  async componentDidMount() {
+    await this.context.logout();
   }
   render() {
     return null;
   }
 }
-
+Logout.contextType = AuthorizationContext;
 export default Logout;

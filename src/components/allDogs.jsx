@@ -28,7 +28,7 @@ class AllDogs extends Component {
         <div>
           <DogsList dogs={this.state.dogs} />
           <Link
-            to="/addDogForm"
+            to="/dog/add"
             className="btn btn-primary"
             style={{ marginBottom: 20 }}
           >

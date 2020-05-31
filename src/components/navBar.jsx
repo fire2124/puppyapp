@@ -25,21 +25,21 @@ const NavBar = () => {
               <div className="navbar-nav">
                 {loggedIn !== true && (
                   <React.Fragment>
-                    <NavLink className="nav-item nav-link" to="/shelter">
+                    <NavLink className="nav-item nav-link" to="/registerShelter">
                       Registrácia útulku
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/login">
                       Prihlásanie
                     </NavLink>
-                    <NavLink className="nav-item nav-link" to="/register">
+                    <NavLink className="nav-item nav-link" to="/registerUser">
                       Registrácia používateľa
                     </NavLink>
                   </React.Fragment>
                 )}
                 {loggedIn === true && (
                   <React.Fragment>
-                    <NavLink className="nav-item nav-link" to="/profile">
-                      {userFirstName}
+                    <NavLink className="nav-item nav-link" to="/userProfile">
+                      {userFirstName} Profile
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/logout">
                       Odhlásiť

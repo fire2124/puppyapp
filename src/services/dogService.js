@@ -11,7 +11,7 @@ export function getAllDogs() {
 }
 
 export function getDogDetail(dogId) {
-  return http.get(`${apiEndpoint}/dog/${dogId}`);
+  return http.get(`${apiEndpoint}/dog/detail/${dogId}`);
 }
 
 export function addDog(dog) {

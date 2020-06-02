@@ -2,6 +2,10 @@ import http from "./httpService";
 import { apiUrl } from "../config.json";
 import { toast } from "react-toastify";
 
+const config = {
+  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
+};
+
 export async function login(credentials) {
   return await http.put(`${apiUrl}/auth/login`, credentials);
 }
@@ -29,6 +33,14 @@ export function registerUser(user) {
 export function registerShelter(shelter) {
   try {
     return http.post(`${apiUrl}/auth/register/shelter`, shelter);
+  } catch (error) {
+    toast.error(error);
+  }
+}
+
+export function getUserProfile(id) {
+  try {
+    return http.get(`${apiUrl}/auth/profile/${id}`, config);
   } catch (error) {
     toast.error(error);
   }

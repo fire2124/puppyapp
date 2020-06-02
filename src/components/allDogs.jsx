@@ -25,16 +25,14 @@ class AllDogs extends Component {
 
     return (
       <div>
-        <div>
-          <DogsList dogs={this.state.dogs} />
-          <Link
-            to="/dog/add"
-            className="btn btn-primary"
-            style={{ marginBottom: 20 }}
-          >
-            Pridať psa
+        <DogsList dogs={this.state.dogs} />
+        <Link
+          to="/addDog"
+          className="btn btn-primary"
+          style={{ marginBottom: 20 }}
+        >
+          Pridať psa
           </Link>
-        </div>
       </div>
     );
   }

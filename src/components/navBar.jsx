@@ -39,7 +39,7 @@ const NavBar = () => {
                 {loggedIn === true && (
                   <React.Fragment>
                     <NavLink className="nav-item nav-link" to="/userProfile">
-                      {userFirstName} Profile
+                      {userFirstName} Profil
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/logout">
                       Odhlásiť

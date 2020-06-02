@@ -6,10 +6,11 @@ const accessToken = 'AccessToken';
 const AuthorizationContext = React.createContext();
 class AuthorizationProvider extends Component {
     state = {
-        loggedIn: null,
+        loggedIn: false,
         userFirstName: null,
         userLastName: null,
-        userRole: null
+        userRole: null,
+        userId: null
     }
 
     async componentDidMount() {
@@ -19,48 +20,18 @@ class AuthorizationProvider extends Component {
             localStorage.getItem(refreshToken) !== null) {
             const response = await authService.refresh(localStorage.getItem(accessToken), localStorage.getItem(refreshToken));
 
-            if (response.data.succeeded === true) {
-                let jwtData = response.data.accessToken.split('.')[1];
-                let stringJwtJsonData = window.atob(jwtData);
-                let decodedJwt = JSON.parse(stringJwtJsonData);
-                let role = decodedJwt['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
-                localStorage.setItem(accessToken, response.data.accessToken);
-                localStorage.setItem(refreshToken, response.data.refreshToken);
-
-                this.setState({
-                    loggedIn: true,
-                    userFirstName: response.data.userFirstName,
-                    userLastName: response.data.userLastName,
-                    userRole: role
-                });
-            }
+            this.login(response);
         }
     }
+
 
     render() {
         return (
             <AuthorizationContext.Provider value={{
-                userRole: this.state.userRole,
-                userFirstName: this.state.userFirstName,
-                loggedIn: this.state.loggedIn,
+                authParams: this.state,
                 login: async (credentials) => {
                     const response = await authService.login(credentials);
-                    if (response.data.succeeded === true) {
-
-                        let jwtData = response.data.accessToken.split('.')[1];
-                        let stringJwtJsonData = window.atob(jwtData);
-                        let decodedJwt = JSON.parse(stringJwtJsonData);
-                        let role = decodedJwt['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
-                        localStorage.setItem(accessToken, response.data.accessToken);
-                        localStorage.setItem(refreshToken, response.data.refreshToken);
-
-                        this.setState({
-                            loggedIn: true,
-                            userFirstName: response.data.userFirstName,
-                            userLastName: response.data.userLastName,
-                            userRole: role
-                        });
-                    }
+                    this.login(response);
                 },
                 logout: async () => {
                     localStorage.removeItem(accessToken);
@@ -70,7 +41,8 @@ class AuthorizationProvider extends Component {
                         loggedIn: false,
                         userRole: null,
                         userFirstName: null,
-                        userLastName: null
+                        userLastName: null,
+                        userId: null
                     });
                 }
 
@@ -78,6 +50,24 @@ class AuthorizationProvider extends Component {
                 {this.props.children}
             </AuthorizationContext.Provider>
         )
+    }
+    login(response) {
+        if (response.data.succeeded === true) {
+            localStorage.setItem(accessToken, response.data.accessToken);
+            localStorage.setItem(refreshToken, response.data.refreshToken);
+            let jwtData = response.data.accessToken.split('.')[1];
+            let stringJwtJsonData = window.atob(jwtData);
+            let decodedJwt = JSON.parse(stringJwtJsonData);
+            let role = decodedJwt['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'];
+            let id = decodedJwt['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier'];
+            this.setState({
+                loggedIn: true,
+                userFirstName: response.data.userFirstName,
+                userLastName: response.data.userLastName,
+                userRole: role,
+                userId: id
+            });
+        }
     }
 }
 

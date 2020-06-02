@@ -9,21 +9,11 @@ class LookupDataProvider extends Component {
 
     async componentDidMount() {
         const data = await lookupTablesService.getAllLookupData();
-        this.setState({
-            lookupData: data.data
-        });
+        this.setState(data.data);
     }
     render() {
         return (
-            <LookupDataContext.Provider value={{
-                lookupData: this.state.lookupData,
-                loadLookupData: async () => {
-                    const data = await lookupTablesService.getAllLookupData();
-                    this.setState({
-                        lookupData: data.data
-                    });
-                }
-            }}>
+            <LookupDataContext.Provider value={this.state}>	
                 {this.props.children}
             </LookupDataContext.Provider>
         )

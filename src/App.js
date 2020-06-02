@@ -42,7 +42,7 @@ class App extends Component {
                 <Route path="/logout" component={Logout} />
 
                 <Route path="/dog" component={AllDogs} />
-                <Route path="/dogAdd" component={AddDog} />
+                <Route path="/addDog" component={AddDog} />
                 <Route path="/dogProfile/:dogId" component={DogProfile} />
                 <Route path="/editDogProfile/:dogId" component={EditDogProfile} />
 

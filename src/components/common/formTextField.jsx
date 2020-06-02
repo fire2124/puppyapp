@@ -9,7 +9,7 @@ class FormTextField extends Component {
                 name={this.props.name}
                 component="input"
                 type="text"
-                placeholder="Meno"
+                placeholder={this.props.placeholder}
             />
         </div>
     }

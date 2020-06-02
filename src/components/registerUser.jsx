@@ -17,10 +17,10 @@ class RegisterUser extends Component {
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <FormTextField name='FirstName' label='Meno' />
-              <FormTextField name='LastName' label='Priezvisko' />
-              <FormTextField name='Email' label='Email' />
-              <FormTextField name='Password' label='Heslo' />
+              <FormTextField name='FirstName' label='Meno ' placeholder='Meno' />
+              <FormTextField name='LastName' label='Priezvisko ' placeholder='Priezvisko'/>
+              <FormTextField name='Email' label='Email ' placeholder='Email'/>
+              <FormTextField name='Password' label='Heslo ' placeholder='Heslo'/>
             </div>
 
             <button type="submit" disabled={submitting || pristine}>

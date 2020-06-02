@@ -9,7 +9,7 @@ class UserProfile extends Component {
   }
 
   componentDidMount() {
-    this._asyncRequest = getUserProfile(this.context.userId).then(
+    this._asyncRequest = getUserProfile(this.context.authParams.userId).then(
       response => {
         this._asyncRequest = null;
         this.setState({ profile: response.data.userProfile });

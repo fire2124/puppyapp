@@ -20,10 +20,11 @@ const NavBar = () => {
         <span className="navbar-toggler-icon" />
       </button>
       <AuthorizationContext.Consumer>
-      {({loggedIn, userFirstName}) => (
+      {({authParams}) => (
               <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              {authParams.loggedIn}
               <div className="navbar-nav">
-                {loggedIn !== true && (
+                {!authParams.loggedIn && (
                   <React.Fragment>
                     <NavLink className="nav-item nav-link" to="/registerShelter">
                       Registrácia útulku
@@ -36,10 +37,30 @@ const NavBar = () => {
                     </NavLink>
                   </React.Fragment>
                 )}
-                {loggedIn === true && (
+                {authParams.loggedIn && authParams.userRole === 'User' && (
                   <React.Fragment>
                     <NavLink className="nav-item nav-link" to="/userProfile">
-                      {userFirstName} Profil
+                      {authParams.userFirstName} Profil
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/logout">
+                      Odhlásiť
+                    </NavLink>
+                  </React.Fragment>
+                )}
+                {authParams.loggedIn && authParams.userRole === 'ShelterAdmin' && (
+                  <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/shelterProfile">
+                      {authParams.userFirstName} Profil
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/logout">
+                      Odhlásiť
+                    </NavLink>
+                  </React.Fragment>
+                )}
+                {authParams.loggedIn && authParams.userRole === 'Admin' && (
+                  <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/shelterRequests">
+                      Útulky 
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/logout">
                       Odhlásiť

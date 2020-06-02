@@ -7,7 +7,7 @@ class DogProfile extends Component {
     dog: null
   }
 
-  componentWillMount() {
+  componentDidMount() {
     const { match: { params } } = this.props;
     this._asyncRequest = getDogDetail(params.dogId).then(
       dogDetail => {

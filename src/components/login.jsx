@@ -7,6 +7,7 @@ class Login extends Component {
 
   onSubmit = async values => {
     await this.context.login(values);
+    this.props.history.push("/dog");
   }
 
   render() {
@@ -16,8 +17,8 @@ class Login extends Component {
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <FormTextField name='UserName' label='Meno' />
-              <FormTextField name='Password' label='Heslo' />
+              <FormTextField name='UserName' label='Email ' placeholder='Email' />
+              <FormTextField name='Password' label='Heslo ' placeholder='Heslo'/>
             </div>
 
             <button type="submit" disabled={submitting || pristine}>

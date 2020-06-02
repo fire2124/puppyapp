@@ -17,7 +17,7 @@ class RegisterShelter extends Component {
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <FormTextField name='name' label='Meno útulku' />
+              <FormTextField name='name' label='Meno útulku' className="text-4xl"/>
               <FormTextField name='city' label='Mesto' />
               <FormTextField name='street' label='Ulica' />
               <FormTextField name='email' label='Email' />
@@ -25,8 +25,7 @@ class RegisterShelter extends Component {
               <FormTextField name='IcoDic' label='IČO/DIČ' />
               <FormTextField name='email' label='Email' />
             </div>
-
-            <button type="submit" disabled={submitting || pristine}>
+            <button type="submit" disabled={submitting || pristine} className="cyan bg-gray-600">
               Registrovať
             </button>
             <pre>{JSON.stringify(values, 0, 2)}</pre>

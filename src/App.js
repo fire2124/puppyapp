@@ -22,6 +22,7 @@ import AdoptionRequests from "./components/adoptionRequests";
 import AdminProfile from "./components/adminProfile";
 import EditAdminProfile from "./components/editAdminProfile";
 import ShelterRequests from "./components/shelterRequests";
+import Landing from "./pages/Landing";
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
@@ -33,13 +34,14 @@ class App extends Component {
 
       <React.Fragment>
         <ToastContainer />
-        <main className="container">
+        <main>
           <AuthorizationProvider>
             <LookupDataProvider>
               <NavBar />
               <Switch>
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
+                <Route path="/landing" component={Landing}/>
 
                 <Route path="/dog" component={AllDogs} />
                 <Route path="/addDog" component={AddDog} />

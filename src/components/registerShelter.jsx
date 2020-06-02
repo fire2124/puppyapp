@@ -1,63 +1,38 @@
-import React from "react";
-import Joi from "joi-browser";
-import Form from "./common/form";
-import auth from "../services/authService";
-import * as userService from "../services/userService";
+import React, { Component } from "react";
+import { Form } from "react-final-form";
+import FormTextField from "../components/common/formTextField"
+import authService from "../services/authService";
 
-class RegisterShelter extends Form {
-  state = {
-    data: {
-      name: "",
-      city: "",
-      street: "",
-      shelterCode: "",
-      email: "",
-      password: "",
-      IcoDic: "",
-    },
-    errors: {},
-  };
+class RegisterShelter extends Component {
 
-  schema = {
-    name: Joi.string().required().min(4).max(256).label("Name"),
-    city: Joi.string().required().min(4).max(256).label("City"),
-    street: Joi.string().required().min(4).max(256).label("Street"),
-    shelterCode: Joi.string().required().min(4).max(6).label("ShelterCod"),
-    email: Joi.string().email().min(5).max(256).required().label("Mail"),
-    password: Joi.string().min(8).max(256).required().label("Password"),
-    IcoDic: Joi.string().required().min(4).max(256).label("Ico/Dic"),
-  };
-
-  doSubmit = async () => {
-    // Call the server
-    try {
-      const response = await userService.registerShelter(this.state.data);
-      auth.loginWithJwt(response.headers["x-auth-token"]);
-      window.location = "/";
-    } catch (ex) {
-      if (ex.response && ex.response.status === 400) {
-        const errors = { ...this.state.errors };
-        errors.email = ex.response.data;
-        this.setState({ errors });
-      }
-    }
-  };
+  onSubmit = async values => {
+    await authService.registerShelter(values);
+    this.props.history.push("/login");
+  }
 
   render() {
     return (
-      <div>
-        <h1>Registrácia útulku</h1>
-        <form onSubmit={this.handleSubmit}>
-          {this.renderInput("name", "Meno útulku")}
-          {this.renderInput("shelterCode", "Číslo útulku")}
-          {this.renderInput("city", "mesto")}
-          {this.renderInput("street", "Ulica")}
-          {this.renderInput("email", "Email")}
-          {this.renderInput("password", "Heslo", "password")}
-          {this.renderInput("IcoDic", "IČO/DIČ")}
-          {this.renderButton("Registrovať")}
-        </form>
-      </div>
+      <Form
+        onSubmit={this.onSubmit}
+        render={({ handleSubmit, form, submitting, pristine, values }) => (
+          <form onSubmit={handleSubmit}>
+            <div>
+              <FormTextField name='name' label='Meno útulku' />
+              <FormTextField name='city' label='Mesto' />
+              <FormTextField name='street' label='Ulica' />
+              <FormTextField name='email' label='Email' />
+              <FormTextField name='password' label='Heslo' />
+              <FormTextField name='IcoDic' label='IČO/DIČ' />
+              <FormTextField name='email' label='Email' />
+            </div>
+
+            <button type="submit" disabled={submitting || pristine}>
+              Registrovať
+            </button>
+            <pre>{JSON.stringify(values, 0, 2)}</pre>
+          </form>
+        )}
+      />
     );
   }
 }

@@ -1,49 +1,69 @@
 import React, { Component } from "react";
 import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
-import NavBar from "./components/navBar";
-import LoginForm from "./components/loginForm";
-import Logout from "./components/logout";
-import RegisterForm from "./components/registerForm";
-import RegisterShelter from "./components/registerShelter";
-import auth from "./services/authService";
-import AddDogForm from "./components/addDogForm";
-import AllDogs from "./components/allDogs";
-import DogDetail from "./components/dogDetail"
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import {LookupDataProvider} from "./lookupDataProvider"
+import NotFound from "./components/notFound";
+import NavBar from "./components/navBar";
+import Login from "./components/login";
+import Logout from "./components/logout";
+import RegisterUser from "./components/registerUser";
+import RegisterShelter from "./components/registerShelter";
+import AddDog from "./components/addDog";
+import AllDogs from "./components/allDogs";
+import DogProfile from "./components/dogProfile";
+
+import EditDogProfile from "./components/editDogProfile";
+import UserProfile from "./components/userProfile";
+import EditUserProfile from "./components/editUserProfile";
+import ShelterProfile from "./components/shelterProfile";
+import EditShelterProfile from "./components/editShelterProfile";
+import AdoptionRequests from "./components/adoptionRequests";
+import AdminProfile from "./components/adminProfile";
+import EditAdminProfile from "./components/editAdminProfile";
+import ShelterRequests from "./components/shelterRequests";
+
+import { LookupDataProvider } from "./lookupDataProvider";
+import { AuthorizationProvider } from "./authorizationProvider";
 
 class App extends Component {
-  state = {};
-
-  componentDidMount() {
-    const user = auth.getCurrentUser();
-    this.setState({ user });
-    console.log(user);
-  }
 
   render() {
-    const { user } = this.state;
-
     return (
 
       <React.Fragment>
         <ToastContainer />
-        <NavBar user={user} />
         <main className="container">
-          <LookupDataProvider>
-            <Switch>
-              <Route path="/register" component={RegisterForm} />
-              <Route path="/login" component={LoginForm} />
-              <Route path="/logout" component={Logout} />
-              <Route path="/shelter" component={RegisterShelter} />
-              <Route path="/addDogForm" component={AddDogForm} />
-              <Route path="/dogs" component={AllDogs} />
-              <Route path="/dogDetail" component={DogDetail} />
-              <Redirect from="/" exact to="/dogs" />
-            </Switch>
-          </LookupDataProvider>
+          <AuthorizationProvider>
+            <LookupDataProvider>
+              <NavBar />
+              <Switch>
+                <Route path="/login" component={Login} />
+                <Route path="/logout" component={Logout} />
+
+                <Route path="/dog" component={AllDogs} />
+                <Route path="/addDog" component={AddDog} />
+                <Route path="/dogProfile/:dogId" component={DogProfile} />
+                <Route path="/editDogProfile/:dogId" component={EditDogProfile} />
+
+                <Route path="/registerUser" component={RegisterUser} />
+                <Route path="/userProfile" component={UserProfile} />
+                <Route path="/editUserProfile" component={EditUserProfile} />
+
+                <Route path="/registerShelter" component={RegisterShelter} />
+                <Route path="/shelterProfile" component={ShelterProfile} />
+                <Route path="/editShelterProfile" component={EditShelterProfile} />
+                <Route path="/adoptionRequests" component={AdoptionRequests} />
+
+                <Route path="/adminProfile" component={AdminProfile} />
+                <Route path="/editAdminProfile" component={EditAdminProfile} />
+                <Route path="/shelterRequests" component={ShelterRequests} />
+
+                <Redirect from="/" exact to="/dog" />
+                <Route component={NotFound} />
+              </Switch>
+            </LookupDataProvider>
+          </AuthorizationProvider>
         </main>
       </React.Fragment>
 

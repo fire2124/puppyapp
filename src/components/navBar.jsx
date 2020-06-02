@@ -1,7 +1,8 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthorizationContext } from "../authorizationProvider";
 
-const NavBar = ({ user }) => {
+const NavBar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <Link className="navbar-brand" to="/">
@@ -18,38 +19,40 @@ const NavBar = ({ user }) => {
       >
         <span className="navbar-toggler-icon" />
       </button>
-      <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div className="navbar-nav">
-          {/* <NavLink className="nav-item nav-link" to="/dog">
-            Profil psa
-          </NavLink> */}
-          {!user && (
-            <React.Fragment>
-              <NavLink className="nav-item nav-link" to="/shelter">
-                Registrácia útulku
-              </NavLink>
-              <NavLink className="nav-item nav-link" to="/login">
-                Prihlásanie
-              </NavLink>
-              <NavLink className="nav-item nav-link" to="/register">
-                Registrácia používateľa
-              </NavLink>
-            </React.Fragment>
-          )}
-          {user && (
-            <React.Fragment>
-              <NavLink className="nav-item nav-link" to="/profile">
-                {user.name}
-              </NavLink>
-              <NavLink className="nav-item nav-link" to="/logout">
-                Odhlásiť
-              </NavLink>
-            </React.Fragment>
-          )}
-        </div>
-      </div>
+      <AuthorizationContext.Consumer>
+      {({loggedIn, userFirstName}) => (
+              <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
+              <div className="navbar-nav">
+                {loggedIn !== true && (
+                  <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/registerShelter">
+                      Registrácia útulku
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/login">
+                      Prihlásanie
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/registerUser">
+                      Registrácia používateľa
+                    </NavLink>
+                  </React.Fragment>
+                )}
+                {loggedIn === true && (
+                  <React.Fragment>
+                    <NavLink className="nav-item nav-link" to="/userProfile">
+                      {userFirstName} Profil
+                    </NavLink>
+                    <NavLink className="nav-item nav-link" to="/logout">
+                      Odhlásiť
+                    </NavLink>
+                  </React.Fragment>
+                )}
+              </div>
+            </div>
+      )}
+
+      </AuthorizationContext.Consumer>
     </nav>
   );
 };
-
+NavBar.contextType = AuthorizationContext;
 export default NavBar;

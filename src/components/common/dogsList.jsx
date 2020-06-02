@@ -7,12 +7,7 @@ class DogsList extends Component {
     render() {
         return <ul>
             {this.props.dogs.map(dog =>
-                <Link to={{
-                    pathname: '/dogDetail',
-                    state: {
-                        dog: dog
-                    }
-                }}>
+                <Link to={`/dogProfile/${dog.id}`}>
                     <DogThumbnail image={image} dogName={dog.name} />
                 </Link>
             )}

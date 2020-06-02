@@ -1,47 +1,54 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
-import jwtDecode from "jwt-decode";
+import { toast } from "react-toastify";
 
-const apiEndpoint = `${apiUrl}/auth/login`;
-const tokenKey = "token";
+const config = {
+  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
+};
 
-http.setJwt(getJwt());
-
-export async function login(userName, password) {
-  const { data: jwt } = await http.put(apiEndpoint, {
-    userName,
-    password,
-  });
-
-  const jwt2 = jwt["accessToken"];
-  return localStorage.setItem(tokenKey, jwt2);
+export async function login(credentials) {
+  return await http.put(`${apiUrl}/auth/login`, credentials);
 }
 
-export function loginWithJwt(jwt) {
-  localStorage.setItem(tokenKey, jwt);
-}
-
-export function logout() {
-  localStorage.removeItem(tokenKey);
-}
-
-export function getCurrentUser() {
+export async function refresh(accessToken, refreshToken) {
+  const request = {
+    accessToken,
+    refreshToken,
+  };
   try {
-    const jwt = localStorage.getItem(tokenKey);
-    return jwtDecode(jwt);
-  } catch (ex) {
-    return null;
+    return await http.put(`${apiUrl}/auth/refresh`, request);
+  } catch (error) {
+    toast.error(error);
   }
 }
 
-export function getJwt() {
-  return localStorage.getItem(tokenKey);
+export function registerUser(user) {
+  try {
+    return http.post(`${apiUrl}/auth/register/user`, user);
+  } catch (error) {
+    toast.error(error);
+  }
+}
+
+export function registerShelter(shelter) {
+  try {
+    return http.post(`${apiUrl}/auth/register/shelter`, shelter);
+  } catch (error) {
+    toast.error(error);
+  }
+}
+
+export function getUserProfile(id) {
+  try {
+    return http.get(`${apiUrl}/auth/profile/${id}`, config);
+  } catch (error) {
+    toast.error(error);
+  }
 }
 
 export default {
   login,
-  loginWithJwt,
-  logout,
-  getCurrentUser,
-  getJwt,
+  registerUser,
+  registerShelter,
+  refresh
 };

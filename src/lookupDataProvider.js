@@ -9,7 +9,7 @@ class LookupDataProvider extends Component {
 
     async componentDidMount() {
         const data = await lookupTablesService.getAllLookupData();
-        this.setState(data.data);
+        this.setState({lookupData: data.data});
     }
     render() {
         return (

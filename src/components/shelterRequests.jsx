@@ -8,24 +8,21 @@ class ShelterRequests extends Component {
     pendingRegistrations: null
   }
 
-  componentDidMount() {
-    this._asyncRequest = getShelterApplications().then(
-      response => {
-        this._asyncRequest = null;
-        this.setState({pendingRegistrations: response.data.registrations});
-        console.log(this.state);
-      }
-    );
+  async componentDidMount() {
+    let response = await getShelterApplications();
+    if (response.data) {
+      this.setState({ pendingRegistrations: response.data.registrations });
+    }
   }
 
   render() {
     if (this.state.pendingRegistrations === null) {
       return ('Loading');
     } else {
-      return(
+      return (
         this.state.pendingRegistrations.map(pendingRegistration =>
           <Link to={`/shelterRequest/${pendingRegistration.shelter.id}`}>
-              {pendingRegistration.shelter.name}
+            {pendingRegistration.shelter.name}
           </Link>
         )
       )

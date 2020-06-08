@@ -6,8 +6,11 @@ import authService from "../services/authService";
 class RegisterShelter extends Component {
 
   onSubmit = async values => {
-    await authService.registerShelter(values);
-    this.props.history.push("/login");
+    let response = await authService.registerShelter(values);
+    console.log(response);
+    if(response != null){
+      this.props.history.push("/login");
+    }
   }
 
   render() {

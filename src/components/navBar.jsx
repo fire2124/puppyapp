@@ -52,6 +52,9 @@ const NavBar = () => {
                     <NavLink className="nav-item nav-link" to="/shelterProfile">
                       {authParams.userFirstName} Profil
                     </NavLink>
+                    <NavLink className="nav-item nav-link" to="/addDog">
+                      Pridať psa
+                    </NavLink>
                     <NavLink className="nav-item nav-link" to="/logout">
                       Odhlásiť
                     </NavLink>

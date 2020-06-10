@@ -13,7 +13,7 @@ import RegisterShelter from "./components/registerShelter";
 import AddDog from "./components/addDog";
 import AllDogs from "./components/allDogs";
 import DogProfile from "./components/dogProfile";
-
+import SelectRegisterUser from "./components/SelectRegisterUser"
 import EditDogProfile from "./components/editDogProfile";
 import UserProfile from "./components/userProfile";
 import EditUserProfile from "./components/editUserProfile";
@@ -48,6 +48,8 @@ class App extends Component {
                 <Route path="/addDog" component={AddDog} />
                 <Route path="/dogProfile/:dogId" component={DogProfile} />
                 <Route path="/editDogProfile/:dogId" component={EditDogProfile} />
+
+                <Route path="/selectRegister" component={SelectRegisterUser}/>
 
                 <Route path="/registerUser" component={RegisterUser} />
                 <Route path="/userProfile" component={UserProfile} />

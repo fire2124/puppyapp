@@ -13,7 +13,6 @@
     background-repeat: no-repeat;
     background-position: left center;
     margin-top: -1%;
-
 }
 .background2 {
   background-image: url('../staticImage/vectors/Vector-2.png');
@@ -21,8 +20,6 @@
    background-repeat: no-repeat;
    background-position: right ;
    margin-top: -1%;
-
-
 }
 .background3 {
   background-image: url('../staticImage/vectors/Vector-3.png');
@@ -34,8 +31,17 @@
    background-repeat: no-repeat;
    background-position: left ;
    margin-top: -1%;
-
 }
+
+.background5 {
+  background-image: url('../staticImage/vectors/Vector-2.png');
+   background-size: 50% 60%;
+   background-repeat: no-repeat;
+   background-position: right ;
+   margin-top: -1%;
+   margin-block-end: -10%;
+}
+
 .pod{
   color: #749BFF;
 }

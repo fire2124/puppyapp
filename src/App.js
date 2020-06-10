@@ -61,7 +61,7 @@ class App extends Component {
                 <Route path="/editAdminProfile" component={EditAdminProfile} />
                 <Route path="/shelterRequests" component={ShelterRequests} />
 
-                <Redirect from="/" exact to="/dog" />
+                <Redirect from="/" exact to="/landing" />
                 <Route component={NotFound} />
               </Switch>
             </LookupDataProvider>

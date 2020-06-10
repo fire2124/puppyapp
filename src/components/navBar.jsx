@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthorizationContext } from "../authorizationProvider";
-import ilustracia from "../staticImage/logo-odtlacok.png";
+import ilustracia from "../staticImage/illustrations/logo-odtlacok.png";
 
 const NavBar = () => {
   return (

@@ -5,6 +5,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import NotFound from "./components/notFound";
 import NavBar from "./components/navBar";
+import Footer from "./components/footer"
 import Login from "./components/login";
 import Logout from "./components/logout";
 import RegisterUser from "./components/registerUser";
@@ -64,6 +65,7 @@ class App extends Component {
                 <Redirect from="/" exact to="/landing" />
                 <Route component={NotFound} />
               </Switch>
+              <Footer/>
             </LookupDataProvider>
           </AuthorizationProvider>
         </main>

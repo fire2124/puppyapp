@@ -7,7 +7,38 @@
  * 1. Correct the line height in all browsers.
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
+ .background {
+   background-image: url('../staticImage/vectors/Vector-1.png');
+    background-size: 85% 85%;
+    background-repeat: no-repeat;
+    background-position: left center;
+    margin-top: -1%;
 
+}
+.background2 {
+  background-image: url('../staticImage/vectors/Vector-2.png');
+   background-size: 60% 90%;
+   background-repeat: no-repeat;
+   background-position: right ;
+   margin-top: -1%;
+
+
+}
+.background3 {
+  background-image: url('../staticImage/vectors/Vector-3.png');
+  background-size: 100% 100%;  
+}
+.background4 {
+  background-image: url('../staticImage/vectors/Vector-4.png');
+   background-size: 67% 90%;
+   background-repeat: no-repeat;
+   background-position: left ;
+   margin-top: -1%;
+
+}
+.pod{
+  color: #749BFF;
+}
 html {
   line-height: 1.15; /* 1 */
   -webkit-text-size-adjust: 100%; /* 2 */
@@ -21,7 +52,8 @@ html {
  */
 
 body {
-  margin: 0;
+  margin: auto;
+
 }
 
 /**
@@ -66397,4 +66429,5 @@ video {
   .xl\:delay-1000 {
     transition-delay: 1000ms;
   }
+
 }

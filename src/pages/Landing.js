@@ -14,21 +14,20 @@ class Landing extends Component {
   render() {
     return (
       <div>
-        <div className="container mx-auto">
-          <div className="flex flex-no-wrap mx-auto">
-            <div className="flex-none w-6/12 m-auto">
-              <img src={vektor1} alt="Logo" />
-              <h1 className="text-left text-4xl font-bold text-orange">
+        <div className=" mx-auto ">
+          <div className="flex flex-no-wrap mx-auto background">
+            <div className="flex-none w-6/12 m-auto m-16" >
+              <h1 className="text-left text-4xl font-bold text-white ml-40">
                 Zoznámte sa so svojím
                 <br /> ideálnym psím spoločníkom
               </h1>
-              <p className="text-lg">
+              <p className="text-lg text-white ml-40">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled
               </p>
-              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8">
+              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 ml-40">
                 Nájsť psíka
               </button>
             </div>
@@ -36,50 +35,56 @@ class Landing extends Component {
               <img src={ilustracia} alt="Logo" />
             </div>
           </div>
-          <div className="flex flex-no-wrap mx-auto">
+          <div className="flex flex-no-wrap mx-auto background2">
             <div className="flex-none w-6/12 m-auto">
               <img src={ilustracia2} alt="Logo" />
             </div>
-            <div className="flex-none w-6/12 mx-auto ">
-              <img src={vektor2} alt="Logo" />
-
-              <h1 className="text-left text-4xl font-bold text-orange">
+            <div className="flex-none w-6/12  m-auto ">
+              <h1 className="text-left text-4xl justify-center font-bold text-white mr-40">
                 HAU TU ? (blog)
               </h1>
-              <p className="text-lg ">
+              <p className="text-lg text-white justify-center mr-40">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled
               </p>
-              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8">
+              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40">
                 Viac
               </button>
             </div>
           </div>
-          <img src={vektor3} alt="Logo" />
-          <div className="flex flex-no-wrap mx-auto">
-            <div className="flex-none w-6/12 mx-auto ">
-              <h1 className="text-left text-4xl font-bold text-orange">
+          <div className="flex flex-no-wrap m-auto background3">
+            <div className="flex w-10/12 m-auto ">
+              <div className= "text-left justify-left flex1">
+              <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-40">
                 Ako pomáhame?
               </h1>
-              <p className="text-lg ">
+              <p className="text-left flex1 text-lg text-white flex1 justify-left ml-40 ">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled
               </p>
-              <img src={icon1} alt="Logo" />
+              </div>
+              <div className="text-lg text-white flex3 justify-left">
               <img src={icon2} alt="Logo" />
+              </div>
+              <div className="text-lg text-white flex3 justify-left">
               <img src={icon3} alt="Logo" />
+              </div>
+              <div className="text-lg text-white flex3 justify-left">
+              <img src={icon1} alt="Logo" />
+              </div>
+              
             </div>
           </div>
-          <div className="flex flex-no-wrap mx-auto">
-            <div className="flex-none w-6/12 mx-auto ">
-              <h1 className="text-left text-4xl font-bold text-orange">
+          <div className="flex flex-no-wrap m-auto">
+            <div className="flex-none w-3/12 m-auto ">
+              <h1 className="text-left text-4xl font-bold pod mr-40">
                 Podujatia
               </h1>
-              <p className="text-lg ">
+              <p className="text-lg mr-40">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
@@ -91,21 +96,19 @@ class Landing extends Component {
             </div>
           </div>
 
-          <div className="flex flex-no-wrap mx-auto">
+          <div className="flex flex-no-wrap m-auto background4">
             <div className="flex-none w-6/12 m-auto">
-              <img src={vektor4} alt="Logo" />
-
-              <h1 className="text-left text-4xl font-bold text-orange">
+              <h1 className="text-left text-4xl font-bold text-white ml-40">
                 Finančná pomoc
               </h1>
 
-              <p className="text-lg">
+              <p className="text-lg text-white ml-40">
                 Lorem Ipsum is simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled
               </p>
-              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8">
+              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 ml-40">
                 Viac
               </button>
             </div>

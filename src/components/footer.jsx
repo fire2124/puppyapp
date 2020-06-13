@@ -22,7 +22,7 @@ const Footer = () => {
         <div class="flex-1 px-4 py-2 m-2">
           <h1 class="text-black text-lg font-bold">Útulky</h1>
           <div class="no-underline hover:underline text-blue-500 text-base">
-            Nájdi sa
+            Ako adoptovať
           </div>
           <div class="no-underline hover:underline text-blue-500 text-base">
             Zvierací obmusman

@@ -27,39 +27,41 @@ const NavBar = () => {
             <div className="navbar-nav">
               {loggedIn !== true && (
                 <React.Fragment className="py-6">
-                  <div className=" md:flex md:items-center md:justify-start mx-auto py-5 px-5 space-x-40 ">
-                    <div className="float-left justify-start flex1">
+                  <div className=" py-5 px-5 flex">
+                    <div className="w-3/12 px-4 py-2 m-2">
                       <img src={ilustracia} alt="Logo" width="30px" />
                     </div>
-                    <div className="space-x-1 justify-center flex2">
-                      <NavLink
-                        className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
-                        to="/"
-                      >
-                        Hľadaj psíka
-                      </NavLink>
-                      <NavLink
-                        className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
-                        to="/"
-                      >
-                        Útulky
-                      </NavLink>
-                      <NavLink
-                        className="  text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
-                        to="/"
-                      >
-                        „HAU TU”
-                      </NavLink>
+                    <div className="w-6/12  px-4 py-2 m-2 justify-center px-4">
+                      <div className="justify-center text-center">
+                        <NavLink
+                          className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          Hľadaj psíka
+                        </NavLink>
+                        <NavLink
+                          className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          Útulky
+                        </NavLink>
+                        <NavLink
+                          className="  text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          „HAU TU”
+                        </NavLink>
+                      </div>
                     </div>
-                    <div className="float-right justify-end flex3 ">
-                     <NavLink
-                        className="  text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange content-end "
+                    <div className="w-3/12 float-right">
+                      <NavLink
+                        className="  text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange float-left "
                         to="/login"
                       >
                         Prihlásanie
                       </NavLink>
                       <NavLink
-                        className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 "
+                        className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 float-right"
                         to="/selectRegister"
                       >
                         Registrácia
@@ -71,13 +73,13 @@ const NavBar = () => {
               {loggedIn === true && (
                 <React.Fragment className="flex justify-start bg-orange-200">
                   <NavLink
-                    className="text-orange-700 text-center bg-orange-400 px-4 py-2 m-2"
+                    className="text-orange-700 text-center bg-orange-400 px-4 py-2 "
                     to="/userProfile"
                   >
                     {userFirstName} Profil
                   </NavLink>
                   <NavLink
-                    className="text-orange-700 text-center bg-orange-400 px-4 py-2 m-2"
+                    className="text-orange-700 text-center bg-orange-400 px-4 py-2"
                     to="/logout"
                   >
                     Odhlásiť

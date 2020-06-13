@@ -12,7 +12,6 @@
     background-size: 85% 85%;
     background-repeat: no-repeat;
     background-position: left center;
-    margin-top: -1%;
 }
 .background2 {
   background-image: url('../staticImage/vectors/Vector-2.png');
@@ -23,7 +22,7 @@
 }
 .background3 {
   background-image: url('../staticImage/vectors/Vector-3.png');
-  background-size: 100% 100%;  
+  background-repeat: repeat-y;
 }
 .background4 {
   background-image: url('../staticImage/vectors/Vector-4.png');

@@ -3,17 +3,19 @@ import { Field } from "react-final-form";
 
 class FormTextField extends Component {
     render() {
-        return <div>
+        return <div class="w-full max-w-xs">
             <h1 class="text-black text-lg font-bold "> <label>{this.props.label}</label></h1>
-           <div class="w-full max-w-sm">
+           <div class="border-b border-black my-4">
             <Field
-                className= "bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                className= "mr-64 focus:outline-none"
                 name={this.props.name}
                 component="input"
                 type="text"
                 placeholder={this.props.text}
             />
+            
             </div>
+    
         </div>
     }
 }

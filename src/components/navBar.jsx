@@ -26,7 +26,7 @@ const NavBar = () => {
           <div className="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div className="navbar-nav">
               {loggedIn !== true && (
-                <React.Fragment className="py-6">
+                <React.Fragment >
                   <div className=" py-5 px-5 flex">
                     <div className="w-3/12 px-2 py-2 m-2">
                       <img src={ilustracia} alt="Logo" width="30px" />

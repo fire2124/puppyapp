@@ -36,11 +36,12 @@
 
 .background5 {
   background-image: url('../staticImage/vectors/Vector-2.png');
-   background-size: 50% 60%;
+   background-size: 100% 50%;
+   position: relative;
    background-repeat: no-repeat;
    background-position: right ;
-   margin-top: -1%;
-   margin-block-end: -10%;
+   margin-bottom: -10%;
+   margin-top: 10%;
 }
 
 
@@ -105,8 +106,6 @@
 .container2:hover {
   background: transparent url('../staticImage/vectors/utulok.png') no-repeat 0 0;
   position: relative;
-  left:0;
-
   margin-top: 1%;
   display: inline-block;
   text-align: center;

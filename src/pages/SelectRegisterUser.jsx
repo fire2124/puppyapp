@@ -18,7 +18,7 @@ class SelectRegisterUser extends Component {
             Používateľ
           </Link>
         </div>
-        <div className="flex-none w-6/12  text-center">
+        <div className="flex-none w-6/12  text-center mr-0">
           <Link
             to="/registerShelter"
             className=" text-4xl font-bold pod my-64 container2"

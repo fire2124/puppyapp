@@ -10,18 +10,18 @@ class SelectRegisterUser extends Component {
     return (
       //m-auto
       <div className="flex flex-no-wrap  ">
-        <div className="flex-none w-6/12 text-center">
+        <div className="flex-none w-6/12 text-center my-64">
           <Link
             to="/registerUser"
-            className="text-4xl font-bold pod my-64 container1"
+            className="text-4xl font-bold pod -my-64 container1"
           >
             Používateľ
           </Link>
         </div>
-        <div className="flex-none w-6/12  text-center mr-0">
+        <div className="flex-none w-6/12  text-center mr-0 my-64">
           <Link
             to="/registerShelter"
-            className=" text-4xl font-bold pod my-64 container2"
+            className=" text-4xl font-bold pod -my-64 container2"
           >
             Útulok
           </Link>

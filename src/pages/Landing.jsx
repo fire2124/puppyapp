@@ -17,7 +17,7 @@ class Landing extends Component {
   render() {
     return (
       <div className=" mx-auto ">
-        <div className="flex flex-no-wrap mx-auto background -mt-16">
+        <div className="flex flex-no-wrap mx-auto background">
           <div className="flex-none w-6/12 m-auto m-16">
             <h1 className="text-left text-4xl font-bold text-white ml-40">
               Zoznámte sa so svojím

@@ -27,11 +27,11 @@ const NavBar = () => {
             <div className="navbar-nav">
               {loggedIn !== true && (
                 <React.Fragment >
-                  <div className=" py-5 px-5 flex">
-                    <div className="w-3/12 px-2 py-2 m-2">
-                      <img src={ilustracia} alt="Logo" width="30px" />
+                  <div className=" py-5 px-5 flex justify-between">
+                    <div className=" px-2 py-2 m-2">
+                      <img src={ilustracia} alt="Logo" width="30px"/>
                     </div>
-                    <div className="w-6/12  px-4 py-2 m-2 justify-center px-4">
+                    <div className="  px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">
                         <NavLink
                           className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
@@ -53,15 +53,15 @@ const NavBar = () => {
                         </NavLink>
                       </div>
                     </div>
-                    <div className=" mx-auto w-3/12 float-right">
+                    <div className=" ">
                       <NavLink
-                        className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange float-left "
+                        className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange inline-block"
                         to="/login"
                       >
                         Prihlásanie
                       </NavLink>
                       <NavLink
-                        className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 float-right"
+                        className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
                         to="/selectRegister"
                       >
                         Registrácia

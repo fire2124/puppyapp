@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { getAllDogs } from "../services/dogService";
-import DogsList from "./common/dogsList";
+import DogsList from "../components/common/dogsList";
 
 class AllDogs extends Component {
   state = {

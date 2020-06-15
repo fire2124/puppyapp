@@ -6,8 +6,8 @@ import ilustracia from "../staticImage/illustrations/logo-odtlacok.png";
 const Footer = () => {
   return (
     <div>
-      <div class="md:flex md:items-center md:justify-start mx-auto py-10 px-10 space-x-40 space-x-1">
-        <div class="flex-1 px-4 py-2 m-2">
+      <div class="md:flex md:items-center md:justify-start mx-auto py-10 px-10 space-x-1">
+        <div class="flex-1 px-4 py-2 m-2  w-1/6">
           <h1 class="text-black text-lg font-bold ">O nás</h1>
           <div class="no-underline hover:underline text-blue-500 text-base">
             Nájdi sa
@@ -19,8 +19,8 @@ const Footer = () => {
             Partneri
           </div>
         </div>
-        <div class="flex-1 px-4 py-2 m-2">
-          <h1 class="text-black text-lg font-bold">Útulky</h1>
+        <div class="flex-1 px-4 py-2 m-2 w-1/6">
+          <h1 class="text-black text-lg font-bold ">Útulky</h1>
           <div class="no-underline hover:underline text-blue-500 text-base">
             Ako adoptovať
           </div>
@@ -28,28 +28,29 @@ const Footer = () => {
             Zvierací obmusman
           </div>
         </div>
-        <div class="flex-1 px-4 py-2 m-2">
-          <h1 class="text-black text-lg font-bold">Sociálne siete</h1>
+        <div class="flex-1 px-4 py-2 m-2 w-1/6">
+          <h1 class="text-black text-lg font-bold ">Sociálne siete</h1>
           <div class="no-underline hover:underline text-blue-500 text-base">
             Facebook
           </div>
         </div>
-        <div class="flex-1 px-4 py-2 m-2">
-          <h1 class="text-black text-2xl font-bold">Newsletter</h1>
-          <div class="no-underline text-blue-500 text-base">
+        <div class="flex-1 px-4 py-2 m-2 w-3/6 mr-20">
+          <h1 class="text-black text-2xl font-bold ">Newsletter</h1>
+          <div class="no-underline text-blue-500 text-base ">
             Začnite odoberať náš newsletter, aby ste boli informovaný o
             zbierkach a podujatiach, ktoré organizujú útulky.
           </div>
         </div>
       </div>
-      <div class="flex background3">
-        <div class="flex-1 text-white text-center px-4 py-2 m-2">
+        
+      <div class="flex background3 ">
+        <div class=" w-3/12 justify-center flex-1 text-white text-center px-4 py-2 m-2">
           Súbory cookies
         </div>
-        <div class="flex-1 text-white text-center px-4 py-2 m-2">
+        <div class="flex-1 justify-center text-white text-center px-4 py-2 m-2">
           Ochrana osobných údajov
         </div>
-        <div class="flex-1 text-white text-center px-4 py-2 m-2">
+        <div class="flex-1 justify-center text-white text-center px-4 py-2 m-2">
           Všeobecné podmienky
         </div>
       </div>

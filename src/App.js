@@ -3,19 +3,19 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
-import NotFound from "./components/notFound";
+import NotFound from "./pages/notFound";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer"
-import Login from "./components/login";
+import Login from "./pages/login";
 import Logout from "./components/logout";
-import RegisterUser from "./components/registerUser";
-import RegisterShelter from "./components/registerShelter";
-import AddDog from "./components/addDog";
-import AllDogs from "./components/allDogs";
-import DogProfile from "./components/dogProfile";
-import SelectRegisterUser from "./components/SelectRegisterUser"
+import RegisterUser from "./pages/registerUser";
+import RegisterShelter from "./pages/registerShelter";
+import AddDog from "./pages/addDog";
+import AllDogs from "./pages/allDogs";
+import DogProfile from "./pages/dogProfile";
+import SelectRegisterUser from "./pages/SelectRegisterUser"
 import EditDogProfile from "./components/editDogProfile";
-import UserProfile from "./components/userProfile";
+import UserProfile from "./pages/userProfile";
 import EditUserProfile from "./components/editUserProfile";
 import ShelterProfile from "./components/shelterProfile";
 import EditShelterProfile from "./components/editShelterProfile";
@@ -23,7 +23,7 @@ import AdoptionRequests from "./components/adoptionRequests";
 import AdminProfile from "./components/adminProfile";
 import EditAdminProfile from "./components/editAdminProfile";
 import ShelterRequests from "./components/shelterRequests";
-import Landing from "./pages/Landing";
+import Landing from "./pages/Landing.jsx";
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";

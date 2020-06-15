@@ -28,7 +28,7 @@ const NavBar = () => {
               {loggedIn !== true && (
                 <React.Fragment className="py-6">
                   <div className=" py-5 px-5 flex">
-                    <div className="w-3/12 px-4 py-2 m-2">
+                    <div className="w-3/12 px-2 py-2 m-2">
                       <img src={ilustracia} alt="Logo" width="30px" />
                     </div>
                     <div className="w-6/12  px-4 py-2 m-2 justify-center px-4">
@@ -53,9 +53,9 @@ const NavBar = () => {
                         </NavLink>
                       </div>
                     </div>
-                    <div className="w-3/12 float-right">
+                    <div className=" mx-auto w-3/12 float-right">
                       <NavLink
-                        className="  text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange float-left "
+                        className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange float-left "
                         to="/login"
                       >
                         Prihlásanie

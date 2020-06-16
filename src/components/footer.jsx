@@ -36,7 +36,7 @@ const Footer = () => {
         </div>
         <div class="flex-1 px-4 py-2 m-2 w-3/6 mr-20">
           <h1 class="text-black text-2xl font-bold ">Newsletter</h1>
-          <div class="no-underline text-blue-500 text-base ">
+          <div class="no-underline text-black-500 text-base ">
             Začnite odoberať náš newsletter, aby ste boli informovaný o
             zbierkach a podujatiach, ktoré organizujú útulky.
           </div>

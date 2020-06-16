@@ -16,8 +16,8 @@ class Login extends Component {
         onSubmit={this.onSubmit}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
-            <div className="ml-64 flex ">
-              <div className="w-6/12">
+            <div className="ml-64 flex my-32">
+              <div className="w-6/12 flex-1">
                 <div className="ml-32 ">
                   <h1 className="text-left text-4xl font-bold pod mr-40">
                     Prihlásiť sa
@@ -56,7 +56,6 @@ class Login extends Component {
                 >
                   Prihlásiť
                 </button>
-                {/* <pre>{JSON.stringify(values, 0, 2)}</pre> */}
                 <div class="no-underline hover:underline text-blue-500 text-base my-4">
                   <Link
                     to="/"
@@ -75,12 +74,12 @@ class Login extends Component {
                 </div>
               </div>
               </div>
-              <div className="w-6/12 background5">
+              <div className="w-6/12 backgroundLogin flex-1">
                 <div className="mb-64">
                   <img
                     src={ilustracia}
                     alt="Logo"
-                    className="mb-64 mr-32 -ml-48 -mt-64"
+                    className="mb-64  -ml-40 -mt-32"
                   />
                 </div>
               </div>

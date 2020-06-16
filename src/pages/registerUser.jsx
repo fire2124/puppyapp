@@ -71,7 +71,7 @@ class RegisterUser extends Component {
                   <img
                     src={ilustracia}
                     alt="Logo"
-                    className="mb-64 mr-32 -ml-48 -mt-56"
+                    className="mb-64 mr-20 -ml-30 mt-4"
                   />
                 </div>
               </div>

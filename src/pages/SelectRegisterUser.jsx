@@ -1,30 +1,40 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
-import vektor1 from "../staticImage/vectors/utulok.png";
-import vektor2 from "../staticImage/vectors/pouzivatel.png";
-
+import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless2.png";
+import ilustracia2 from "../staticImage/illustrations/registracia_utulok.png";
 
 class SelectRegisterUser extends Component {
   render() {
     return (
       //m-auto
-      <div className="flex flex-no-wrap  ">
-        <div className="flex-none w-6/12 text-center my-64">
-          <Link
-            to="/registerUser"
-            className="text-4xl font-bold pod -my-64 container1"
-          >
-            Používateľ
-          </Link>
+      <div className="flex h-64 my-56 ">
+        <div className=" w-6/12 text-left ml-64 -mt-32 mx-100  block box-border container1">
+          <div className="">
+          <a href="/registerUser"><img src={ilustracia} alt="Logo" width="500px"/></a>
+          </div>
+          <div className="">
+            <Link
+              to="/registerUser"
+              className="text-6xl font-bold  ml-16 pod "
+            >
+              Používateľ
+            </Link>
+          </div>
         </div>
-        <div className="flex-none w-6/12  text-center mr-0 my-64">
-          <Link
-            to="/registerShelter"
-            className=" text-4xl font-bold pod -my-64 container2"
-          >
-            Útulok
-          </Link>
+        <div className=" w-6/12 text-left ml-56 -mt-16 mx-100 mr-64   block box-border container2">
+          <div className=" mr-32">
+          <a href="/registerShelter"><img src={ilustracia2} alt="Logo" width="500px"/></a>
+          </div>
+
+          <div className="mb-4">
+            <Link
+              to="/registerShelter"
+              className="text-6xl font-bold  ml-32 pod "
+            >
+              Útulok
+            </Link>
+          </div>
         </div>
       </div>
     );

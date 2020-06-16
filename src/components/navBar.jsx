@@ -29,7 +29,7 @@ const NavBar = () => {
                 <React.Fragment >
                   <div className=" py-5 px-5 flex justify-between">
                     <div className=" px-2 py-2 m-2">
-                      <img src={ilustracia} alt="Logo" width="30px"/>
+                    <a href="/"><img src={ilustracia} alt="Logo" width="30px"/></a>
                     </div>
                     <div className="  px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">

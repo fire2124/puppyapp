@@ -27,7 +27,7 @@ class Popups extends Component {
             <br />
             na staroslivosť o psa ?
           </div>
-          <div className="flex flex-no-wrap mx-auto  justify-center mb-5">
+          <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5">
             <div className="mx-10">
               <button class="flex1 my-5 text-2xl">0 - 1 hodina</button>
               <img src={ilustracia} alt="Logo" width="70px" className="ml-10" />
@@ -104,12 +104,12 @@ class Popups extends Component {
           </div>
         </div>
         <div className="modal">
-          <a className="close">
-            {/*onClick={close}*/}
+           {/*<a className="close">
+           onClick={close}
             &times;
-          </a>
+          </a>*/}
           <div className="font-bold text-3xl flex flex-no-wrap mx-auto justify-center mt-20 mb-10">
-            Koľko členov má Vaša domácnosť?
+            Koľko členov má <br /> Vaša domácnosť?
           </div>
           <div className="flex flex-no-wrap mx-auto justify-center mb-5">
             <div className="mx-10">
@@ -240,8 +240,8 @@ class Popups extends Component {
             <div className="font-bold text-3xl flex flex-no-wrap mx-auto justify-center mt-20 mb-10">
               Máte doma aj iné zvieratá?
             </div>
-            <div className="flex flex-no-wrap mx-auto justify-between mb-5">
-              <div className="w-1/3 ml-40">
+            <div className="xl:flex xl:flex-no-wrap xl:mx-auto xl:justify-between xl:mb-5">
+              <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl">Pes</p>
                   <img src={dog} alt="Logo" width="70px" className="" />
@@ -281,7 +281,7 @@ class Popups extends Component {
                   </div>
                 </div>
               </div>
-              <div className="w-1/3 ">
+              <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl justify-right">Mačka</p>
                   <img src={cat} alt="Logo" width="70px" className="" />
@@ -321,7 +321,7 @@ class Popups extends Component {
                   </div>
                 </div>
               </div>
-              <div className="w-1/3 ">
+              <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl">Iné</p>
                   <img src={duck} alt="Logo" width="70px" />
@@ -389,7 +389,7 @@ class Popups extends Component {
             <br />
             starostlivosťou o psíka?
           </div>
-          <div className="flex flex-no-wrap mx-auto justify-center mb-5">
+          <div className=" xl:flex  xl:flex-no-wrap  xl:mx-auto  xl:justify-center  xl:mb-5">
             <div className="mx-10">
               <p class="flex1 my-5 text-2xl">Začiatočník</p>
             </div>
@@ -425,7 +425,7 @@ class Popups extends Component {
             <br />
             si vyzdvihnúť psíka?
           </div>
-          <div className="flex flex-no-wrap mx-auto justify-center mb-5">
+          <div className=" xl:flex  xl:flex-no-wrap  xl:mx-auto  xl:justify-center mb-5">
             <div className="mx-10">
               <p class="flex1 my-5 text-2xl">0 - 10 km</p>
             </div>

@@ -17,8 +17,8 @@ class RegisterShelter extends Component {
         onSubmit={this.onSubmit}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
-            <div className="ml-64 flex">
-              <div className="w-6/12 flex1">
+            <div className="xl:ml-64 xl:flex">
+              <div className="xl:w-6/12 xl:flex1">
                 <div className="ml-32 ">
                   <div>
                     <h1 className="text-left text-4xl font-bold pod mr-40 ">
@@ -39,32 +39,32 @@ class RegisterShelter extends Component {
                     <FormTextField
                       name="city"
                       label="Mesto"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <FormTextField
                       name="street"
                       label="Ulica"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <FormTextField
                       name="email"
                       label="Email"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <FormTextField
                       name="password"
                       label="Heslo"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <FormTextField
                       name="IcoDic"
                       label="IČO/DIČ"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <FormTextField
                       name="email"
                       label="Email"
-                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                   </div>
                   <div>
@@ -104,12 +104,12 @@ class RegisterShelter extends Component {
                   </div>
                 </div>
               </div>
-              <div className="w-6/12 background5 flex-1">
-                <div className="mb-64">
+              <div className="xl:w-6/12 background5 xl:flex-1">
+                <div className="xl:mb-64">
                   <img
                     src={ilustracia}
                     alt="Logo"
-                    className="mb-0 mt-32 mr-20 -ml-14"
+                    className="mb-0 xl:mt-32 mr-20 -ml-14"
                   />
                 </div>
               </div>

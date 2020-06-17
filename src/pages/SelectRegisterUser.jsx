@@ -8,8 +8,8 @@ class SelectRegisterUser extends Component {
   render() {
     return (
       //m-auto
-      <div className="flex h-64 my-56 ">
-        <div className=" w-6/12 text-left ml-64 -mt-32 mx-100  block box-border container1">
+      <div className="xl:flex xl:h-64 my-56 ">
+        <div className=" xl:w-6/12 xl:text-left xl:ml-64 xl:-mt-32 xl:mx-100 xl:block xl:box-border container1">
           <div className="">
           <a href="/registerUser"><img src={ilustracia} alt="Logo" width="500px"/></a>
           </div>
@@ -22,8 +22,8 @@ class SelectRegisterUser extends Component {
             </Link>
           </div>
         </div>
-        <div className=" w-6/12 text-left ml-56 -mt-16 mx-100 mr-64   block box-border container2">
-          <div className=" mr-32">
+        <div className=" xl:w-6/12 text-left xl:ml-56 xl:-mt-16 xl:mx-100 xl:mr-64 xl:block xl:box-border mt-20 container2">
+          <div className=" xl:mr-32">
           <a href="/registerShelter"><img src={ilustracia2} alt="Logo" width="500px"/></a>
           </div>
 

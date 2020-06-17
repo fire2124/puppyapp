@@ -18,8 +18,8 @@ class RegisterUser extends Component {
         onSubmit={this.onSubmit}
         render={({ handleSubmit, form, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
-            <div className="ml-64 flex ">
-              <div className="w-6/12">
+            <div className="xl:ml-64 xl:flex mt-10">
+              <div className="xl:w-6/12">
                 <div className="ml-32 ">
                   <h1 className="text-left text-4xl font-bold pod mr-40 ">
                     Registrovať sa
@@ -66,7 +66,7 @@ class RegisterUser extends Component {
                   </div>
                 </div>
               </div>
-              <div className="w-6/12 background5">
+              <div className="xl:w-6/12 background5">
                 <div className="mb-64 ">
                   <img
                     src={ilustracia}

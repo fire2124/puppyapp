@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { getAllDogs } from "../services/dogService";
 import DogsList from "./common/dogsList";
 import FilterDogs from "./filterDogsForm";
-
+import { getFiltered } from "../services/dogService";
 
 class AllDogs extends Component {
 
@@ -25,8 +25,11 @@ class AllDogs extends Component {
     this.setState({ currentPage: page });
   };
 
-  displayFiltered(dogs){
-    this.setState({ dogs: dogs });
+  async displayFiltered(values) {
+    let response = await getFiltered(values); //TOTO move API call to allDogs, return only values
+    if (response.data) {
+      this.setState({ dogs: response.data.dogs });
+    }
   }
 
   async resetFilter(){

@@ -7,7 +7,6 @@ class RegisterShelter extends Component {
 
   onSubmit = async values => {
     let response = await authService.registerShelter(values);
-    console.log(response);
     if(response != null){
       this.props.history.push("/login");
     }
@@ -17,14 +16,18 @@ class RegisterShelter extends Component {
     return (
       <Form
         onSubmit={this.onSubmit}
-        render={({ handleSubmit, form, submitting, pristine, values }) => (
+        render={({ handleSubmit, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div>
-              <FormTextField name='name' label='Meno útulku ' placeholder=''/>
-              <FormTextField name='city' label='Mesto ' placeholder=''/>
-              <FormTextField name='street' label='Ulica ' placeholder=''/>
+              <FormTextField name='name' label='Názov ' placeholder=''/>
+              <FormTextField name='shelterCode' label='Identifikačne číslo ' placeholder=''/>
               <FormTextField name='email' label='Email ' placeholder=''/>
-              <FormTextField name='IcoDic' label='IČO/DIČ ' placeholder=''/>
+              <FormTextField name='phoneNumber' label='Tel. číslo ' placeholder=''/>
+              {/* <FormTextField name='firstName' label='Meno administrátora ' placeholder=''/>
+              <FormTextField name='lastName' label='Priezvisko administrátora ' placeholder=''/> */}
+              <FormTextField name='street' label='Ulica ' placeholder=''/>
+              <FormTextField name='city' label='Mesto ' placeholder=''/>
+              <FormTextField name='postcode' label='PSČ ' placeholder=''/>
               <FormTextField name='password' label='Heslo ' placeholder=''/>
               <FormTextField name='confirmPassword' label='Potvrdenie hesla ' placeholder=''/>
             </div>

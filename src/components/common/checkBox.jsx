@@ -11,8 +11,6 @@ const Checkbox = ({
   ...rest
 }) => {
   const handleChange = (event, ...rest) => {
-    // const { checked } = event.target;
-    // console.log(event.target);
 
     onChange({
       name: event.target.name,

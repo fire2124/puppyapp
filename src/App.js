@@ -19,9 +19,8 @@ import EditUserProfile from "./components/editUserProfile";
 import ShelterProfile from "./components/shelterProfile";
 import EditShelterProfile from "./components/editShelterProfile";
 import AdoptionRequests from "./components/adoptionRequests";
-import AdminProfile from "./components/adminProfile";
-import EditAdminProfile from "./components/editAdminProfile";
 import ShelterRequests from "./components/shelterRequests";
+import ShelterRequest from "./components/shelterRequest";
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
@@ -55,9 +54,8 @@ class App extends Component {
                 <Route path="/editShelterProfile" component={EditShelterProfile} />
                 <Route path="/adoptionRequests" component={AdoptionRequests} />
 
-                <Route path="/adminProfile" component={AdminProfile} />
-                <Route path="/editAdminProfile" component={EditAdminProfile} />
                 <Route path="/shelterRequests" component={ShelterRequests} />
+                <Route path="/shelterRequest/:shelterId" component={ShelterRequest} />
 
                 <Redirect from="/" exact to="/dog" />
                 <Route component={NotFound} />

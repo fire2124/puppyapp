@@ -63,10 +63,9 @@ class AddDog extends Component {
                 </div>
               </div>
 
-
               <button type="submit" disabled={submitting || pristine}>
                 Uložiť
-            </button>
+              </button>
               <pre>{JSON.stringify(values, 0, 2)}</pre>
             </form>
           )}

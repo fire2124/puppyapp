@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import { AuthorizationContext } from "../authorizationProvider";
 import { Form } from "react-final-form";
-import FormTextField from "../components/common/formTextField"
+import FormTextField from "./common/formTextField"
 
 class Login extends Component {
 
   onSubmit = async values => {
-    await this.context.login(values);
-    this.props.history.push("/dog");
+    let response = await this.context.login(values);
+    if(response){
+      this.props.history.push("/dog");
+    }
   }
 
   render() {

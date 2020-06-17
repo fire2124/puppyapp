@@ -40,7 +40,7 @@ const NavBar = () => {
                 {authParams.loggedIn && authParams.userRole === 'User' && (
                   <React.Fragment>
                     <NavLink className="nav-item nav-link" to="/userProfile">
-                      {authParams.userFirstName} Profil
+                      Profil používateľa
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/logout">
                       Odhlásiť
@@ -50,7 +50,7 @@ const NavBar = () => {
                 {authParams.loggedIn && authParams.userRole === 'ShelterAdmin' && (
                   <React.Fragment>
                     <NavLink className="nav-item nav-link" to="/shelterProfile">
-                      {authParams.userFirstName} Profil
+                      Profil útulku
                     </NavLink>
                     <NavLink className="nav-item nav-link" to="/addDog">
                       Pridať psa

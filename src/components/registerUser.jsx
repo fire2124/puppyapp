@@ -14,13 +14,14 @@ class RegisterUser extends Component {
     return (
       <Form
         onSubmit={this.onSubmit}
-        render={({ handleSubmit, form, submitting, pristine, values }) => (
+        render={({ handleSubmit, submitting, pristine, values }) => (
           <form onSubmit={handleSubmit}>
             <div>
               <FormTextField name='FirstName' label='Meno ' placeholder='Meno' />
               <FormTextField name='LastName' label='Priezvisko ' placeholder='Priezvisko'/>
               <FormTextField name='Email' label='Email ' placeholder='Email'/>
               <FormTextField name='Password' label='Heslo ' placeholder='Heslo'/>
+              <FormTextField name='ConfirmPassword' label='Potvrdenie hesla ' placeholder=''/>
             </div>
 
             <button type="submit" disabled={submitting || pristine}>

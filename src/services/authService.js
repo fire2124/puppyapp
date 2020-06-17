@@ -64,9 +64,21 @@ export async function getUserProfile(id) {
   }
 }
 
+export async function editUserProfile(values, id) {
+  try {
+    let response = await http.put(`${apiUrl}/auth/updateProfile/${id}`,values, config);
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default {
   login,
   registerUser,
   registerShelter,
-  refresh
+  refresh,
+  editUserProfile,
 };

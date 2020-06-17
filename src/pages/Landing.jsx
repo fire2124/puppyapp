@@ -17,7 +17,7 @@ class Landing extends Component {
   render() {
     return (
       <div className=" mx-auto ">
-        <div className="flex flex-no-wrap mx-auto background1">
+        <div className="flex flex-no-wrap m-auto background1">
           <div className="flex-none w-6/12 m-auto m-16">
             <h1 className="text-left text-4xl font-bold text-white ml-40 mt-20">
               Zoznámte sa so svojím
@@ -28,36 +28,37 @@ class Landing extends Component {
               proces výberu Vášho nového člena rodiny prostredníctvom
               jedinečného dotazníka a samotnej ONLINE adopcie.
             </p>
-            <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 ml-40 mt-5">
+            <Link className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 ml-40 mt-10" to="/popups">
+           
               Nájsť psíka
-            </button>
+            </Link >
           </div>
           <div className="flex-none w-6/12 mx-auto ml-10 mt-20">
             <img src={ilustracia} alt="Logo" />
           </div>
         </div>
-        <div className=" flex flex-no-wrap mx-auto background2 my-56">
-          <div className="flex1 w-6/12 m-auto ml-64 -mr-64 mt-24">
+        <div className=" flex flex-no-wrap background2 my-56">
+          <div className="flex1 w-6/12 ml-56 mt-24">
             <div className="text-left justify-left flex1">
               <img src={ilustracia2} alt="Logo" />
             </div>
           </div>
-          <div className="container-fluid flex1 w-6/12 m-auto ml-32">
-            <h1 className="text-left text-4xl justify-left font-bold text-white  mt-20 ">
+          <div className="container-fluid flex1 w-6/12 mt-20">
+            <h1 className="text-left text-4xl justify-left font-bold text-white mt-32 ml-64 ">
               HAU TU ? (blog)
             </h1>
-            <p className="text-left text-lg text-white justify-left mr-40 mt-5">
+            <p className="text-left text-lg text-white justify-left  mt-5 ml-64">
               Neviete ako vycvičiť Vášho psíka? Ako prebieha proces adopcie? S
               týmito otázkami ale aj s mnohými ďaľšími Vám radi pomôžeme. Na
               našom blogu nájdete veľa užitočných článkov, ktoré Vás naučia, ako
               sa čo najlepšie postarať o svojho štvornohého priateľa.
             </p>
-            <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5">
+            <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5 ml-64">
               Viac
             </button>
           </div>
         </div>
-        <div className="flex flex-no-wrap background3">
+        <div className=" flex flex-no-wrap m-auto background3">
           <div className="flex w-6/12  my-56">
             <div className="text-left justify-left flex1">
               <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-40">
@@ -120,8 +121,8 @@ class Landing extends Component {
           </div>
         </div>
         <div className="flex flex-no-wrap m-auto my-40">
-          <div className="flex flex-no-wrap m-auto w-7/12 justify-center">
-            <div class=" ml-20 py-10 px-2 space-x-1 w-4/12 -mr-32">
+          <div className="flex flex-no-wrap m-auto w-7/12 justify-center ml-20">
+            <div class=" ml-20 py-10 px-2 space-x-1 w-4/12 ">
               <div class="py-2 m-2">
                 <div class="flip-card">
                   <div class="flip-card-inner">
@@ -147,7 +148,7 @@ class Landing extends Component {
                 </div>
               </div>
             </div>
-            <div class="py-10 px-2 space-x-1 w-4/12 -mr-32">
+            <div class="py-10 px-2 space-x-1 w-4/12 ">
               <div class="py-2 m-2">
                 <div class="flip-card">
                   <div class="flip-card-inner">
@@ -174,7 +175,7 @@ class Landing extends Component {
               </div>
             </div>
 
-            <div class="py-10 px-2 space-x-1 w-4/12 -mr-32">
+            <div class="py-10 px-2 space-x-1 w-4/12 ">
               <div class="py-2 m-2">
                 <div class="flip-card  ">
                   <div class="flip-card-inner">

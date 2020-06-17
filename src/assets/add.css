@@ -1,16 +1,15 @@
 .background1 {
   background-image: url("../staticImage/vectors/Vector-1.png");
-  background-size: 70% 100%;
+  background-size: 70% 160%;
   background-repeat: no-repeat;
-  background-position: left center;
+  background-position: left;
+  
 }
 .background2 {
   background-image: url("../staticImage/vectors/Vector-2.png");
-  background-size: 66% 120%;
+  background-size: 70% 100%;
   background-repeat: no-repeat;
-  position: relative;
-  background-position: right;
-  margin-top: 10%;
+  background-position: right ;
 }
 .container-fluid {
   height: 100%;
@@ -239,3 +238,16 @@
   padding: 0.25em 0.8em;
   background: #749bff;
 }
+
+
+/* Small (sm) */
+@media (min-width: 640px) { /* ... */ }
+
+/* Medium (md) */
+@media (min-width: 768px) { /* ... */ }
+
+/* Large (lg) */
+@media (min-width: 1024px) { /* ... */ }
+
+/* Extra Large (xl) */
+@media (min-width: 1280px) { /* ... */ }

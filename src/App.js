@@ -3,6 +3,8 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import "./assets/add.css";
+
 import NotFound from "./pages/notFound";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer"
@@ -24,9 +26,10 @@ import AdminProfile from "./components/adminProfile";
 import EditAdminProfile from "./components/editAdminProfile";
 import ShelterRequests from "./components/shelterRequests";
 import Landing from "./pages/Landing.jsx";
-
+import Popups from "./pages/popups.jsx"
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
+// import StepperExample from "./components/plusAndMinus.jsx"
 
 class App extends Component {
 
@@ -40,6 +43,7 @@ class App extends Component {
             <LookupDataProvider>
               <NavBar />
               <Switch>
+              <Route path="/popups" component={Popups} />
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
                 <Route path="/landing" component={Landing}/>

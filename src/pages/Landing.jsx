@@ -8,7 +8,7 @@ import group3 from "../staticImage/group/Group 167.png";
 import group4 from "../staticImage/group/Group 168.png";
 import group5 from "../staticImage/group/Group 169.png";
 import group6 from "../staticImage/group/Group 171.png";
-
+import { Link, NavLink } from "react-router-dom";
 import icon1 from "../staticImage/icons/DOG-icon.png";
 import icon2 from "../staticImage/icons/HAND&HEART.png";
 import icon3 from "../staticImage/icons/HOUSE.png";
@@ -55,7 +55,6 @@ class Landing extends Component {
             <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5">
               Viac
             </button>
-            ={" "}
           </div>
         </div>
         <div className="flex flex-no-wrap background3">

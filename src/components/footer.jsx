@@ -6,7 +6,7 @@ import ilustracia from "../staticImage/illustrations/logo-odtlacok.png";
 const Footer = () => {
   return (
     <div>
-      <div class="xl:flex xl:items-center xl:justify-start xl:mx-auto xl:py-10 xl:px-10 xl:space-x-1 mt-32">
+      <div class="md:flex md:items-center md:justify-start mx-auto py-10 px-10 space-x-1">
         <div class="flex-1 px-4 py-2 m-2  w-1/6">
           <h1 class="text-black text-lg font-bold ">O nás</h1>
           <div class="no-underline hover:underline text-blue-500 text-base">

@@ -1,6 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
-import Popup from "reactjs-popup";
+import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
+import FormTextField from "../components/common/formTextField";
+
 import ilustracia from "../staticImage/dot/CLOCK-1.png";
 import ilustracia2 from "../staticImage/dot/CLOCK-2.png";
 import ilustracia3 from "../staticImage/dot/CLOCK-3.png";
@@ -244,7 +245,7 @@ class Popups extends Component {
               <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl">Pes</p>
-                  <img src={dog} alt="Logo" width="70px" className="" />
+                  <img src={dog} alt="Logo" width="100px" />
                 </div>
                 <div className="flex flex-no-wrap mx-auto justify-left mb-5">
                   <div className="justify-between input-group plus-minus-input">
@@ -284,7 +285,7 @@ class Popups extends Component {
               <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl justify-right">Mačka</p>
-                  <img src={cat} alt="Logo" width="70px" className="" />
+                  <img src={cat} alt="Logo" width="100px" className="" />
                 </div>
                 <div className="flex flex-no-wrap justify-right mb-5">
                   <div className="justify-between input-group plus-minus-input">
@@ -324,7 +325,7 @@ class Popups extends Component {
               <div className="w-1/3 xl:ml-40 ml-32">
                 <div className="mx-10 ml-20">
                   <p class="flex1 my-5 text-2xl">Iné</p>
-                  <img src={duck} alt="Logo" width="70px" />
+                  <img src={duck} alt="Logo" width="100px" />
                 </div>
 
                 <div className="flex flex-no-wrap mx-auto justify-left mb-5">

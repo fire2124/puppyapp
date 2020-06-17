@@ -224,9 +224,9 @@ class Landing extends Component {
           </div>
         </div>
 
-        <div className="flex flex-no-wrap xl:m-auto background4">
+        <div className="xl:flex xl:flex-no-wrap xl:m-auto background4">
           <div className="xl:flex-none xl:w-6/12 xl:m-auto">
-            <h1 className="text-left text-4xl font-bold text-white xl:ml-40 mt-5">
+            <h1 className="xl:text-left text-4xl font-bold text-white xl:ml-40 mt-5">
               Finančná pomoc
             </h1>
 
@@ -238,7 +238,7 @@ class Landing extends Component {
               Viac
             </button>
           </div>
-          <div className="flex-none w-6/12 mx-auto">
+          <div className="xl:flex-none xl:w-6/12 xl:mx-auto">
             <img src={ilustracia3} alt="Logo" />
           </div>
         </div>

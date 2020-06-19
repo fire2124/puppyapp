@@ -27,10 +27,13 @@ import ShelterRequests from "./components/shelterRequests";
 import Landing from "./pages/Landing.jsx";
 import Popups from "./pages/popups.jsx";
 import Pop from "./pages/pop";
+import logger from "./services/logService";
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
 // import StepperExample from "./components/plusAndMinus.jsx"
+
+logger.init();
 
 class App extends Component {
   render() {

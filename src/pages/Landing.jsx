@@ -31,7 +31,7 @@ class Landing extends Component {
             <div className="mt-5">
               <Link
                 className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 xl:ml-40 mt-10"
-                to="/popups"
+                to="/allDogs"
               >
                 Nájsť psíka
               </Link>
@@ -126,52 +126,52 @@ class Landing extends Component {
         </div>
         <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:my-40">
           <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:w-7/12 xl:justify-center xl:ml-20 ml-32">
-            <div class=" xl:ml-20 xl:py-10 xl:px-2 xl:space-x-1 xl:w-4/12 ">
-              <div class="xl:py-2 xl:m-2">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+            <div className=" xl:ml-20 xl:py-10 xl:px-2 xl:space-x-1 xl:w-4/12 ">
+              <div className="xl:py-2 xl:m-2">
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group1} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="py-2 m-2">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+              <div className="py-2 m-2">
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group3} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
-              <div class="py-2 m-2">
-                <div class="flip-card">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+            <div className="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
+              <div className="py-2 m-2">
+                <div className="flip-card">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group2} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="py-2 m-2">
-                <div class="flip-card  ">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+              <div className="py-2 m-2">
+                <div className="flip-card  ">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group4} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
@@ -179,26 +179,26 @@ class Landing extends Component {
               </div>
             </div>
 
-            <div class="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
-              <div class="py-2 m-2">
-                <div class="flip-card  ">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+            <div className="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
+              <div className="py-2 m-2">
+                <div className="flip-card  ">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group6} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="py-2 m-2">
-                <div class="flip-card  ">
-                  <div class="flip-card-inner">
-                    <div class="flip-card-front">
+              <div className="py-2 m-2">
+                <div className="flip-card  ">
+                  <div className="flip-card-inner">
+                    <div className="flip-card-front">
                       <img src={group5} alt="Logo" />
                     </div>
-                    <div class="flip-card-back">
+                    <div className="flip-card-back">
                       <img src={group6} alt="Logo" />
                     </div>
                   </div>
@@ -206,7 +206,7 @@ class Landing extends Component {
               </div>
             </div>
           </div>
-          <div class="mx-20 xl:mt-32 w-5/12">
+          <div className="mx-20 xl:mt-32 w-5/12">
             <div className="xl:flex-none xl:m-auto xl:mr-32">
               <h1 className="text-left text-4xl font-bold pod mr-40">
                 Podujatia

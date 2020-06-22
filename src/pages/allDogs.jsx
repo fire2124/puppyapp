@@ -3,6 +3,7 @@ import { getAllDogs } from "../services/dogService";
 import DogsList from "../components/common/dogsList";
 import { getFiltered } from "../services/dogService";
 import FilterDogs from "../components/filterDogsForm";
+import { Link } from "react-router-dom";
 
 class AllDogs extends Component {
   constructor(props) {
@@ -60,15 +61,21 @@ class AllDogs extends Component {
                 <div className=" ml-64 mt-16">
                   <h1 className="xl:text-left text-4xl font-bold text-white  mt-5">
                     Chceme Vám pomôcť nájsť vhodného psíka
-                    <br/> práve pre Vašu rodinu
+                    <br /> práve pre Vašu rodinu
                   </h1>
 
                   <p className="xl:text-lg text-white xl:mr-40">
-                   Máme pre Vás dotazník, ktorý Vám môže pomôcť
+                    Máme pre Vás dotazník, ktorý Vám môže pomôcť
                   </p>
-                  <button className="text-white font-semibold xl:text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-5">
+                  <div className="mt-5">
+                  <Link
+                    className="text-white font-semibold xl:text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8"
+                    to="/popups"
+                  >
                     Vyplniť dotazník
-                  </button>
+                  </Link>
+                  </div>
+                 
                 </div>
               </div>
             </div>

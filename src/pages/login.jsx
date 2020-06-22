@@ -11,7 +11,7 @@ class Login extends Component {
     try {
       let response = await this.context.login(values);
       if(response){
-        this.props.history.push("/allDogs");
+        this.props.history.push("/");
       }
     } catch (error) {
       console.log(error);

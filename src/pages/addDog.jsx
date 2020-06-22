@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import { addDog } from "../services/dogService";
 import { Form, Field } from "react-final-form";
-import FormTextField from "./common/formTextField"
-import FormCheckBox from "./common/formCheckBoxField"
-import FormOptionField from "./common/formOptionField"
+import FormTextField from "../components/common/formTextField"
+import FormCheckBox from "../components/common/formCheckBoxField"
+import FormOptionField from "../components/common/formOptionField"
 import { LookupDataContext } from "../lookupDataProvider"
 
 class AddDog extends Component {

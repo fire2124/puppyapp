@@ -1,48 +1,56 @@
 {
-  "name": "vidly",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.10.1",
-    "@sentry/browser": "^5.15.0",
-    "axios": "^0.19.2",
-    "bootstrap": "^4.4.1",
-    "final-form": "^4.19.1",
-    "font-awesome": "^4.7.0",
-    "joi-browser": "^13.4.0",
-    "jwt-decode": "^2.2.0",
-    "lodash": "^4.17.15",
-    "prettier": "^2.0.3",
-    "prop-types": "^15.7.2",
-    "qs": "^6.9.4",
-    "react": "^16.13.1",
-    "react-datepicker": "^2.16.0",
-    "react-dom": "^16.13.1",
-    "react-final-form": "^6.4.0",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^3.4.1",
-    "react-toastify": "^5.5.0",
-    "update": "^0.7.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
-  },
-  "devDependencies": {
-    "case-sensitive-paths-webpack-plugin": "^2.3.0"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "name": "vidly",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@material-ui/core": "^4.10.2",
+        "@sentry/browser": "^5.15.0",
+        "autoprefixer": "^9.8.2",
+        "axios": "^0.19.2",
+        "final-form": "^4.19.1",
+        "font-awesome": "^4.7.0",
+        "joi-browser": "^13.4.0",
+        "jwt-decode": "^2.2.0",
+        "lodash": "^4.17.15",
+        "mdbootstrap": "^4.19.0",
+        "mdbreact": "^4.27.0",
+        "postcss": "^7.0.32",
+        "postcss-cli": "^7.1.1",
+        "postcss-import": "^12.0.1",
+        "prettier": "^2.0.3",
+        "prop-types": "^15.7.2",
+        "react": "^16.13.1",
+        "react-datepicker": "^2.16.0",
+        "react-dom": "^16.13.1",
+        "react-final-form": "^6.4.0",
+        "react-router-dom": "^4.3.1",
+        "react-scripts": "^3.4.1",
+        "react-toastify": "^5.5.0",
+        "reactjs-popup": "^1.5.0",
+        "tailwindcss": "^1.4.6",
+        "update": "^0.7.4"
+    },
+    "scripts": {
+        "start": "npm run watch:css && react-scripts start",
+        "build": "npm run build:css && react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "build:css": "postcss src/assets/tailwind.css -o src/assets/main.css",
+        "watch:css": "postcss src/assets/tailwind.css -o src/assets/main.css"
+    },
+    "devDependencies": {
+        "case-sensitive-paths-webpack-plugin": "^2.3.0"
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    }
 }

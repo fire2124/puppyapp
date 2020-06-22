@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { getAllDogs } from "../services/dogService";
-import DogsList from "./common/dogsList";
-import FilterDogs from "./filterDogsForm";
+import DogsList from "../components/common/dogsList";
 import { getFiltered } from "../services/dogService";
+import FilterDogs from "../components/filterDogsForm";
 
 class AllDogs extends Component {
 
@@ -26,7 +26,7 @@ class AllDogs extends Component {
   };
 
   async displayFiltered(values) {
-    let response = await getFiltered(values); //TOTO move API call to allDogs, return only values
+    let response = await getFiltered(values);
     if (response.data) {
       this.setState({ dogs: response.data.dogs });
     }

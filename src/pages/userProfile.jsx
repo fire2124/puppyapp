@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import useProfile from './useProfile';
+import useProfile from '../components/useProfile';
 
 function UserProfile() {
 

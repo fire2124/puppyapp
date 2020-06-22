@@ -3,8 +3,9 @@
     "version": "0.1.0",
     "private": true,
     "dependencies": {
+        "@material-ui/core": "^4.10.2",
         "@sentry/browser": "^5.15.0",
-        "autoprefixer": "^9.8.0",
+        "autoprefixer": "^9.8.2",
         "axios": "^0.19.2",
         "final-form": "^4.19.1",
         "font-awesome": "^4.7.0",
@@ -13,6 +14,7 @@
         "lodash": "^4.17.15",
         "mdbootstrap": "^4.19.0",
         "mdbreact": "^4.27.0",
+        "postcss": "^7.0.32",
         "postcss-cli": "^7.1.1",
         "postcss-import": "^12.0.1",
         "prettier": "^2.0.3",

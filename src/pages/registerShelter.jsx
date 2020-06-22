@@ -6,10 +6,13 @@ import { Link } from "react-router-dom";
 import ilustracia from "../staticImage/illustrations/registracia_utulok.png";
 
 class RegisterShelter extends Component {
-  onSubmit = async (values) => {
-    await authService.registerShelter(values);
-    this.props.history.push("/login");
-  };
+  
+  onSubmit = async values => {
+    let response = await authService.registerShelter(values);
+    if(response != null){
+      this.props.history.push("/login");
+    }
+  }
 
   render() {
     return (

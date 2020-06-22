@@ -6,9 +6,13 @@ import { Link } from "react-router-dom";
 import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.png";
 
 class Login extends Component {
-  onSubmit = async (values) => {
-    await this.context.login(values);
-  };
+  
+  onSubmit = async values => {
+    let response = await this.context.login(values);
+    if(response){
+      this.props.history.push("/dog");
+    }
+  }
 
   render() {
     return (

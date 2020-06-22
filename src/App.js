@@ -21,13 +21,15 @@ import EditUserProfile from "./components/editUserProfile";
 import ShelterProfile from "./components/shelterProfile";
 import EditShelterProfile from "./components/editShelterProfile";
 import AdoptionRequests from "./components/adoptionRequests";
-import AdminProfile from "./components/adminProfile";
-import EditAdminProfile from "./components/editAdminProfile";
 import ShelterRequests from "./components/shelterRequests";
+import ShelterRequest from "./components/shelterRequest";
 import Landing from "./pages/Landing.jsx";
 import Popups from "./pages/popups.jsx";
+<<<<<<< HEAD
 import Pop from "./pages/pop";
 import logger from "./services/logService";
+=======
+>>>>>>> feeface9bc1341ba962881a7c1eb0a826c9ef11c
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
@@ -46,31 +48,25 @@ class App extends Component {
               <NavBar />
               <Switch>
                 <Route path="/popups" component={Popups} />
-                <Route path="/popups2" component={Pop} />
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
                 <Route path="/landing" component={Landing} />
-                <Route path="/dog" component={AllDogs} />
+                <Route path="/allDogs" component={AllDogs} />
                 <Route path="/addDog" component={AddDog} />
                 <Route path="/dogProfile/:dogId" component={DogProfile} />
-                <Route
-                  path="/editDogProfile/:dogId"
-                  component={EditDogProfile}
-                />
+                <Route path="/editDogProfile/:dogId" component={EditDogProfile} />
                 <Route path="/selectRegister" component={SelectRegisterUser} />
                 <Route path="/registerUser" component={RegisterUser} />
                 <Route path="/userProfile" component={UserProfile} />
                 <Route path="/editUserProfile" component={EditUserProfile} />
                 <Route path="/registerShelter" component={RegisterShelter} />
                 <Route path="/shelterProfile" component={ShelterProfile} />
-                <Route
-                  path="/editShelterProfile"
-                  component={EditShelterProfile}
-                />
+                <Route path="/editShelterProfile" component={EditShelterProfile} />
                 <Route path="/adoptionRequests" component={AdoptionRequests} />
-                <Route path="/adminProfile" component={AdminProfile} />
-                <Route path="/editAdminProfile" component={EditAdminProfile} />
+
                 <Route path="/shelterRequests" component={ShelterRequests} />
+                <Route path="/shelterRequest/:shelterId" component={ShelterRequest} />
+
                 <Redirect from="/" exact to="/landing" />
                 <Route component={NotFound} />
               </Switch>

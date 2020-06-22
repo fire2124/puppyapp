@@ -1,35 +1,28 @@
-import React, { Component } from 'react';
-import { getUserProfile } from "../services/authService";
-import { AuthorizationContext } from "../authorizationProvider";
+import React from 'react';
+import { Link } from "react-router-dom";
+import useProfile from '../components/useProfile';
 
-class UserProfile extends Component {
+function UserProfile() {
 
-  state = {
-    profile: null
-  }
+  const profile = useProfile();
 
-  componentDidMount() {
-    this._asyncRequest = getUserProfile(this.context.userId).then(
-      response => {
-        this._asyncRequest = null;
-        this.setState({ profile: response.data.userProfile });
-      }
+  if (profile.profile == null) {
+    return ('Loading');
+  } else {
+    return (
+      <div>
+        <p> Meno: <strong> {profile.profile.firstName} </strong> </p>
+        <p> Priezvisko: <strong> {profile.profile.lastName} </strong> </p>
+        <p> Email: <strong> {profile.profile.email} </strong> </p>
+
+        <Link to={`/editUserProfile`}>
+          <button type="button">
+            Upraviť profil
+          </button>
+        </Link>
+        
+      </div>
     );
   }
-
-  render() {
-    if (this.state.profile === null) {
-      return ('Loading');
-    } else {
-      return (
-        <div>
-          <p> Meno: <strong> {this.state.profile.firstName} </strong> </p>
-          <p> Priezvisko: <strong> {this.state.profile.lastName} </strong> </p>
-          <p> Email: <strong> {this.state.profile.email} </strong> </p>
-        </div>
-      );
-    }
-  }
 }
-UserProfile.contextType = AuthorizationContext;
 export default UserProfile;

@@ -1,13 +1,19 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
-import { toast } from "react-toastify";
 
 const config = {
   headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
 };
 
 export async function login(credentials) {
-  return await http.put(`${apiUrl}/auth/login`, credentials);
+  try {
+    let response = await http.put(`${apiUrl}/auth/login`, credentials);
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.error(error);
+  }
 }
 
 export async function refresh(accessToken, refreshToken) {
@@ -16,33 +22,56 @@ export async function refresh(accessToken, refreshToken) {
     refreshToken,
   };
   try {
-    return await http.put(`${apiUrl}/auth/refresh`, request);
+    let response = await http.put(`${apiUrl}/auth/refresh`, request);
+    if(response.data.succeeded){
+      return response;
+    }
   } catch (error) {
-    toast.error(error);
+    console.log(error);
   }
 }
 
-export function registerUser(user) {
+export async function registerUser(user) {
   try {
-    return http.post(`${apiUrl}/auth/register/user`, user);
+    let response = await http.post(`${apiUrl}/auth/register/user`, user);
+    if(response.data.succeeded){
+      return response;
+    }
   } catch (error) {
-    toast.error(error);
+    console.log(error);
   }
 }
 
-export function registerShelter(shelter) {
+export async function registerShelter(shelter) {
   try {
-    return http.post(`${apiUrl}/auth/register/shelter`, shelter);
+    let response = await http.post(`${apiUrl}/auth/register/shelter`, shelter);
+    if(response.data.succeeded){
+      return response;
+    }
   } catch (error) {
-    toast.error(error);
+    console.log(error);
   }
 }
 
-export function getUserProfile(id) {
+export async function getUserProfile(id) {
   try {
-    return http.get(`${apiUrl}/auth/profile/${id}`, config);
+    let response = await http.get(`${apiUrl}/auth/profile/${id}`, config);
+    if(response.data.succeeded){
+      return response;
+    }
   } catch (error) {
-    toast.error(error);
+    console.log(error);
+  }
+}
+
+export async function editUserProfile(values, id) {
+  try {
+    let response = await http.put(`${apiUrl}/auth/updateProfile/${id}`,values, config);
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.log(error);
   }
 }
 
@@ -50,5 +79,6 @@ export default {
   login,
   registerUser,
   registerShelter,
-  refresh
+  refresh,
+  editUserProfile,
 };

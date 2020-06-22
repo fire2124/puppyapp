@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
-import FormTextField from "../components/common/formTextField";
 
 import ilustracia from "../staticImage/dot/CLOCK-1.png";
 import ilustracia2 from "../staticImage/dot/CLOCK-2.png";

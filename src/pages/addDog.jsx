@@ -9,8 +9,10 @@ import { LookupDataContext } from "../lookupDataProvider"
 class AddDog extends Component {
 
   onSubmit = async values => {
-    await addDog(values);
-    this.props.history.push("/dog");
+    let response = await addDog(values);
+    if (response != null) {
+      this.props.history.push("/dog");
+    }
   }
 
   render() {
@@ -61,10 +63,9 @@ class AddDog extends Component {
                 </div>
               </div>
 
-
               <button type="submit" disabled={submitting || pristine}>
                 Uložiť
-            </button>
+              </button>
               <pre>{JSON.stringify(values, 0, 2)}</pre>
             </form>
           )}

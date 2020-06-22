@@ -5,6 +5,8 @@ import DogThumbnail from "../common/dogThumbnail"
 
 class DogsList extends Component {
     render() {
+        if (this.props.dogs.length === 0)
+            return <p>Nie sú žiadne psy v databáze.</p>;
         return <ul>
             {this.props.dogs.map(dog =>
                 <Link to={`/dogProfile/${dog.id}`}>

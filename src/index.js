@@ -5,6 +5,9 @@ import './assets/main.css';
 import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import "font-awesome/css/font-awesome.css";
+import logger from "./services/logService";
+
+logger.init();
 
 ReactDOM.render(
   <BrowserRouter>

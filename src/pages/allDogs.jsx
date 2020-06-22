@@ -1,38 +1,54 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
 import { getAllDogs } from "../services/dogService";
 import DogsList from "../components/common/dogsList";
+import { getFiltered } from "../services/dogService";
+import FilterDogs from "../components/filterDogsForm";
 
 class AllDogs extends Component {
-  state = {
-    dogs: [],
-    currentPage: 1,
-    pageSize: 4
-  };
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      dogs: [],
+      currentPage: 1,
+      pageSize: 4
+    };
+    this.displayFiltered = this.displayFiltered.bind(this);
+    this.resetFilter = this.resetFilter.bind(this);
+  }
 
   async componentDidMount() {
-    const { data } = await getAllDogs();
-    this.setState({ dogs: data.dogs });
+    this.getAllDogsFromRepository();
   }
 
   handlePageChange = (page) => {
     this.setState({ currentPage: page });
   };
 
-  render() {
-    if (this.state.dogs.length === 0)
-      return <p>Nie sú žiadne psy v databáze.</p>;
+  async displayFiltered(values) {
+    let response = await getFiltered(values);
+    if (response.data) {
+      this.setState({ dogs: response.data.dogs });
+    }
+  }
 
+  async resetFilter(){
+    this.getAllDogsFromRepository();
+  }
+
+  async getAllDogsFromRepository(){
+    let response = await getAllDogs();
+    if(response){
+      const { data } = response;
+      this.setState({ dogs: data.dogs });
+    }
+  }
+
+  render() {
     return (
       <div>
+        <FilterDogs onDisplayedFiltered = {this.displayFiltered} onResetFilter = {this.resetFilter}/>
         <DogsList dogs={this.state.dogs} />
-        <Link
-          to="/addDog"
-          className="btn btn-primary"
-          style={{ marginBottom: 20 }}
-        >
-          Pridať psa
-          </Link>
       </div>
     );
   }

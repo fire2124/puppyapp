@@ -10,7 +10,7 @@ class Login extends Component {
   onSubmit = async values => {
     let response = await this.context.login(values);
     if(response){
-      this.props.history.push("/dog");
+      this.props.history.push("/allDogs");
     }
   }
 

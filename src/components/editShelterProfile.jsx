@@ -42,7 +42,6 @@ function EditShelterProfile(props) {
             <button type="submit">
               Uložiť profil
             </button>
-            <pre>{JSON.stringify(values, 0, 2)}</pre>
           </form>
         )}
       />

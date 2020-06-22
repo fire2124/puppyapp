@@ -3,13 +3,12 @@
   background-size: 70% 160%;
   background-repeat: no-repeat;
   background-position: left;
-  
 }
 .background2 {
   background-image: url("../staticImage/vectors/Vector-2.png");
   background-size: 70% 100%;
   background-repeat: no-repeat;
-  background-position: right ;
+  background-position: right;
 }
 .container-fluid {
   height: 100%;
@@ -89,6 +88,7 @@
 .pod {
   color: #749bff;
 }
+
 /* .container1:{
    transform: translateY(-50%);
    display: inline-block;
@@ -239,15 +239,47 @@
   background: #749bff;
 }
 
+.bg-gray {
+  background-color: #858380;
+}
+
+.back {
+  background: #ffffff;
+  border: 1px solid #d6d6d6;
+  box-sizing: border-box;
+  border-radius: 8px;
+}
+
+.backgroundUserProfile {
+  height: 300px;
+  background-image: url("../staticImage/vectors/VectorUP.png");
+  background-size: 95% 100%;
+  background-repeat: no-repeat;
+  background-position: right ;
+}
+
+.backgroundAllDogs {
+  height: 300px;
+  background-image: url("../staticImage/vectors/Vector-3.png");
+  background-repeat: repeat-y;
+}
 
 /* Small (sm) */
-@media (min-width: 640px) { /* ... */ }
+@media (min-width: 640px) {
+  /* ... */
+}
 
 /* Medium (md) */
-@media (min-width: 768px) { /* ... */ }
+@media (min-width: 768px) {
+  /* ... */
+}
 
 /* Large (lg) */
-@media (min-width: 1024px) { /* ... */ }
+@media (min-width: 1024px) {
+  /* ... */
+}
 
 /* Extra Large (xl) */
-@media (min-width: 1280px) { /* ... */ }
+@media (min-width: 1280px) {
+  /* ... */
+}

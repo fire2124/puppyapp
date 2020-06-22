@@ -5,13 +5,12 @@ import { getFiltered } from "../services/dogService";
 import FilterDogs from "../components/filterDogsForm";
 
 class AllDogs extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
       dogs: [],
       currentPage: 1,
-      pageSize: 4
+      pageSize: 4,
     };
     this.displayFiltered = this.displayFiltered.bind(this);
     this.resetFilter = this.resetFilter.bind(this);
@@ -32,13 +31,13 @@ class AllDogs extends Component {
     }
   }
 
-  async resetFilter(){
+  async resetFilter() {
     this.getAllDogsFromRepository();
   }
 
-  async getAllDogsFromRepository(){
+  async getAllDogsFromRepository() {
     let response = await getAllDogs();
-    if(response){
+    if (response) {
       const { data } = response;
       this.setState({ dogs: data.dogs });
     }
@@ -46,9 +45,38 @@ class AllDogs extends Component {
 
   render() {
     return (
-      <div>
-        <FilterDogs onDisplayedFiltered = {this.displayFiltered} onResetFilter = {this.resetFilter}/>
-        <DogsList dogs={this.state.dogs} />
+      <div className=" xl:mx-auto ">
+        <div className="xl:flex xl:flex-no-wrap xl:m-auto">
+          <div className="w-2/12 ml-8">
+            <FilterDogs
+              onDisplayedFiltered={this.displayFiltered}
+              onResetFilter={this.resetFilter}
+            />
+          </div>
+
+          <div className="w-10/12 ">
+            <div className="backgroundAllDogs">
+              <div className="xl:flex xl:flex-no-wrap xl:m-auto background4">
+                <div className=" ml-64 mt-16">
+                  <h1 className="xl:text-left text-4xl font-bold text-white  mt-5">
+                    Chceme Vám pomôcť nájsť vhodného psíka
+                    <br/> práve pre Vašu rodinu
+                  </h1>
+
+                  <p className="xl:text-lg text-white xl:mr-40">
+                   Máme pre Vás dotazník, ktorý Vám môže pomôcť
+                  </p>
+                  <button className="text-white font-semibold xl:text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-5">
+                    Vyplniť dotazník
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div>
+              <DogsList dogs={this.state.dogs} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }

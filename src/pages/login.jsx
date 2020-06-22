@@ -8,10 +8,16 @@ import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.p
 class Login extends Component {
   
   onSubmit = async values => {
-    let response = await this.context.login(values);
-    if(response){
-      this.props.history.push("/allDogs");
+    try {
+      let response = await this.context.login(values);
+      if(response){
+        this.props.history.push("/allDogs");
+      }
+    } catch (error) {
+      console.log(error);
+      
     }
+    
   }
 
   render() {

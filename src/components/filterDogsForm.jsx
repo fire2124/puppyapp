@@ -78,7 +78,7 @@ function FilterDogs(props) {
                 <FormCheckBox name="Chipped" label="Čipovaný" />
               </div>
             </div>
-            <div>
+            <div className="mt-10"> 
               <button
                 className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
                 type="submit"
@@ -87,9 +87,9 @@ function FilterDogs(props) {
                 Vyhľadať
               </button>
             </div>
-            <div>
+            <div >
               <button
-                className="text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 inline-block "
+                className="text-orange font-semibold font-sm text-center bg-orange-400 px-4 py-2 m-2 inline-block "
                 type="button"
                 onClick={() => {
                   form.reset();

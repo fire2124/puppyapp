@@ -10,7 +10,8 @@ class FormTextField extends Component {
                 className= "mr-64 focus:outline-none"
                 name={this.props.name}
                 component="input"
-                type="text"
+                //type="text"
+                type={this.props.type}
                 placeholder={this.props.text}
             />
             

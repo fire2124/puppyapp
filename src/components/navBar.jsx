@@ -57,15 +57,15 @@ const NavBar = () => {
                 </React.Fragment>
               )}
               {authParams.loggedIn && authParams.userRole === 'User' && (
-                <React.Fragment className="flex justify-start bg-orange-200">
+                <React.Fragment className="xl:py-5 xl:px-5 xl:flex justify-between">
                   <NavLink
-                    className="text-orange-700 text-center bg-orange-400 px-4 py-2 "
+                    className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 border-2 border-orange inline-block"
                     to="/userProfile"
                   >
                     Profil
                   </NavLink>
                   <NavLink
-                    className="text-orange-700 text-center bg-orange-400 px-4 py-2"
+                    className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
                     to="/logout"
                   >
                     Odhlásiť
@@ -73,7 +73,7 @@ const NavBar = () => {
                 </React.Fragment>
               )}
               {authParams.loggedIn && authParams.userRole === 'ShelterAdmin' && (
-                <React.Fragment className="flex justify-start bg-orange-200">
+                <React.Fragment className="xl:py-5 xl:px-5 xl:flex justify-between">
                   <NavLink
                     className="text-orange-700 text-center bg-orange-400 px-4 py-2 "
                     to="/shelterProfile"

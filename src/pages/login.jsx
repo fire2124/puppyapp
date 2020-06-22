@@ -8,10 +8,16 @@ import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.p
 class Login extends Component {
   
   onSubmit = async values => {
-    let response = await this.context.login(values);
-    if(response){
-      this.props.history.push("/allDogs");
+    try {
+      let response = await this.context.login(values);
+      if(response){
+        this.props.history.push("/allDogs");
+      }
+    } catch (error) {
+      console.log(error);
+      
     }
+    
   }
 
   render() {
@@ -36,6 +42,7 @@ class Login extends Component {
                       name="UserName"
                       label="Meno"
                       text="Meno"
+                      type="text"
                       className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                     <br />
@@ -43,6 +50,7 @@ class Login extends Component {
                       name="Password"
                       label="Heslo"
                       text="Heslo"
+                      type="password"
                       className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />
                   </div>

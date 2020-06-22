@@ -79,12 +79,14 @@ class RegisterShelter extends Component {
                      <FormTextField
                       name="password"
                       label="Heslo"
+                      type="password"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                       placeholder=''
                     />
                      <FormTextField
                       name="confirmPassword"
                       label="Potvrdenie hesla"
+                      type="password"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                       placeholder=''
                     />

@@ -30,11 +30,33 @@ class RegisterUser extends Component {
                     Vášho domáceho miláčika!
                   </p>
                   <br />
-                  <FormTextField name="FirstName" label="Meno" placeholder='Meno'/>
-                  <FormTextField name="LastName" label="Priezvisko" placeholder='Priezvisko'/>
-                  <FormTextField name="Email" label="E-mail" placeholder='Email'/>
-                  <FormTextField name="Password" label="Heslo" placeholder='Heslo'/>
-                  <FormTextField name='ConfirmPassword' label='Potvrdenie hesla' placeholder=''/>
+                  <FormTextField
+                    name="FirstName"
+                    label="Meno"
+                    placeholder="Meno"
+                  />
+                  <FormTextField
+                    name="LastName"
+                    label="Priezvisko"
+                    placeholder="Priezvisko"
+                  />
+                  <FormTextField
+                    name="Email"
+                    label="E-mail"
+                    placeholder="Email"
+                  />
+                  <FormTextField
+                    name="Password"
+                    label="Heslo"
+                    type="password"
+                    placeholder="Heslo"
+                  />
+                  <FormTextField
+                    name="ConfirmPassword"
+                    label="Potvrdenie hesla"
+                    type="password"
+                    placeholder=""
+                  />
                   <div className="text-xs my-8 max-w-xs">
                     Súhlasím so spracovaním emailovej adresy za účelom zaslania
                     noviniek a ponúk emailom.

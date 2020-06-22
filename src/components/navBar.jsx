@@ -7,11 +7,12 @@ import ilustracia2 from "../staticImage/Path.png";
 import useProfile from "../components/useProfile";
 
 const NavBar = () => {
-  const profile = useProfile();
 
-  if (profile.profile == null) {
-    return "";
-  } else {
+  const profile = useProfile();
+  
+  // if (profile.profile == null) {
+  //   return "Loading";
+  // }else
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <AuthorizationContext.Consumer>
@@ -97,7 +98,7 @@ const NavBar = () => {
                       </div>
                       <div className=" ">
                         <div className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 inline-block">
-                          {profile.profile.firstName} {profile.profile.lastName}
+                        {/*  {profile.profile.firstName} {profile.profile.lastName}*/}
                         </div>
                         <div class="dropdown">
                           <img src={ilustracia2} alt="Logo" />
@@ -227,7 +228,7 @@ const NavBar = () => {
         </AuthorizationContext.Consumer>
       </nav>
     );
-  }
+          
 };
 NavBar.contextType = AuthorizationContext;
 export default NavBar;

@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 import React, { Component } from "react";
-import FormTextField from "../components/common/formTextField";
 
 class Pop extends Component {
   render() {

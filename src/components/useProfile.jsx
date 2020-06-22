@@ -2,12 +2,12 @@ import { useContext, useEffect, useState } from 'react';
 import { getUserProfile } from "../services/authService";
 import { AuthorizationContext } from "../authorizationProvider";
 
-function useProfile() {
+async function useProfile() {
     const [profile, setProfile] = useState(null);
     const [userId, setuserId] = useState(null);
     const authContext = useContext(AuthorizationContext);
 
-    useEffect(() => {
+  await useEffect(() => {
         async function fetchData() {
             if(authContext.authParams.userId !== null){
                 setuserId(authContext.authParams.userId);

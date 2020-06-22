@@ -4,8 +4,8 @@ import { Field } from "react-final-form";
 class FormCheckBox extends Component {
     render() {
         return <div>
-            <label>{this.props.label}</label>
-            <Field name={this.props.name} component="input" type="checkbox" />
+            <Field name={this.props.name} component="input" type="checkbox" className={this.props.className}/>
+            <label className="ml-2">{this.props.label}</label>
         </div>
     }
 }

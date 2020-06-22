@@ -38,36 +38,55 @@ class RegisterShelter extends Component {
                       name="name"
                       label="Názov útulku"
                       className="text-4xl my-8"
+                      placeholder=''
                     />
                     <FormTextField
-                      name="city"
-                      label="Mesto"
+                      name="shelterCode"
+                      label="Identifikačne číslo"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
+                    />
+                    <FormTextField
+                      name="email"
+                      label="E-mail"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
+                    />
+                    <FormTextField
+                      name="phoneNumber"
+                      label="Telefónne číslo"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
                     />
                     <FormTextField
                       name="street"
                       label="Ulica"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
                     />
                     <FormTextField
-                      name="email"
-                      label="Email"
+                      name="city"
+                      label="Mesto"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
                     />
-                    <FormTextField
+                     <FormTextField
+                      name="postcode"
+                      label="PSČ"
+                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
+                    />
+                     <FormTextField
                       name="password"
                       label="Heslo"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
                     />
-                    <FormTextField
-                      name="IcoDic"
-                      label="IČO/DIČ"
+                     <FormTextField
+                      name="confirmPassword"
+                      label="Potvrdenie hesla"
                       className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
-                    />
-                    <FormTextField
-                      name="email"
-                      label="Email"
-                      className="bg-transparent w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                      placeholder=''
                     />
                   </div>
                   <div>

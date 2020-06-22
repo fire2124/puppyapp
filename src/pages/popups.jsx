@@ -25,7 +25,7 @@ class Popups extends Component {
           <div className="font-bold text-3xl flex flex-no-wrap mx-auto  justify-center mt-20 mb-10">
             Koľko hodín denne máte
             <br />
-            na staroslivosť o psa ?
+            na staroslivosť o psa?
           </div>
           <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5">
             <div className="mx-10">
@@ -42,7 +42,7 @@ class Popups extends Component {
               />
             </div>
             <div className="mx-10">
-              <button class="flex1 my-5 text-2xl">3 a viac hodin</button>
+              <button class="flex1 my-5 text-2xl">3 a viac hodín</button>
               <img
                 src={ilustracia3}
                 alt="Logo"

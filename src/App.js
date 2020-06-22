@@ -25,10 +25,31 @@ import ShelterRequests from "./components/shelterRequests";
 import ShelterRequest from "./components/shelterRequest";
 import Landing from "./pages/Landing.jsx";
 import Popups from "./pages/popups.jsx";
+import Popups2 from "./pages/pop.jsx";
+import logger from "./services/logService";
+import firebase from "firebase";
+
 
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
 // import StepperExample from "./components/plusAndMinus.jsx"
+
+logger.init();
+
+let firebaseConfig = {
+  apiKey: "AIzaSyBOBZLHcRMlHQyTZADkIwW3Dp9kiuMlXuY",
+  authDomain: "puppyapp-2a457.firebaseapp.com",
+  databaseURL: "https://puppyapp-2a457.firebaseio.com",
+  projectId: "puppyapp-2a457",
+  storageBucket: "puppyapp-2a457.appspot.com",
+  messagingSenderId: "100087391563",
+  appId: "1:100087391563:web:580aeb333f00865a59f4ce",
+  measurementId: "G-HQC1SXQYXL"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 
 class App extends Component {
   render() {
@@ -41,6 +62,8 @@ class App extends Component {
               <NavBar />
               <Switch>
                 <Route path="/popups" component={Popups} />
+                <Route path="/popups2" component={Popups2} />
+
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />
                 <Route path="/landing" component={Landing} />

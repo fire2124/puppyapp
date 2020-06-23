@@ -28,11 +28,8 @@ import Popups from "./pages/popups.jsx";
 import Popups2 from "./pages/pop.jsx";
 import logger from "./services/logService";
 import firebase from "firebase";
-
-
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
-// import StepperExample from "./components/plusAndMinus.jsx"
 
 logger.init();
 

@@ -30,6 +30,9 @@ import logger from "./services/logService";
 import firebase from "firebase";
 import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
+import HauTU from "./pages/HauTU";
+import Article1 from "./pages/articles/article1";
+
 
 logger.init();
 
@@ -60,6 +63,8 @@ class App extends Component {
               <Switch>
                 <Route path="/popups" component={Popups} />
                 <Route path="/popups2" component={Popups2} />
+                <Route path="/hautu" component={HauTU} />
+                <Route path="/article1" component={Article1} />
 
                 <Route path="/login" component={Login} />
                 <Route path="/logout" component={Logout} />

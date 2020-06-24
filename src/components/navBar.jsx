@@ -43,7 +43,7 @@ const NavBar = () => {
                           </NavLink>
                           <NavLink
                             className="  text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
-                            to="/"
+                            to="/hautu"
                           >
                             „HAU TU”
                           </NavLink>

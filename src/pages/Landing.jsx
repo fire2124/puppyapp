@@ -57,9 +57,10 @@ class Landing extends Component {
               našom blogu nájdete veľa užitočných článkov, ktoré Vás naučia, ako
               sa čo najlepšie postarať o svojho štvornohého priateľa.
             </p>
-            <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5 ml-64">
-              Viac
-            </button>
+            <Link
+                to={`/hautu`}
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5 ml-64"
+              >Viac</Link>
           </div>
         </div>
         <div className=" xl:flex xl:flex-no-wrap xl:m-auto background3">

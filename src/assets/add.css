@@ -255,7 +255,7 @@
   background-image: url("../staticImage/vectors/VectorUP.png");
   background-size: 95% 100%;
   background-repeat: no-repeat;
-  background-position: right ;
+  background-position: right;
 }
 
 .backgroundAllDogs {
@@ -263,9 +263,31 @@
   background-image: url("../staticImage/vectors/Vector-3.png");
   background-repeat: repeat-y;
 }
+.backgroundHAUTU {
+  background-image: url("../staticImage/vectors/VectorHautu.png");
+  height: 350px;
+  background-size: 90% 100%;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+
+
+.houtuFinder {
+  /* WHITE */
+  width: 448px;
+  height: 52px;
+  background: #ffffff;
+  border-radius: 26px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 1;
+  margin: 0px 8px;
+}
 
 .dropbtn {
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -284,7 +306,7 @@
   right: 0;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -294,7 +316,9 @@
   display: block;
 }
 
-.dropdown-content a:hover {background-color: #f1f1f1;}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 .dropdown:hover .dropdown-content {
   display: block;

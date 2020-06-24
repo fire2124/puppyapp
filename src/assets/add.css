@@ -270,8 +270,21 @@
   background-repeat: no-repeat;
   background-position: left;
 }
-
-
+.backgroundFooter1 {
+  background-image: url("../staticImage/16px/Vector-fb.png");
+  height: 16px;
+  width: 16px;
+  background-repeat: no-repeat;
+  background-position: left;
+}
+.backgroundFooter2 {
+  background-image: url("../staticImage/16px/Vector.png");
+  height: 32px;
+  width: 32px;
+  margin-bottom: 50px;
+  background-repeat: no-repeat;
+  background-position: left;
+}
 .houtuFinder {
   /* WHITE */
   width: 448px;

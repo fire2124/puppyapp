@@ -33,15 +33,15 @@ class Login extends Component {
                     Prihlásiť sa
                   </h1>
                   <p className="text-base mr-40">
-                    Prihlásiť sa do svojho účtu pre uľahčenie <br />
+                    Prihláste sa do svojho účtu pre uľahčenie <br />
                     hľadania Vášho domáceho miláčika!
                   </p>
                   <div>
                     <br />
                     <FormTextField
                       name="UserName"
-                      label="Meno"
-                      text="Meno"
+                      label="E-mail"
+                      text="E-mail"
                       type="text"
                       className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
                     />

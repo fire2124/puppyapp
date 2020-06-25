@@ -30,7 +30,7 @@
 
 .background5 {
   background-image: url("../staticImage/vectors/Vector-2.png");
-  background-size: 100% 60%;
+  background-size: 100% 45%;
   position: relative;
   background-repeat: no-repeat;
   background-position: right;
@@ -339,6 +339,37 @@
 
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+
+.ml-100 {
+  margin-left: 500px;
+}
+
+.imglist {
+  list-style-type: none;
+  margin: 0;
+ /*display: flex;
+   flex-wrap: wrap;*/
+  text-align: center;
+}
+
+.imglist .li {
+  width: 50%;
+  padding: 20px;
+  display:inline-block;
+  
+}
+.imglist .li .img {
+  max-width: 100%;
+}
+
+.imglist .li .img .center {
+  justify-content:center;
+}
+
+.container .h5{
+  text-align: center;
+  margin-top: 50px;
 }
 
 /* Small (sm) */

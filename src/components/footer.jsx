@@ -19,23 +19,23 @@ const Footer = () => {
       <div className="md:flex md:items-center md:justify-start mx-auto py-10 px-10 space-x-1">
         <div className="flex-1 px-4 py-2 m-2 w-1/6">
           <h1 className="text-black text-lg font-bold ">O nás</h1>
-          <div className="no-underline hover:underline text-blue-500 text-base">
-            Nájdi sa
+          <div className="no-underline hover:underline text-blue-500 text-base mt-1">
+            Nájdite sa online
           </div>
-          <div className="no-underline hover:underline text-blue-500 text-base">
-            Zvierací obmusman
+          <div className="no-underline hover:underline text-blue-500 text-base mt-1">
+            Zvierací ombudsman
           </div>
-          <div className="no-underline hover:underline text-blue-500 text-base">
+          <div className="no-underline hover:underline text-blue-500 text-base mt-1">
             Partneri
           </div>
         </div>
         <div className="flex-1 px-4 py-2 m-2 w-1/6">
           <h1 className="text-black text-lg font-bold ">Útulky</h1>
-          <div className="no-underline hover:underline text-blue-500 text-base">
+          <div className="no-underline hover:underline text-blue-500 text-base mt-1">
             Ako adoptovať
           </div>
-          <div className="no-underline hover:underline text-blue-500 text-base">
-            Zvierací obmusman
+          <div className="no-underline hover:underline text-blue-500 text-base mt-1">
+            Zoznam útulkov
           </div>
         </div>
         <div className="flex-1 px-4 py-2 m-2 w-1/6">
@@ -47,7 +47,7 @@ const Footer = () => {
         </div>
         <div className="flex-1 px-4 py-2 m-2 w-3/6 mr-20">
           <h1 className="text-black text-2xl font-bold ">Newsletter</h1>
-          <div className="no-underline text-black-500 text-justify text-base mr-10">
+          <div className="no-underline text-black-500 text-justify text-base mr-10 mt-1">
             Začnite odoberať náš newsletter, aby ste boli informovaný o
             zbierkach a podujatiach, ktoré organizujú útulky.
           </div>
@@ -68,7 +68,7 @@ const Footer = () => {
                       name="Odoslať"
                       component="input"
                       type="text"
-                      placeholder="Odoslať"
+                      placeholder="Váš e-mail"
                     />
                     <div className="backgroundFooter2 float-right"></div>
                   </div>

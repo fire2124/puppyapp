@@ -1,11 +1,12 @@
 import React, { Component } from "react";
+import "../../assets/add.scss"
 
 class DogThumbnail extends Component {
   render() {
     return (
-      <div className="dogThumbnail">
-        <img width="170" height="150" src={this.props.image} alt="Snow" />
-        <div className="thumbnailText">{this.props.dogName}</div>
+      <div >
+        <img width="248" height="248" src={this.props.image} alt="Snow" />
+        <div className="thumbnailText text-left">{this.props.dogName}</div>
       </div>
     );
   }

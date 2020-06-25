@@ -23,7 +23,7 @@ class Landing extends Component {
               Zoznámte sa so svojím
               <br /> ideálnym psím spoločníkom
             </h1>
-            <p className="text-lg text-white xl:ml-40 mt-5 ">
+            <p className="text-lg text-white text-justify xl:ml-40 mt-5 ">
               Spájame útulky, psíkov a rodiny na jednom mieste. Uľahčujeme celý
               proces výberu Vášho nového člena rodiny prostredníctvom
               jedinečného dotazníka a samotnej ONLINE adopcie.
@@ -48,19 +48,23 @@ class Landing extends Component {
             </div>
           </div>
           <div className="container-fluid flex1 w-6/12 xl:mt-20">
-            <h1 className="text-left text-4xl justify-left font-bold text-white xl:mt-32 ml-64 ">
+            <h1 className="text-left text-4xl justify-left font-bold text-white xl:mt-32 ml-40 ">
               HAU TU ? (blog)
             </h1>
-            <p className="text-left text-lg text-white justify-left  mt-5 ml-64">
+            <p className="text-left text-lg text-white justify-center mt-5 ml-40">
               Neviete ako vycvičiť Vášho psíka? Ako prebieha proces adopcie? S
               týmito otázkami ale aj s mnohými ďaľšími Vám radi pomôžeme. Na
               našom blogu nájdete veľa užitočných článkov, ktoré Vás naučia, ako
               sa čo najlepšie postarať o svojho štvornohého priateľa.
             </p>
-            <Link
+            <div className="mt-5">
+              <Link
                 to={`/hautu`}
-                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-5 ml-64"
-              >Viac</Link>
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-10 ml-40"
+              >
+                Viac
+              </Link>
+            </div>
           </div>
         </div>
         <div className=" xl:flex xl:flex-no-wrap xl:m-auto background3">
@@ -69,7 +73,7 @@ class Landing extends Component {
               <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-40">
                 Ako pomáhame?
               </h1>
-              <p className="text-left flex1 text-lg text-white flex1 justify-left ml-40 mt-5">
+              <p className="text-justify flex1 text-lg text-white flex1 justify-left ml-40 mt-5">
                 Prostredníctvom tohto projektu sa snažíme nachádzať vhodný domov
                 útulkáčom a tým zlepšiť situáciu v útulkoch v rámci celého
                 Slovenska.
@@ -212,7 +216,7 @@ class Landing extends Component {
               <h1 className="text-left text-4xl font-bold pod mr-40">
                 Podujatia
               </h1>
-              <p className="text-lg mt-5">
+              <p className="text-lg text-justify mt-5">
                 Sme tu pre združenia a útulky, ktoré denne bojujú o prežitie a
                 na riešenie mnohých problémov nemajú čas ani ľudské kapacity.
                 Preto im chceme uľahčiť prácu aj pomocou týchto akcií. Pridajte
@@ -231,7 +235,7 @@ class Landing extends Component {
               Finančná pomoc
             </h1>
 
-            <p className="xl:text-lg text-white xl:ml-40 xl:mr-40">
+            <p className="xl:text-lg text-white text-justify xl:ml-40 xl:mr-40">
               Peňažné dary pre útulky znamenajú viac možností pre psíkov. Každé
               euro pomôže našim psíkom zlepšiť ich osud alebo zachrániť život.
             </p>

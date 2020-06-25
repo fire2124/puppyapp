@@ -59,12 +59,12 @@ class AllDogs extends Component {
             <div className="backgroundAllDogs">
               <div className="xl:flex xl:flex-no-wrap xl:m-auto background4">
                 <div className=" ml-64 mt-16">
-                  <h1 className="xl:text-left text-4xl font-bold text-white  mt-5">
+                  <h1 className="xl:text-left text-4xl font-bold text-white  ">
                     Chceme Vám pomôcť nájsť vhodného psíka
                     <br /> práve pre Vašu rodinu
                   </h1>
 
-                  <p className="xl:text-lg text-white xl:mr-40">
+                  <p className="xl:text-lg text-white xl:mr-40 xl:mt-5">
                     Máme pre Vás dotazník, ktorý Vám môže pomôcť
                   </p>
                   <div className="mt-5">

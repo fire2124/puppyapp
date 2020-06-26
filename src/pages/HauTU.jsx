@@ -66,7 +66,7 @@ class HauTU extends Component {
             </div>
             <div className=" mr-64 xl:w-6/12">
               <h1 className="text-left text-3xl font-bold pod mr-40">
-                Aké povinnosti sa spájajú <br />s chovom zvieraťa?
+                Aké povinnosti sa spájajú s chovom zvieraťa?
               </h1>
               <p className="text-lg mt-5">
                 Lorem Ipsum is simply dummy text of the printing and typesetting

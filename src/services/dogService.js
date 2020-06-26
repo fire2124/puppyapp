@@ -45,6 +45,8 @@ export async function getDogDetail(dogId) {
   }
 }
 
+
+
 export async function addDog(dog) {
   try {
     let response = await http.post(`${apiEndpoint}/dog/add/`, dog, config);

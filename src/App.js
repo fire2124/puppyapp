@@ -33,7 +33,6 @@ import { AuthorizationProvider } from "./authorizationProvider";
 import HauTU from "./pages/HauTU";
 import Article1 from "./pages/articles/article1";
 
-
 logger.init();
 
 let firebaseConfig = {
@@ -71,6 +70,8 @@ class App extends Component {
                 <Route path="/landing" component={Landing} />
                 <Route path="/allDogs" component={AllDogs} />
                 <Route path="/addDog" component={AddDog} />
+                <Route path="/adoptionForm/:dogId" component={AdoptionRequests} />
+
                 <Route path="/dogProfile/:dogId" component={DogProfile} />
                 <Route path="/editDogProfile/:dogId" component={EditDogProfile} />
                 <Route path="/selectRegister" component={SelectRegisterUser} />

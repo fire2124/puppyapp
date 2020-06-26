@@ -26,6 +26,7 @@ class AllDogs extends Component {
   };
 
   async displayFiltered(values) {
+    console.log(values)
     let response = await getFiltered(values);
     if (response.data) {
       this.setState({ dogs: response.data.dogs });

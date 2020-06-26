@@ -11,6 +11,9 @@ import image2 from "../staticImage/shallow/shallow 3.png";
 import image3 from "../staticImage/shallow/shallow 4.png";
 import image4 from "../staticImage/shallow/shallow 5.png";
 
+import yes from "../staticImage/16px/Path.png";
+import no from "../staticImage/16px/icn-close.png";
+
 const responsive = {
   superLargeDesktop: {
     // the naming can be any, depends on you.
@@ -52,6 +55,8 @@ class DogProfile extends Component {
       return "Loading";
     } else {
       const { dog } = this.state.dog;
+      console.log(dog);
+
       return (
         <div className="dogProfile-full">
           <div className="dogProfile">
@@ -109,18 +114,26 @@ class DogProfile extends Component {
                         </p>
                       </div>
                     </div>
-                    <div className="justify-center ml-64 mt-10">
+{/* 
+                    <div className="xl:flex xl:flex-no-wrap xl:m-auto ">
+                  <div className=" mr-5">
+                    <div className="flex mt-5"> */}
+                      
+                    <div className="justify-center ml-40 mt-10">
                       <div className="xl:text-left  ">
-                        <p className="mt-4">
+                        <div className="mt-4">
                           {" "}
                           <strong>Pohlavie:</strong> {dog.genderName}{" "}
-                        </p>
-                        <div className="mt-4">
-                          <strong>Farba:</strong>
-
-                          {dog.colorNames.map((name) => (
-                            <div>- {name}</div>
-                          ))}
+                        </div>
+                        <div className="xl:flex xl:flex-no-wrap xl:m-auto  mt-4">
+                          <div className=" flex w-1/2 mt-4">
+                            <strong>Farba:</strong>
+                          </div>
+                          <div className=" flex w-1/2 mt-4">
+                            {dog.colorNames.map((name) => (
+                              <div className="ml-2">{name}, </div>
+                            ))}
+                          </div>
                         </div>
                         <p className="mt-4">
                           {" "}
@@ -132,34 +145,90 @@ class DogProfile extends Component {
                 </div>
               </div>
             </div>
-            <div className="w-6/12 mt-64 justify-center">
-                <div className="xl:flex-none xl:w-8/12 xl:mt-8 ml-64 px-64">
-                  <div className="justify-between text-lg font-bold pod mr-40">
-                    Ďalšie informácie
-                  </div>
-                  <div> - {dog.additionalInfo} </div>
+            <div className=" mt-64 justify-center flex">
+              <div className=" xl:mt-20">
+                <div className="justify-between text-lg font-bold pod ml-8">
+                  Zdravotný stav
                 </div>
-              <div className="xl:flex-none xl:w-8/12 xl:mt-8 ml-64 px-64">
-                  <div className="justify-between text-lg font-bold pod mr-40">
-                  Vhodný ku:
+                <div className="xl:flex xl:flex-no-wrap xl:m-auto ">
+                  <div className="w-1/2 mr-5">
+                    <div className="flex mt-5">
+                      {" "}
+                      {dog.dewormed === true && (
+                        <img src={yes} alt="Logo" width="auto" />
+                      )}{" "}
+                      {dog.dewormed === false && (
+                        <img src={no} alt="Logo" width="auto" />
+                      )}
+                      <div className="ml-5">Odčervenie</div>
+                    </div>
+                    <div className="flex mt-5">
+                      {" "}
+                      {dog.castrated === true && (
+                        <img src={yes} alt="Logo" width="auto" />
+                      )}{" "}
+                      {dog.castrated === false && (
+                        <img src={no} alt="Logo" width="auto" />
+                      )}
+                      <div className="ml-5">Vykastrovanie</div>
+                    </div>
                   </div>
-                  {dog.compatibilityNames.map((name) => (
-                    <div>- {name}</div>
-                  ))}
+                  <div className="w-1/2 ml-5">
+                    <div className="flex mt-5">
+                      {" "}
+                      {dog.chipped === true && (
+                        <img src={yes} alt="Logo" width="auto" />
+                      )}{" "}
+                      {dog.chipped === false && (
+                        <img src={no} alt="Logo" width="auto" />
+                      )}
+                      <div className="ml-5">Čipovanie</div>
+                    </div>
+                    <div className="flex mt-5">
+                      {" "}
+                      {dog.castrated === true && (
+                        <img src={yes} alt="Logo" width="auto" />
+                      )}{" "}
+                      {dog.castrated === false && (
+                        <img src={no} alt="Logo" width="auto" />
+                      )}
+                      <div className="ml-5">Kastrácia</div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div className="xl:flex-none xl:w-8/12 xl:mt-8 ml-64 px-64">
-                <div className="justify-between text-lg font-bold pod mr-40">
-                  Povahové črty:
+              <div className=" xl:mt-20 mx-10">
+                <div className="justify-between text-lg font-bold pod mx-16 ">
+                  Povaha:
                 </div>
-                {dog.behaviorTraitNames.map((name) => (
-                  <div>- {name}</div>
-                ))}
+                <div className="mt-5 ">
+                  {dog.behaviorTraitNames.map((name) => (
+                    <div className="mt-5 mx-16">- {name}</div>
+                  ))}
+                </div>
+              </div>
+              <div className=" xl:mt-20 mx-5">
+                <div className="justify-between text-lg font-bold pod mx-16">
+                  Ďalšie informácie
+                </div>
+                <div className="mt-5 mx-16"> - {dog.additionalInfo} </div>
+              </div>
+              <div className=" xl:mt-20 mx-5">
+                <div className="justify-between text-lg font-bold pod mx-16">
+                  Vhodný k:
+                </div>
+                <div className=" mt-5 ">
+                  {dog.compatibilityNames.map((name) => (
+                    <div className="mt-5 mx-16">- {name}</div>
+                  ))}
+                </div>
               </div>
             </div>
+            <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 ml-64">
+              <Link to="/allDogs"> Späť </Link>
+            </div>
           </div>
-          <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10 ml-64">
-            <Link to="/allDogs"> Späť </Link>
-          </div>
+
           <div className="App mt-10">
             <div className="container-fluid ">
               <div className="row justify-center ">

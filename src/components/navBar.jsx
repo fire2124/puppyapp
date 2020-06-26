@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { AuthorizationContext } from "../authorizationProvider";
-import ilustracia from "../staticImage/illustrations/logo-odtlacok.png";
+import ilustracia from "../staticImage/najdite_sa_online.png";
 import ilustracia2 from "../staticImage/Path.png";
 import ilustracia3 from "../staticImage/image 9.png";
 
@@ -22,17 +22,12 @@ const NavBar = () => {
               {!authParams.loggedIn && (
                 <React.Fragment>
                   <div className=" xl:py-5 xl:px-5 xl:flex justify-between">
-                    <div className="px-4 py-2 m-2 justify-center px-4">
-                      <a href="/" className="xl:flex">
-                        <div className="w-1/3">
-                          <img src={ilustracia} alt="Logo" width="30px" />
-                        </div>
-                        <div className="w-2/3">
-                          <img src={ilustracia3} alt="Logo" width="103px" />
-                        </div>
+                    <div className="px-4 py-2 justify-center px-4">
+                      <a href="/" className="xl:flex">                    
+                          <img src={ilustracia} alt="Logo" width="154" />                
                       </a>
                     </div>
-                    <div className="  px-4 py-2 m-2 justify-center px-4">
+                    <div className=" px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">
                         <NavLink
                           className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "

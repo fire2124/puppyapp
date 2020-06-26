@@ -3,14 +3,11 @@ import { Link } from "react-router-dom";
 import { getDogDetail } from "../services/dogService";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ilustracia from "../staticImage/hautu/article1/close-up-photography-of-adult-black-and-white-short-coat-dog-733416 (1).png";
-
-// import ilustracia from "../staticImage/hautu/brown-and-white-short-coated-puppy-1805164.png";
+import ilustracia from "../staticImage/shallow/shallow-focus-photo-of-long-coated-dog-3361722 1.png";
 import image from "../staticImage/shallow/shallow 2.png";
 import image2 from "../staticImage/shallow/shallow 3.png";
 import image3 from "../staticImage/shallow/shallow 4.png";
 import image4 from "../staticImage/shallow/shallow 5.png";
-
 import yes from "../staticImage/16px/Path.png";
 import no from "../staticImage/16px/icn-close.png";
 
@@ -68,27 +65,27 @@ class DogProfile extends Component {
                     alt="Logo"
                     width="auto"
                     height="auto"
-                    className=" xl:mt-20 xl:ml-32"
+                    className=" xl:mt-20 xl:ml-32 max-w-none"
                   />
                 </div>
                 <div>
-                  <div className="justify-center ml-64 mt-20">
+                  <div className="justify-center ml-40 mt-20">
                     <div className="xl:text-left text-4xl font-bold text-white  ">
                       <p> Ahoj! Ja som {dog.name}. </p>
                     </div>
-                    <div className="xl:text-left text-white text-justify mr-64 w-7/12">
+                    <div className="xl:text-left text-white text-justify mt-5 mr-64 w-7/12">
                       <p>
                         {" "}
                         Som veselá a hravá fenka, ktorá si vyžaduje veľa
                         pozornosti. Som vhodná k ľuďom, ktorí majú čas a chuť
-                        naplno sa mi venovať a naučiť ma novým trikom. Rada
+                         sa mi naplno venovať a naučiť ma novým trikom. Rada
                         skúmam svoje okolie a rozumiem si aj s inými domácimi
                         zvieratkami.{" "}
                       </p>
                     </div>
                   </div>
                   <div className="xl:flex xl:flex-no-wrap xl:m-auto">
-                    <div className="justify-start xl:ml-64 xl:mt-24">
+                    <div className="justify-start xl:ml-40 xl:mt-24">
                       <div className="xl:text-left text-lg text-orange font-bold font-sm bg-orange-400">
                         Útulok Centrum psíkov
                       </div>
@@ -98,7 +95,7 @@ class DogProfile extends Component {
                     </div>
                   </div>
                   <div className="xl:flex xl:flex-no-wrap xl:m-auto">
-                    <div className="justify-start xl:ml-64 mt-10">
+                    <div className="justify-start xl:ml-40 mt-2">
                       <div className="xl:text-left  ">
                         <p className="mt-4">
                           {" "}
@@ -113,23 +110,18 @@ class DogProfile extends Component {
                           <strong>Srsť:</strong> {dog.furTypeName}{" "}
                         </p>
                       </div>
-                    </div>
-{/* 
-                    <div className="xl:flex xl:flex-no-wrap xl:m-auto ">
-                  <div className=" mr-5">
-                    <div className="flex mt-5"> */}
-                      
-                    <div className="justify-center ml-40 mt-10">
+                    </div>                      
+                    <div className="justify-center ml-40 mt-2">
                       <div className="xl:text-left  ">
                         <div className="mt-4">
                           {" "}
                           <strong>Pohlavie:</strong> {dog.genderName}{" "}
                         </div>
-                        <div className="xl:flex xl:flex-no-wrap xl:m-auto  mt-4">
-                          <div className=" flex w-1/2 mt-4">
+                        <div className="xl:flex xl:flex-no-wrap xl:m-auto mt-4">
+                          <div className=" flex w-1/3 mt-4">
                             <strong>Farba:</strong>
                           </div>
-                          <div className=" flex w-1/2 mt-4">
+                          <div className=" flex w-2/3 mt-4">
                             {dog.colorNames.map((name) => (
                               <div className="ml-2">{name}, </div>
                             ))}
@@ -147,11 +139,11 @@ class DogProfile extends Component {
             </div>
             <div className=" mt-64 justify-center flex">
               <div className=" xl:mt-20">
-                <div className="justify-between text-lg font-bold pod ml-8">
+                <div className="justify-between text-lg font-bold pod ml-16">
                   Zdravotný stav
                 </div>
                 <div className="xl:flex xl:flex-no-wrap xl:m-auto ">
-                  <div className="w-1/2 mr-5">
+                  <div className="w-1/2 mr-5 ml-10">
                     <div className="flex mt-5">
                       {" "}
                       {dog.dewormed === true && (
@@ -226,6 +218,12 @@ class DogProfile extends Component {
             </div>
             <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 ml-64">
               <Link to="/allDogs"> Späť </Link>
+              <Link
+              className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-10 ml-20"
+              to="/adoptionForm"
+            >
+              Adoptovať
+            </Link>
             </div>
           </div>
 

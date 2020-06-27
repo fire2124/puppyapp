@@ -53,7 +53,7 @@ function FilterDogs(props) {
                   type="select"
                   label="Rasa"
                   options={lookupData.breedOptions}
-                  name="Race"
+                  name="BreedIds"
                   placeholder="jazvečík"
                 />
               </div>

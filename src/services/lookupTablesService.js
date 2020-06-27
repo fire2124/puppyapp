@@ -3,8 +3,8 @@ import { apiUrl } from "../config.json";
 
 const apiEndpoint = apiUrl;
 
-export function getAllLookupData() {
-    return http.get(`${apiEndpoint}/lookupTables/getAllLookupData`);
+export async function getAllLookupData() {
+    return await http.get(`${apiEndpoint}/lookupTables/getAllLookupData`);
 }
 
 export default { getAllLookupData };

@@ -72,12 +72,13 @@ class AuthorizationProvider extends Component {
     async refreshTokens() {
         if (localStorage.getItem(accessTokenName) !== null && localStorage.getItem(refreshTokenName) !== null) {
             const response = await authService.refresh(localStorage.getItem(accessTokenName), localStorage.getItem(refreshTokenName));
-            if (response !== null) {
-                this.setTokens(response.data.accessToken, response.data.refreshToken);
-                return true;
-            } else {
-                return false;
+            if (response) {
+                if (response.data) {
+                    this.setTokens(response.data.accessToken, response.data.refreshToken);
+                    return true;
+                }
             }
+            return false;
         }
     }
 

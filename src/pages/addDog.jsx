@@ -8,12 +8,13 @@ import { LookupDataContext } from "../lookupDataProvider";
 import ilustracia from "../staticImage/adminShelter/addDog/input_field-profilova_foto.png";
 import ilustracia2 from "../staticImage/adminShelter/addDog/input_field-profilova_foto (1).png";
 import { NavLink } from "react-router-dom";
+import SelectOptionField from "../components/common/selectOptionField";
 
 class AddDog extends Component {
   onSubmit = async (values) => {
     let response = await addDog(values);
     if (response != null) {
-      this.props.history.push("/dog");
+      this.props.history.push("/allDogs");
     }
   };
 
@@ -87,6 +88,15 @@ class AddDog extends Component {
                       <FormCheckBox
                         name="RequiresGarden"
                         label="Vyžaduje si záhradu"
+                      />
+                    </div>
+                    <div>
+                      <SelectOptionField
+                        type="select"
+                        label="Rasa"
+                        options={lookupData.breedOptions}
+                        name="BreedId"
+                        placeholder="Rasa"
                       />
                     </div>
                   </div>

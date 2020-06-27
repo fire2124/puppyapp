@@ -2,13 +2,10 @@ import http from "./httpService";
 import { apiUrl } from "../config.json";
 
 const apiEndpoint = apiUrl;
-const config = {
-  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
-};
 
 export async function getShelterApplications() {
   try {
-    let response = await http.get(`${apiEndpoint}/shelter/applications`, config);
+    let response = await http.get(`${apiEndpoint}/shelter/applications`, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -19,7 +16,7 @@ export async function getShelterApplications() {
 
 export async function getAllShelters() {
   try {
-    let response = await http.get(`${apiEndpoint}/shelter/allShelters`, config);
+    let response = await http.get(`${apiEndpoint}/shelter/allShelters`, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -30,8 +27,7 @@ export async function getAllShelters() {
 
 export async function getShelterProfile(id) {
   try {
-    console.log(id);
-    let response = await http.get(`${apiEndpoint}/shelter/detail/${id}`, config);
+    let response = await http.get(`${apiEndpoint}/shelter/detail/${id}`, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -42,8 +38,7 @@ export async function getShelterProfile(id) {
 
 export async function getShelterByAdminId(adminId) {
   try {
-    console.log(adminId);
-    let response = await http.get(`${apiEndpoint}/shelter/detailByAdmin/${adminId}`, config);
+    let response = await http.get(`${apiEndpoint}/shelter/detailByAdmin/${adminId}`, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -54,7 +49,7 @@ export async function getShelterByAdminId(adminId) {
 
 export async function activateShelter(id) {
   try {
-    let response = await http.put(`${apiEndpoint}/shelter/applications/accept/${id}`, null, config);
+    let response = await http.put(`${apiEndpoint}/shelter/applications/accept/${id}`, null, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -65,7 +60,7 @@ export async function activateShelter(id) {
 
 export async function declineShelter(id) {
   try {
-    let response = await http.put(`${apiEndpoint}/shelter/applications/decline/${id}`, null, config);
+    let response = await http.put(`${apiEndpoint}/shelter/applications/decline/${id}`, null, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -76,7 +71,7 @@ export async function declineShelter(id) {
 
 export async function editShelterProfile(values, id) {
   try {
-    let response = await http.put(`${apiUrl}/shelter/updateProfile/${id}`,values, config);
+    let response = await http.put(`${apiUrl}/shelter/updateProfile/${id}`,values, http.getAuthHeader());
     if(response.data.succeeded){
       return response;
     }

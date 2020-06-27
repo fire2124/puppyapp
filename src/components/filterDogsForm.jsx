@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { Form } from "react-final-form";
 import FormCheckBox from "./common/formCheckBoxField";
-import Select from "./common/select";
+import SelectOptionField from "./common/selectOptionField";
 
 import FormOptionField from "./common/formOptionField";
 import { LookupDataContext } from "../lookupDataProvider";
@@ -49,7 +49,7 @@ function FilterDogs(props) {
                 />
               </div>
               <div className="mt-5">
-                <Select
+                <SelectOptionField
                   type="select"
                   label="Rasa"
                   options={lookupData.breedOptions}

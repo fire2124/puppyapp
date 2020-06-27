@@ -1,10 +1,6 @@
 import http from "./httpService";
 import { apiUrl } from "../config.json";
 
-const config = {
-  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
-};
-
 export async function login(credentials) {
   try {
     let response = await http.put(`${apiUrl}/auth/login`, credentials);
@@ -55,7 +51,7 @@ export async function registerShelter(shelter) {
 
 export async function getUserProfile(id) {
   try {
-    let response = await http.get(`${apiUrl}/auth/profile/${id}`, config);
+    let response = await http.get(`${apiUrl}/auth/profile/${id}`, http.getAuthHeader());
     if(response.data.succeeded){
       return response;
     }
@@ -66,7 +62,7 @@ export async function getUserProfile(id) {
 
 export async function editUserProfile(values, id) {
   try {
-    let response = await http.put(`${apiUrl}/auth/updateProfile/${id}`,values, config);
+    let response = await http.put(`${apiUrl}/auth/updateProfile/${id}`,values, http.getAuthHeader());
     if(response.data.succeeded){
       return response;
     }

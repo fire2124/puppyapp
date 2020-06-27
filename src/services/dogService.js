@@ -3,9 +3,6 @@ import { apiUrl } from "../config.json";
 import queryString from 'query-string';
 
 const apiEndpoint = apiUrl;
-const config = {
-  headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
-};
 
 export async function getAllDogs() {
   try {
@@ -49,7 +46,7 @@ export async function getDogDetail(dogId) {
 
 export async function addDog(dog) {
   try {
-    let response = await http.post(`${apiEndpoint}/dog/add/`, dog, config);
+    let response = await http.post(`${apiEndpoint}/dog/add/`, dog, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }
@@ -60,7 +57,7 @@ export async function addDog(dog) {
 
 export async function deletedog(dogId) {
   try {
-    let response = await http.delete(`${apiEndpoint}/dog/delete/` + dogId, config);
+    let response = await http.delete(`${apiEndpoint}/dog/delete/` + dogId, http.getAuthHeader());
     if (response.data.succeeded) {
       return response;
     }

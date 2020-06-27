@@ -16,9 +16,17 @@ axios.interceptors.response.use(null, (error) => {
   return Promise.reject(error);
 });
 
+function getAuthHeader(){
+  return {
+    headers: { Authorization: `Bearer ${localStorage.getItem('AccessToken')}` },
+  };
+}
+
+
 export default {
   get: axios.get,
   post: axios.post,
   put: axios.put,
-  delete: axios.delete
+  delete: axios.delete,
+  getAuthHeader
 };

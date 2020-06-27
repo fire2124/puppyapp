@@ -2,17 +2,15 @@ import { useContext, useEffect, useState } from 'react';
 import { getUserProfile } from "../services/authService";
 import { AuthorizationContext } from "../authorizationProvider";
 
-async function useProfile() {
+function useProfile() {
     const [profile, setProfile] = useState(null);
-    const [userId, setuserId] = useState(null);
     const authContext = useContext(AuthorizationContext);
 
-  await useEffect(() => {
+    useEffect(() => {
         async function fetchData() {
-            if(authContext.authParams.userId !== null){
-                setuserId(authContext.authParams.userId);
+            if (authContext.authParams.userId !== null) {
                 let response = await getUserProfile(authContext.authParams.userId);
-                if (response) {
+                if (response.data) {
                     setProfile(response.data.userProfile);
                 }
             }
@@ -20,8 +18,7 @@ async function useProfile() {
         fetchData();
     }, [authContext.authParams.userId]);
 
-    return {profile: profile, 
-            userId: userId};
+    return profile;
 }
 
-export default useProfile;
+export default useProfile; 

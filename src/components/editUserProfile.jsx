@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useContext} from "react";
 import useProfile from "./useProfile";
 import { Form } from "react-final-form";
 import FormTextField from "./common/formTextField";
 import { editUserProfile } from "../services/authService";
+import { AuthorizationContext } from "../authorizationProvider";
 
 function EditUserProfile(props) {
+  const authContext = useContext(AuthorizationContext);
+  const profile = useProfile();
+
   const onSubmit = (values) => {
     async function editprofile() {
-      let response = await editUserProfile(values, profile.userId);
+      let response = await editUserProfile(values, authContext.authParams.userId);
       if (response != null) {
         props.history.push("/userProfile");
       }
@@ -15,17 +19,16 @@ function EditUserProfile(props) {
     editprofile();
   };
 
-  const profile = useProfile();
 
-  if (profile.profile == null) {
+  if (profile === null) {
     return "Loading";
   } else {
     return (
       <Form
         onSubmit={onSubmit}
         initialValues={{
-          FirstName: profile.profile.firstName,
-          LastName: profile.profile.lastName,
+          FirstName: profile.firstName,
+          LastName: profile.lastName,
         }}
         render={({ handleSubmit, values }) => (
           <form onSubmit={handleSubmit}>

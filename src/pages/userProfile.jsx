@@ -9,12 +9,13 @@ import ilustracia4 from "../staticImage/hautu/HAU-TO-IMAGE.png";
 import ilustracia5 from "../staticImage/hautu/brown-and-white-short-coated-puppy-1805164.png";
 
 
-function UserProfile() {
+function UserProfile() { 
   const profile = useProfile();
 
-  if (profile.profile == null) {
+  if (profile === null) {
     return "Loading";
   } else {
+    console.log(profile);
     return (
       <div className=" xl:mx-auto ">
         <div className="xl:flex xl:flex-no-wrap xl:m-auto backgroundUserProfile">
@@ -24,10 +25,10 @@ function UserProfile() {
           <div className="justify-start mt-32 ml-10">
             <div>
               <div className="text-left text-3xl font-bold text-white">
-                {profile.profile.firstName} {profile.profile.lastName}
+                {profile.firstName} {profile.lastName}
               </div>
               <div className="text-left text-2xl text-white">
-                {profile.profile.email}
+                {profile.email}
               </div>
             </div>
 

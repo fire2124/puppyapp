@@ -1,10 +1,12 @@
 .background1 {
+  height: 700px;
   background-image: url("../staticImage/vectors/Vector-1.png");
-  background-size: 70% 160%;
+  background-size: 70% 100%;
   background-repeat: no-repeat;
   background-position: left;
 }
 .background2 {
+  height: 700px;
   background-image: url("../staticImage/vectors/Vector-2.png");
   background-size: 70% 100%;
   background-repeat: no-repeat;

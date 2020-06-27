@@ -23,12 +23,12 @@ class Landing extends Component {
               Zoznámte sa so svojím
               <br /> ideálnym psím spoločníkom
             </h1>
-            <p className="text-lg text-white text-justify xl:ml-40 mt-5 ">
+            <p className="text-lg text-white text-justify xl:ml-40 mt-10 mr-64">
               Spájame útulky, psíkov a rodiny na jednom mieste. Uľahčujeme celý
               proces výberu Vášho nového člena rodiny prostredníctvom
               jedinečného dotazníka a samotnej ONLINE adopcie.
             </p>
-            <div className="mt-5">
+            <div className="mt-10">
               <Link
                 className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 xl:ml-40 mt-10"
                 to="/allDogs"
@@ -37,21 +37,21 @@ class Landing extends Component {
               </Link>
             </div>
           </div>
-          <div className="flex-none w-6/12 mx-auto ml-10 xl:mt-20">
-            <img src={ilustracia} alt="Logo" />
+          <div className="flex-none w-6/12 mx-auto ml-10 xl:mt-40">
+            <img src={ilustracia} alt="Logo"  width="693px"/>
           </div>
         </div>
         <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 my-4">
-          <div className="flex1 w-6/12 ml-56 xl:mt-24">
-            <div className="text-left justify-left xl:flex1">
+          <div className="flex1 w-6/12 ml-56 xl:mt-64">
+            <div className=" justify-left xl:flex1">
               <img src={ilustracia2} alt="Logo" />
             </div>
           </div>
-          <div className="container-fluid flex1 w-6/12 xl:mt-20">
+          <div className="container-fluid flex1 w-6/12 xl:mt-48 xl:ml-20">
             <h1 className="text-left text-4xl justify-left font-bold text-white xl:mt-32 ml-40 ">
               HAU TU ? (blog)
             </h1>
-            <p className="text-left text-lg text-white justify-center mt-5 ml-40">
+            <p className="text-left text-lg text-white justify-center mt-5 ml-40 mr-64">
               Neviete ako vycvičiť Vášho psíka? Ako prebieha proces adopcie? S
               týmito otázkami ale aj s mnohými ďaľšími Vám radi pomôžeme. Na
               našom blogu nájdete veľa užitočných článkov, ktoré Vás naučia, ako
@@ -70,17 +70,17 @@ class Landing extends Component {
         <div className=" xl:flex xl:flex-no-wrap xl:m-auto background3">
           <div className="xl:flex xl:w-6/12  xl:my-56">
             <div className="text-left justify-left flex1">
-              <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-40">
+              <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-64">
                 Ako pomáhame?
               </h1>
-              <p className="text-justify flex1 text-lg text-white flex1 justify-left ml-40 mt-5">
+              <p className="text-justify flex1 text-lg text-white flex1 justify-left ml-64 mt-5 mr-48">
                 Prostredníctvom tohto projektu sa snažíme nachádzať vhodný domov
                 útulkáčom a tým zlepšiť situáciu v útulkoch v rámci celého
                 Slovenska.
               </p>
             </div>
           </div>
-          <div className="xl:flex w-6/12 xl:ml-48 xl:my-56">
+          <div className="xl:flex w-6/12 xl:ml-48 xl:my-56 xl:mr-32">
             <div className="xl:w-1/3 mr-16 justify-left ">
               <img
                 src={icon2}
@@ -235,7 +235,7 @@ class Landing extends Component {
               Finančná pomoc
             </h1>
 
-            <p className="xl:text-lg text-white text-justify xl:ml-40 xl:mr-40">
+            <p className="xl:text-lg text-white text-justify xl:ml-40 xl:mr-64">
               Peňažné dary pre útulky znamenajú viac možností pre psíkov. Každé
               euro pomôže našim psíkom zlepšiť ich osud alebo zachrániť život.
             </p>

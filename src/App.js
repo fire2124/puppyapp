@@ -32,6 +32,7 @@ import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
 import HauTU from "./pages/HauTU";
 import Article1 from "./pages/articles/article1";
+import ShelterPROFILETOSEEFORYOUSER from "./components/SHELTERPROFILETOSEEFORYOUSER";
 
 logger.init();
 
@@ -80,6 +81,8 @@ class App extends Component {
                 <Route path="/editUserProfile" component={EditUserProfile} />
                 <Route path="/registerShelter" component={RegisterShelter} />
                 <Route path="/shelterProfile" component={ShelterProfile} />
+                <Route path="/shelterProfileId" component={ShelterPROFILETOSEEFORYOUSER} />
+
                 <Route path="/editShelterProfile" component={EditShelterProfile} />
                 <Route path="/adoptionRequests" component={AdoptionRequests} />
 

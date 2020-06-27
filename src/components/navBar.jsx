@@ -67,7 +67,7 @@ const NavBar = () => {
                 </React.Fragment>
               )}
               {authParams.loggedIn && authParams.userRole === "User" && (
-                <React.Fragment className="xl:py-5 xl:px-5 xl:flex justify-between">
+                <React.Fragment>
                   <div className=" xl:py-5 xl:px-5 xl:flex justify-between">
                     <div className=" px-2 py-2 m-2">
                       <a href="/" className="xl:flex">

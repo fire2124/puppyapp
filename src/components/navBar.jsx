@@ -26,6 +26,12 @@ const NavBar = () => {
                     </div>
                     <div className=" px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">
+                      <NavLink
+                          className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          Domov
+                        </NavLink>
                         <NavLink
                           className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
                           to="/allDogs"
@@ -73,6 +79,12 @@ const NavBar = () => {
                     </div>
                     <div className="  px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">
+                      <NavLink
+                          className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          Domov
+                        </NavLink>
                         <NavLink
                           className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
                           to="/allDogs"
@@ -203,6 +215,12 @@ const NavBar = () => {
                     </div>
                     <div className="  px-4 py-2 m-2 justify-center px-4">
                       <div className="justify-center text-center">
+                      <NavLink
+                          className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
+                          to="/"
+                        >
+                          Domov
+                        </NavLink>
                         <NavLink
                           className=" text-black text-center bg-orange-400 px-4 py-2 m-2 rounded-full py-2 px-4 py-2 px-4 "
                           to="/allDogs"

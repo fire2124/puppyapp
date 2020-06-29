@@ -70,12 +70,12 @@ class AddDog extends Component {
                   </div>
                   <div className="mt-10">
                     <label className="text-base font-bold">Popis </label>
-                    <div className="w-64 min-w-full rounded-full py-2 px-4 py-2 px-4 border-2 border-black inline-block">
+                    <div className="w-64 min-w-full  py-2 px-4 py-2 px-4  inline-block">
                       <Field
                         name="AdditionalInfo"
                         component="textarea"
                         placeholder="Sem zadajte bližšie informácie, ktoré by mal používateľ vediet o danom psovi."
-                        className="w-64 min-w-full"
+                        className="w-64 min-w-full h-64 rounded-lg  border-2 border-black"
                       />
                     </div>
                     <div className="mt-10">

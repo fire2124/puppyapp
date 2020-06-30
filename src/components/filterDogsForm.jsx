@@ -30,8 +30,8 @@ function FilterDogs(props) {
         }}
         render={({ handleSubmit, submitting, pristine, form }) => (
           <form onSubmit={handleSubmit}>
-            <div className="ml-5">
-              <div>
+            <div className="">
+              <div className="xl:mr-10">
                 <FormOptionField
                   type="checkbox"
                   options={lookupData.colorOptions}
@@ -39,7 +39,7 @@ function FilterDogs(props) {
                   name="ColorIds"
                 />
               </div>
-              <div className="mt-5">
+              <div className="mt-5 xl:mr-10">
                 <FormOptionField
                   type="checkbox"
                   options={lookupData.furTypeOptions}
@@ -48,7 +48,7 @@ function FilterDogs(props) {
                   
                 />
               </div>
-              <div className="mt-5">
+              <div className="mt-5 xl:mr-10">
                 <SelectOptionField
                   type="select"
                   label="Rasa"
@@ -57,24 +57,15 @@ function FilterDogs(props) {
                   placeholder="jazvečík"
                 />
               </div>
-              <div className="mt-5">
+              <div className="mt-5 xl:mr-10">
                 <FormOptionField
                   type="radio"
                   options={lookupData.genderOptions}
                   label="Pohlavie"
                   name="GenderId"
                 />
-              </div>
-              {/* <div className="mt-5">
-                <FormOptionField
-                  type="checkbox"
-                  options={lookupData.ageOptions}
-                  label="Vek"
-                  name="AgeIds"
-                />
-              </div> */}
-
-              <div className="mt-5">
+              </div>        
+              <div className="mt-5 xl:mr-10">
                 <FormOptionField
                   type="checkbox"
                   options={lookupData.sizeOptions}
@@ -82,24 +73,15 @@ function FilterDogs(props) {
                   name="SizeIds"
                 />
               </div>
-              <div className="mt-5">
+              <div className="mt-5 xl:mr-10">
                 <FormOptionField
                   type="checkbox"
                   options={lookupData.vaccinationTypeOptions}
                   label="Očkovaný"
                   name="VaccinationIds"
                 />
-              </div>
-            
-              {/* <div className="mt-5">
-                <FormOptionField
-                  type="checkbox"
-                  options={lookupData.behaviorTraitOptions}
-                  label="Povahové črty"
-                  name="BehaviorIds"
-                />
-              </div> */}
-              <div className="mt-5">
+              </div>           
+              <div className="mt-5 ">
                 <FormCheckBox name="Castrated" label="Kastrovaný" />
               </div>
               <div className="mt-5">
@@ -109,7 +91,7 @@ function FilterDogs(props) {
                 <FormCheckBox name="Chipped" label="Čipovaný" />
               </div>
             </div>
-            <div className="mt-10">
+            <div className="mt-10 xl:mr-10">
               <button
                 className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
                 type="submit"
@@ -118,9 +100,9 @@ function FilterDogs(props) {
                 Vyhľadať
               </button>
             </div>
-            <div>
+            <div className="mt-3">
               <button
-                className="text-orange font-semibold font-sm text-center bg-orange-400 px-4 py-2 m-2 inline-block "
+                className="text-orange font-semibold font-sm text-center bg-orange-400 inline-block "
                 type="button"
                 onClick={() => {
                   form.reset();

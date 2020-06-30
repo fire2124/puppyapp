@@ -36,7 +36,6 @@ function EditShelterProfile(props) {
           Street: profile.street,
           ICO: profile.ico,
           Dic: profile.dic,
-
           BankAccount: profile.bankAccountNumber,
           Iban: profile.iban,
           PhoneNumber: profile.phoneNumber,
@@ -74,21 +73,28 @@ function EditShelterProfile(props) {
                     Adresa{" "}
                   </label>
                   <div className="w-64 min-w-full  ">
+                    <div className="mt-3">
                     <FormTextField
                       name="City"
                       label="Mesto "
                       placeholder="Priezvisko"
                     />
+                    </div>
+                    <div className="mt-3">
                     <FormTextField
                       name="Street"
                       label="Adresa "
                       placeholder="Street"
                     />
+                    </div>
+                    <div className="mt-3">
                     <FormTextField
                       name="PostCode"
                       label="PSČ"
                       placeholder="PostCode"
                     />
+                    </div>
+                    
                   </div>
                 </div>
               </div>
@@ -98,7 +104,7 @@ function EditShelterProfile(props) {
                     Kontakty{" "}
                   </label>
 
-                  <div className="flex">
+                  <div className="flex mt-3">
                     <FormTextField
                       name="PhoneNumber"
                       label="Tel.č."
@@ -112,14 +118,14 @@ function EditShelterProfile(props) {
                     Identifikačné číslo{" "}
                   </label>
                   <div className="flex">
-                    <div>
+                  <div className="mt-3">
                       <FormTextField
                         name="ICO"
                         label="IČO "
                         placeholder="ICO"
                       />
                     </div>
-                    <div className="xl:ml-10">
+                    <div className="xl:ml-10 mt-3">
                       <FormTextField
                         name="Dic"
                         label="Dič "
@@ -134,14 +140,14 @@ function EditShelterProfile(props) {
                     Bankový účet{" "}
                   </label>
                   <div className="flex">
-                    <div>
+                    <div className="mt-3">
                       <FormTextField
                         name="BankAccount"
                         label="Číslo účtu "
                         placeholder="BankAccount"
                       />
                     </div>
-                    <div className="xl:ml-10">
+                    <div className="xl:ml-10 mt-3">
                       <FormTextField
                         name="Iban"
                         label="IBAN "

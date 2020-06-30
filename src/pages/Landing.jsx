@@ -12,6 +12,7 @@ import { Link } from "react-router-dom";
 import icon1 from "../staticImage/icons/DOG-icon.png";
 import icon2 from "../staticImage/icons/HAND&HEART.png";
 import icon3 from "../staticImage/icons/HOUSE.png";
+import Video from "./video"
 
 class Landing extends Component {
   render() {
@@ -40,6 +41,9 @@ class Landing extends Component {
           <div className="flex-none w-6/12 mx-auto ml-10 xl:mt-40">
             <img src={ilustracia} alt="Logo"  width="693px"/>
           </div>
+        </div>
+        <div className="xl:flex  xl:mt-56 justify-center">
+          <Video/>
         </div>
         <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 my-4">
           <div className="flex1 w-6/12 ml-56 xl:mt-64">

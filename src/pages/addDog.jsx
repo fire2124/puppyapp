@@ -23,6 +23,8 @@ class AddDog extends Component {
       return "Loading";
     } else {
       const lookupData = this.context.lookupData;
+      console.log(lookupData);
+      
       return (
         <Form
           onSubmit={this.onSubmit}
@@ -67,6 +69,12 @@ class AddDog extends Component {
                         className="font-bold"
                       />
                     </div>
+                    <div className="mt-2 font-bold">
+                      <FormCheckBox
+                        name="RequiresGarden"
+                        label="Vyžaduje si záhradu"
+                      />
+                    </div>
                   </div>
                   <div className="mt-10">
                     <label className="text-base font-bold">Popis </label>
@@ -84,12 +92,7 @@ class AddDog extends Component {
                         label="Miesto nájdenia"
                       />
                     </div>
-                    <div>
-                      <FormCheckBox
-                        name="RequiresGarden"
-                        label="Vyžaduje si záhradu"
-                      />
-                    </div>
+                   
                     <div>
                       <SelectOptionField
                         type="select"
@@ -101,8 +104,8 @@ class AddDog extends Component {
                     </div>
                   </div>
                 </div>
-                <div className="xl:flex-none xl:w-4/12 xl:m-auto xl:m-16">
-                  <div>
+                <div className="xl:flex-none xl:w-4/12 xl:ml-16 xl:mt-16">
+                  <div className=" mr-64">
                     <FormOptionField
                       type="radio"
                       options={lookupData.furTypeOptions}
@@ -110,7 +113,7 @@ class AddDog extends Component {
                       name="FurTypeId"
                     />
                   </div>
-                  <div className="mt-10">
+                  <div className="mt-10 mr-64">
                     <FormOptionField
                       type="checkbox"
                       options={lookupData.colorOptions}
@@ -118,7 +121,7 @@ class AddDog extends Component {
                       name="ColorIds"
                     />
                   </div>
-                  <div className="mt-10">
+                  <div className="mt-10 mr-64">
                     <FormOptionField
                       type="radio"
                       options={lookupData.genderOptions}
@@ -127,7 +130,7 @@ class AddDog extends Component {
                     />
                   </div>
 
-                  <div className="mt-10">
+                  <div className="mt-10 mr-64">
                     <FormOptionField
                       type="radio"
                       options={lookupData.ageOptions}
@@ -135,17 +138,17 @@ class AddDog extends Component {
                       name="AgeId"
                     />
                   </div>
-                  <div className="mt-10">
+                  <div className="mt-10 mr-64">
                     <FormOptionField
                       type="radio"
                       options={lookupData.sizeOptions}
-                      label="Výška"
+                      label="Zvoľte výšku psa"
                       name="SizeId"
                     />
                   </div>
                 </div>
                 <br />
-                <div className="xl:flex-none xl:w-4/12 xl:m-auto xl:m-16">
+                <div className="xl:flex-none xl:w-4/12  xl:mt-16 xl:mr-64">
                   <div>
                     <label className="text-base font-bold mt-10">
                       Zdravotný stav
@@ -163,7 +166,7 @@ class AddDog extends Component {
                     </div>
                   </div>
                   <div>
-                    <div className="mt-10">
+                    <div className="mt-10 mr-64">
                       <FormOptionField
                         type="radio"
                         options={lookupData.vaccinationTypeOptions}
@@ -171,7 +174,7 @@ class AddDog extends Component {
                         name="VaccinationTypeId"
                       />
                     </div>
-                    <div className="mt-10">
+                    <div className="mt-10 mr-64">
                       <FormOptionField
                         type="radio"
                         options={lookupData.attentionRequirementOptions}
@@ -180,8 +183,8 @@ class AddDog extends Component {
                       />
                     </div>
                   </div>
-                  <div className="mr-10">
-                    <div className="mt-10">
+                  <div className="mr-10 ">
+                    <div className="mt-10 mr-56">
                       <FormOptionField
                         type="checkbox"
                         options={lookupData.compatibilityOptions}
@@ -189,7 +192,7 @@ class AddDog extends Component {
                         name="CompatibilityIds"
                       />
                     </div>
-                    <div className="mt-10 mr-10">
+                    <div className="mt-10 mr-56">
                       <FormOptionField
                         type="checkbox"
                         options={lookupData.behaviorTraitOptions}

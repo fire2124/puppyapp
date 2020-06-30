@@ -56,7 +56,7 @@ class AllDogs extends Component {
             />
           </div>
 
-          <div className="w-10/12 ">
+          <div className="w-10/12 xl:mt-2">
             <div className="backgroundAllDogs">
               <div className="xl:flex xl:flex-no-wrap xl:m-auto background4">
                 <div className=" ml-64 mt-16">

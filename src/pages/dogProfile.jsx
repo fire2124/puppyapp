@@ -76,11 +76,7 @@ class DogProfile extends Component {
                     <div className="xl:text-left text-white text-justify mt-5 mr-64 w-7/12">
                       <p>
                         {" "}
-                        Som veselá a hravá fenka, ktorá si vyžaduje veľa
-                        pozornosti. Som vhodná k ľuďom, ktorí majú čas a chuť
-                         sa mi naplno venovať a naučiť ma novým trikom. Rada
-                        skúmam svoje okolie a rozumiem si aj s inými domácimi
-                        zvieratkami.{" "}
+                         {dog.additionalInfo} {" "}
                       </p>
                     </div>
                   </div>
@@ -123,7 +119,7 @@ class DogProfile extends Component {
                           </div>
                           <div className=" flex w-2/3 mt-4">
                             {dog.colorNames.map((name) => (
-                              <div className="ml-2">{name}, </div>
+                              <div className="ml-5">{name}, </div>
                             ))}
                           </div>
                         </div>
@@ -203,7 +199,7 @@ class DogProfile extends Component {
                 <div className="justify-between text-lg font-bold pod mx-16">
                   Ďalšie informácie
                 </div>
-                <div className="mt-5 mx-16"> - {dog.additionalInfo} </div>
+                <div className="mt-5 mx-16"> </div>
               </div>
               <div className=" xl:mt-20 mx-5">
                 <div className="justify-between text-lg font-bold pod mx-16">

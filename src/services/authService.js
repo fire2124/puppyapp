@@ -27,6 +27,19 @@ export async function refresh(accessToken, refreshToken) {
   }
 }
 
+export async function forgotPassword(email) {
+  console.log(email);
+  
+  try {
+    let response = await http.put(`${apiUrl}/auth/forgotPassword`, email);
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function registerUser(user) {
   try {
     let response = await http.post(`${apiUrl}/auth/register/user`, user);
@@ -77,4 +90,5 @@ export default {
   registerShelter,
   refresh,
   editUserProfile,
+  forgotPassword,
 };

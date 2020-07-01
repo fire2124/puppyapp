@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import PreferencesWizzardForm from "../components/preferencesWizzardForm";
 import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.png";
 import ilustracia2 from "../staticImage/illustrations/Ilustracia_backgroundless2.png";
 import ilustracia3 from "../staticImage/illustrations/Ilustracia_backgroundless3 – Register.png";
@@ -251,6 +252,7 @@ class Landing extends Component {
             <img src={ilustracia3} alt="Logo" />
           </div>
         </div>
+        <PreferencesWizzardForm></PreferencesWizzardForm>
       </div>
     );
   }

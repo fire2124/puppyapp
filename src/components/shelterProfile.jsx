@@ -145,7 +145,7 @@ function ShelterProfile() {
             </div>
           </div>
           <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 ml-64">
-            <Link to="/"> Späť </Link>
+            <Link to="/"> {"<"} Späť </Link>
             <Link to={`/editShelterProfile`} className="ml-20">
               {" "}
               <button

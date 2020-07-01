@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import icon1 from "../staticImage/icons/DOG-icon.png";
 import icon2 from "../staticImage/icons/HAND&HEART.png";
 import icon3 from "../staticImage/icons/HOUSE.png";
-import Video from "./video"
+import Video from "./video";
 
 class Landing extends Component {
   render() {
@@ -39,11 +39,11 @@ class Landing extends Component {
             </div>
           </div>
           <div className="flex-none w-6/12 mx-auto ml-10 xl:mt-40">
-            <img src={ilustracia} alt="Logo"  width="693px"/>
+            <img src={ilustracia} alt="Logo" width="693px" />
           </div>
         </div>
         <div className="xl:flex  xl:mt-56 justify-center">
-          <Video/>
+          <Video />
         </div>
         <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 my-4">
           <div className="flex1 w-6/12 ml-56 xl:mt-64">
@@ -226,9 +226,14 @@ class Landing extends Component {
                 Preto im chceme uľahčiť prácu aj pomocou týchto akcií. Pridajte
                 sa k nám a pomôžte tak psíkom na Slovensku.
               </p>
-              <button className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-5">
-                Ďalšie podujatia
-              </button>
+              <div className="mt-10">
+                <Link
+                  to={`/workingPage`}
+                  className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 "
+                >
+                  Ďalšie podujatia
+                </Link>
+              </div>
             </div>
           </div>
         </div>
@@ -243,9 +248,14 @@ class Landing extends Component {
               Peňažné dary pre útulky znamenajú viac možností pre psíkov. Každé
               euro pomôže našim psíkom zlepšiť ich osud alebo zachrániť život.
             </p>
-            <button className="text-white font-semibold xl:text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 ml-40 mt-5">
-              Viac
-            </button>
+            <div className="xl:ml-40 xl:mt-10">
+              <Link
+                to={`/workingPage`}
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 "
+              >
+                Viac
+              </Link>
+            </div>
           </div>
           <div className="xl:flex-none xl:w-6/12 xl:mx-auto">
             <img src={ilustracia3} alt="Logo" />

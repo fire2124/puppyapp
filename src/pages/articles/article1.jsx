@@ -109,7 +109,7 @@ class Article1 extends Component {
               to={`/hautu`}
               className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
             >
-              Späť
+              {"<"} Späť
             </Link>
 
             {/* <Link

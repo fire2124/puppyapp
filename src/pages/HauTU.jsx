@@ -77,7 +77,9 @@ class HauTU extends Component {
               <Link
                 to={`/article1`}
                 className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
-              >Čítaj viac ></Link>
+              >
+                Čítaj viac >
+              </Link>
             </div>
           </div>
           <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:mt-16 ">
@@ -94,9 +96,12 @@ class HauTU extends Component {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
               </p>
-              <button className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10">
+              <Link
+                to={`/workingPage`}
+                className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
+              >
                 Čítaj viac >
-              </button>
+              </Link>
             </div>
           </div>
           <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:mt-16 ">
@@ -113,9 +118,12 @@ class HauTU extends Component {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
               </p>
-              <button className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10">
+              <Link
+                to={`/workingPage`}
+                className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
+              >
                 Čítaj viac >
-              </button>
+              </Link>
             </div>
           </div>
           <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:mt-16 ">
@@ -132,9 +140,12 @@ class HauTU extends Component {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
               </p>
-              <button className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10">
+              <Link
+                to={`/workingPage`}
+                className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
+              >
                 Čítaj viac >
-              </button>
+              </Link>
             </div>
           </div>
           <div className="xl:flex xl:flex-no-wrap xl:m-auto xl:mt-16 ">
@@ -151,9 +162,12 @@ class HauTU extends Component {
                 text ever since the 1500s, when an unknown printer took a galley
                 of type and scrambled it to make a type specimen book.
               </p>
-              <button className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10">
+              <Link
+                to={`/workingPage`}
+                className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-10"
+              >
                 Čítaj viac >
-              </button>
+              </Link>
             </div>
           </div>
         </div>

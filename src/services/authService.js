@@ -29,7 +29,6 @@ export async function refresh(accessToken, refreshToken) {
 
 export async function forgotPassword(email) {
   console.log(email);
-  
   try {
     let response = await http.put(`${apiUrl}/auth/forgotPassword`, email);
     if(response.data.succeeded){
@@ -37,6 +36,17 @@ export async function forgotPassword(email) {
     }
   } catch (error) {
     console.log(error);
+  }
+}
+
+export async function resetPassword(values) {
+  try {
+    let response = await http.post(`${apiUrl}/auth/resetPassword`, values);
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.error(error);
   }
 }
 
@@ -91,4 +101,5 @@ export default {
   refresh,
   editUserProfile,
   forgotPassword,
+  resetPassword,
 };

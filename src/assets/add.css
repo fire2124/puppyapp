@@ -170,29 +170,56 @@
 }
 
 .modal {
-  margin-left: 15%;
-  width: 70%;
-  height: 100%;
-  font-size: 12px;
-  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+
+  position: static;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+  /* WHITE */
+
+  background: #ffffff;
+  /* BLUE 259DB5 */
+
   border: 4px solid #749bff;
+  box-sizing: border-box;
+  box-shadow: 10px 10px 24px rgba(0, 0, 0, 0.25);
+  border-radius: 24px;
+
+  /* Inside Auto Layout */
+
+  flex: none;
+  order: 0;
+  align-self: flex-start;
+  margin: 0px 0px;
 }
 .modal > .header {
+  border-radius: 24px;
+
   font-size: 18px;
   text-align: center;
   padding: 5px;
 }
 .modal > .content {
+  
   padding: 10px 5px;
   border-radius: 20px;
 }
 .modal > .actions {
+  border-radius: 24px;
+
   padding: 10px 5px;
   margin: auto;
   text-align: center;
   border-radius: 20px;
 }
 .modal > .close {
+  border-radius: 24px;
+
   cursor: pointer;
   position: absolute;
   display: block;
@@ -349,7 +376,7 @@
 .imglist {
   list-style-type: none;
   margin: 0;
- /*display: flex;
+  /*display: flex;
    flex-wrap: wrap;*/
   text-align: center;
 }
@@ -357,18 +384,17 @@
 .imglist .li {
   width: 50%;
   padding: 20px;
-  display:inline-block;
-  
+  display: inline-block;
 }
 .imglist .li .img {
   max-width: 100%;
 }
 
 .imglist .li .img .center {
-  justify-content:center;
+  justify-content: center;
 }
 
-.container .h5{
+.container .h5 {
   text-align: center;
   margin-top: 50px;
 }

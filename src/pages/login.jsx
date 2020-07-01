@@ -7,6 +7,7 @@ import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.p
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
 import authService from "../services/authService";
+import Pop from "./../components/popups/popupRegister"
 
 class Login extends Component {
   constructor(props) {
@@ -105,12 +106,14 @@ class Login extends Component {
                     >
                       Zabudli ste svoje heslo?
                     </button>
+                    
                     <Popup
+                      className="modal"
                       open={this.state.open}
                       closeOnDocumentClick
                       onClose={this.closeModal}
                     >
-                      <div className="modal">
+                      <div className="modal"> 
                         <div className="font-bold text-4xl text-black flex flex-no-wrap mx-auto  justify-center mt-20 mb-10">
                           Zabudli ste svoje heslo?
                         </div>
@@ -160,9 +163,10 @@ class Login extends Component {
                             </div>
                           </div>
                         </div>
-                      </div>
+                       </div> 
                     </Popup>
                   </div>
+                  {/* <Pop/> */}
                   <div className="no-underline hover:underline text-blue-500 text-base">
                     <Link
                       to="/selectRegister"
@@ -172,7 +176,7 @@ class Login extends Component {
                     </Link>
                   </div>
                 </div>
-              </div>
+              </div>             
               <div className="xl:w-6/12 backgroundLogin flex-1">
                 <div className="xl:mb-64">
                   <img

@@ -32,8 +32,6 @@ import { LookupDataProvider } from "./lookupDataProvider";
 import { AuthorizationProvider } from "./authorizationProvider";
 import HauTU from "./pages/HauTU";
 import Article1 from "./pages/articles/article1";
-import UpdatePassword from "./pages/updatePassword";
-import WorkingPage from "./pages/workingPage";
 
 import ShelterPROFILETOSEEFORYOUSER from "./components/SHELTERPROFILETOSEEFORYOUSER";
 
@@ -70,9 +68,6 @@ class App extends Component {
                 <Route path="/article1" component={Article1} />
 
                 <Route path="/login" component={Login} />
-                <Route path="/updatePassword" component={UpdatePassword} />
-                <Route path="/workingPage" component={WorkingPage} />
-
 
                 <Route path="/logout" component={Logout} />
                 <Route path="/landing" component={Landing} />

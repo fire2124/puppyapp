@@ -33,7 +33,7 @@
 
   }
   .background4 {
-    background-image: url("../staticImage/mobile/vector/Vector.png");
+    /*background-image: url("../staticImage/mobile/vector/Vector.png");*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left;
@@ -105,7 +105,7 @@
 
   }
   .background4 {
-    background-image: url("../staticImage/mobile/vector/Vector.png");
+    /*background-image: url("../staticImage/mobile/vector/Vector.png");*/
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left;

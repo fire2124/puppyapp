@@ -24,7 +24,7 @@ class Landing extends Component {
               Zoznámte sa so svojím
               <br /> ideálnym psím spoločníkom
             </h1>
-            <p className="text-lg text-white text-justify xl:ml-40 mt-10 mr-64">
+            <p className="text-lg text-white text-left xl:ml-40 mt-10 mr-64">
               Spájame útulky, psíkov a rodiny na jednom mieste. Uľahčujeme celý
               proces výberu Vášho nového člena rodiny prostredníctvom
               jedinečného dotazníka a samotnej ONLINE adopcie.
@@ -81,7 +81,7 @@ class Landing extends Component {
               <h1 className="text-left flex1 text-4xl font-bold text-white justify-left xl:ml-64 lg:ml-32">
                 Ako pomáhame?
               </h1>
-              <p className="text-justify flex1 text-lg text-white justify-left xl:ml-64 xl:mt-5 
+              <p className="text-left flex1 text-lg text-white justify-left xl:ml-64 xl:mt-5 
                                                                               lg: ml-32 lg:mt-2 ">
                 Prostredníctvom tohto projektu sa snažíme nachádzať vhodný domov
                 útulkáčom a tým zlepšiť situáciu v útulkoch v rámci celého
@@ -225,7 +225,7 @@ class Landing extends Component {
               <h1 className="text-left text-4xl font-bold pod mr-40">
                 Podujatia
               </h1>
-              <p className="text-lg text-justify mt-5">
+              <p className="text-lg text-left mt-5">
                 Sme tu pre združenia a útulky, ktoré denne bojujú o prežitie a
                 na riešenie mnohých problémov nemajú čas ani ľudské kapacity.
                 Preto im chceme uľahčiť prácu aj pomocou týchto akcií. Pridajte
@@ -249,7 +249,7 @@ class Landing extends Component {
               Finančná pomoc
             </h1>
 
-            <p className="xl:text-lg text-white text-justify xl:ml-40 xl:mr-64">
+            <p className="xl:text-lg text-white text-left xl:ml-40 xl:mr-64">
               Peňažné dary pre útulky znamenajú viac možností pre psíkov. Každé
               euro pomôže našim psíkom zlepšiť ich osud alebo zachrániť život.
             </p>

@@ -64,7 +64,7 @@ const Footer = () => {
                         sm:flex-1                        sm:w-6/6 sm:justify-center sm:text-center
                                                                                                 ">
           <h1 className="text-black text-2xl font-bold ">Newsletter</h1>
-          <div className="no-underline text-black-500 xl:text-justify xl:ml-0 text-base xl:mr-10 
+          <div className="no-underline text-black-500 xl:text-left xl:ml-0 text-base xl:mr-10 
                                                        sm:text-center sm:ml-10 sm:mr-10">
             Začnite odoberať náš newsletter, aby ste boli informovaný o
             zbierkach a podujatiach, ktoré organizujú útulky.

@@ -25,7 +25,7 @@ class HauTU extends Component {
         <div className="xl:flex xl:flex-no-wrap xl:m-auto backgroundHAUTU">
           <div className=" xl:m-16">
             <h1 className="xl:text-left text-3xl font-bold text-white xl:ml-40 ">
-              Hau TU? (blog)
+              HAU TU? (blog)
             </h1>
             <p className="text-lg text-white xl:ml-40 mt-5 xl:mr-64">
               Neviete ako vycvičiť Vášho psíka? Ako prebieha proces adopcie? S

@@ -4,7 +4,7 @@ import { Field } from "react-final-form";
 class SelectOptionField extends Component {
   render() {
     return (
-      <div className="  my-4 text-black  focus:outline">
+      <div className="my-4 text-black  focus:outline">
             <div>
             <label className="font-bold">{this.props.label}</label>
             </div>

@@ -17,7 +17,7 @@ const Footer = () => {
   return (
     <div className="">
       <div className="md:flex md:items-center md:justify-center md:mx-auto md:py-10 md:px-10 md:space-x-1 
-                      sm:justify-center sm:items-center sm:space-y-10  sm:mb-10 sm:mt-10">
+                      sm:justify-center sm:items-center sm:space-y-10  sm:mt-10">
         <div className="xl:flex-1 xl:px-4 xl:py-2 xl:m-2 xl:w-1/6 xl:justify-left xl:text-left xl:mt-10
                         lg:flex-1                        lg:w-1/6 lg:justify-left xl:text-left
                         md:flex-1                        md:w-1/6 md:justify-left xl:text-left
@@ -99,7 +99,7 @@ const Footer = () => {
       </div>
 
       <div className="xl:flex backgroundFooter3 ">
-        <div className=" xl:flex-1 xl:justify-center text-white text-center px-4 py-2 xl:m-2">
+        <div className="xl:flex-1 xl:justify-center text-white text-center px-4 py-2 xl:m-2">
           Súbory cookies
         </div>
         <div className="xl:flex-1 xl:justify-center text-white text-center px-4 py-2 xl:m-2">

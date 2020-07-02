@@ -7,6 +7,7 @@ import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless.p
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";
 import authService from "../services/authService";
+import Pop from "./../components/popups/popupRegister"
 
 class Login extends Component {
   constructor(props) {

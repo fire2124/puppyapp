@@ -43,28 +43,32 @@ class Landing extends Component {
           </div>
         </div>
         <div className="xl:flex  xl:mt-56 justify-center">
-          <Video />
+          <Video className="video"/>
         </div>
-        <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 my-4">
-          <div className="flex1 w-6/12 ml-56 xl:mt-64">
-            <div className=" justify-left xl:flex1">
-              <img src={ilustracia2} alt="Logo" />
+        <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 lg:my-24">
+          <div className="flex1 w-6/12 xl:ml-56 xl:mt-64 lg:ml-32 lg:mt-32">
+            <div className=" justify-left xl:flex1 ">
+              <img src={ilustracia2} alt="Logo" width="693px" />
             </div>
           </div>
-          <div className="container-fluid flex1 w-6/12 xl:mt-48 xl:ml-20">
-            <h1 className="text-left text-4xl justify-left font-bold text-white xl:mt-32 ml-40 ">
+          <div className="container-fluid flex1 w-6/12 xl:mt-48 xl:ml-20 
+                                                        lg:mt-20 lg:ml-10">
+            <h1 className="text-left text-4xl justify-left font-bold text-white xl:mt-32 xl:ml-40 
+                                                                                lg:mt-16 lg:ml-20">
               HAU TU ? (blog)
             </h1>
-            <p className="text-left text-lg text-white justify-center mt-5 ml-40 mr-64">
+            <p className="text-left text-lg text-white justify-center xl:mt-5 xl:ml-40 xl:mr-64 
+                                                                      lg:mt-2 lg:ml-20 lg:mr-32">
               Neviete ako vycvičiť Vášho psíka? Ako prebieha proces adopcie? S
               týmito otázkami ale aj s mnohými ďaľšími Vám radi pomôžeme. Na
               našom blogu nájdete veľa užitočných článkov, ktoré Vás naučia, ako
               sa čo najlepšie postarať o svojho štvornohého priateľa.
             </p>
-            <div className="mt-5">
+            <div className="xl:mt-5 lg:mt-2">
               <Link
                 to={`/hautu`}
-                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mr-40 mt-10 ml-40"
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 xl:mr-40 xl:mt-10 xl:ml-40 
+                                                                                                                lg:mr-20 lg:mt-5 lg:ml-20"
               >
                 Viac
               </Link>
@@ -74,10 +78,11 @@ class Landing extends Component {
         <div className=" xl:flex xl:flex-no-wrap xl:m-auto background3">
           <div className="xl:flex xl:w-6/12  xl:my-56">
             <div className="text-left justify-left flex1">
-              <h1 className="text-left flex1 text-4xl font-bold text-white justify-left ml-64">
+              <h1 className="text-left flex1 text-4xl font-bold text-white justify-left xl:ml-64 lg:ml-32">
                 Ako pomáhame?
               </h1>
-              <p className="text-justify flex1 text-lg text-white flex1 justify-left ml-64 mt-5 mr-48">
+              <p className="text-justify flex1 text-lg text-white justify-left xl:ml-64 xl:mt-5 
+                                                                              lg: ml-32 lg:mt-2 ">
                 Prostredníctvom tohto projektu sa snažíme nachádzať vhodný domov
                 útulkáčom a tým zlepšiť situáciu v útulkoch v rámci celého
                 Slovenska.
@@ -90,7 +95,7 @@ class Landing extends Component {
                 src={icon2}
                 alt="Logo"
                 width="80px"
-                className="xl:justify-center ml-20 "
+                className="xl:justify-center xl:ml-20 "
               />
               <p className="text-center  text-xl font-bold text-white justify-left mt-4">
                 196
@@ -100,12 +105,12 @@ class Landing extends Component {
                 súrne domov
               </p>
             </div>
-            <div className="xl:w-1/3 xl:mr-16 justify-left ">
+            <div className="xl:w-1/3 xl:mr-16 xl:justify-left ">
               <img
                 src={icon3}
                 alt="Logo"
                 width="80px"
-                className="xl:justify-center ml-20 "
+                className="xl:justify-center xl:ml-20 "
               />
               <p className="text-center  text-xl font-bold text-white justify-left mt-4">
                 12 458
@@ -116,12 +121,12 @@ class Landing extends Component {
                 nový domov
               </p>
             </div>
-            <div className="xl:w-1/3 mr-16 justify-left">
+            <div className="xl:w-1/3 xl:mr-16 xl:justify-left">
               <img
                 src={icon1}
                 alt="Logo"
                 width="80px"
-                className="justify-center ml-20 "
+                className="xl:justify-center xl:ml-20 "
               />
               <p className="text-center  text-xl font-bold text-white justify-left mt-4">
                 10 869
@@ -148,7 +153,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="py-2 m-2">
+              <div className="xl:py-2 xl:m-2">
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -162,7 +167,7 @@ class Landing extends Component {
               </div>
             </div>
             <div className="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
-              <div className="py-2 m-2">
+              <div className="xl:py-2 xl:m-2">
                 <div className="flip-card">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -174,7 +179,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="py-2 m-2">
+              <div className="xl:py-2 xl:m-2">
                 <div className="flip-card  ">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -189,7 +194,7 @@ class Landing extends Component {
             </div>
 
             <div className="xl:py-10 px-2 xl:space-x-1 xl:w-4/12 ">
-              <div className="py-2 m-2">
+              <div className="xl:py-2 xl:m-2">
                 <div className="flip-card  ">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -201,7 +206,7 @@ class Landing extends Component {
                   </div>
                 </div>
               </div>
-              <div className="py-2 m-2">
+              <div className="xl:py-2 xl:m-2">
                 <div className="flip-card  ">
                   <div className="flip-card-inner">
                     <div className="flip-card-front">
@@ -251,7 +256,7 @@ class Landing extends Component {
             <div className="xl:ml-40 xl:mt-10">
               <Link
                 to={`/workingPage`}
-                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 "
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full xl:py-2 xl:px-8 "
               >
                 Viac
               </Link>

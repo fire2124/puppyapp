@@ -1,72 +1,79 @@
-import React, { Component } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { getAllDogs, getFiltered, getDogsByUserPreference } from "../services/dogService";
 import DogsList from "../components/common/dogsList";
 import FilterDogs from "../components/filterDogsForm";
-import { Link } from "react-router-dom";
 import { AuthorizationContext } from "../authorizationProvider";
 import PreferencesWizzardForm from "../components/preferencesWizzardForm";
 
-class AllDogs extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      dogs: [],
-      isPreferencesWizzardOpen: false
-    };
-    this.displayFiltered = this.displayFiltered.bind(this);
-    this.resetFilter = this.resetFilter.bind(this);
-  }
+function AllDogs() {
+  const authContext = useContext(AuthorizationContext);
+  const [dogs, setDogs] = useState([]);
+  const [filteredDogs, setfilteredDogs] = useState([]);
+  const [isPreferencesWizzardOpen, setIsPreferencesWizzardOpen] = useState(false);
 
-  toggleModal(show){
-    this.setState({isPreferencesWizzardOpen : show})
-  }
+  useEffect(() => {
+    fetchData();
+  }, [authContext.authParams]);
 
-  async componentDidMount() {
-    this.getAllDogsFromRepository();
-  }
+  useEffect(() => {
+    console.log("component mounted");
+    fetchData();
+  }, []);
 
-  async displayFiltered(values) {
-    console.log(values)
-    let response = await getFiltered(values);
-    if (response.data) {
-      this.setState({ dogs: response.data.dogs });
+  async function fetchData() {
+    let response = await getAllDogs();
+    if (response) {
+      const { data } = response;
+      setDogs(data.dogs);
     }
-  }
-
-  async resetFilter() {
-    this.getAllDogsFromRepository();
-  }
-
-  async getAllDogsFromRepository() {
-    if (this.context.authParams.userProfile.isPreferenceSet) {
-      let response = await getDogsByUserPreference();
-      if (response) {
-        const { data } = response;
-        this.setState({ dogs: data.dogs });
-      }
-    }
-    else {
-      let response = await getAllDogs();
-      if (response) {
-        const { data } = response;
-        this.setState({ dogs: data.dogs });
+    if (authContext.authParams !== null) {
+      if (authContext.authParams.loggedIn) {
+        if (authContext.authParams.userProfile !== null) {
+          if (authContext.authParams.userProfile.isPreferenceSet) {
+            let response = await getDogsByUserPreference();
+            if (response) {
+              const { data } = response;
+              setfilteredDogs(data.dogs);
+            }
+          } else {
+            let response = await getAllDogs();
+            if (response) {
+              const { data } = response;
+              setDogs(data.dogs);
+            }
+          }
+        }
       }
     }
   }
 
-  render() {
-    return (
+const displayFiltered = async values => {
+  console.log(values)
+  let response = await getFiltered(values);
+  if (response.data) {
+    setDogs(response.data.dogs);
+  }
+}
+
+const resetFilter = async => {
+  fetchData();
+}
+
+if (authContext.authParams.userProfile === null) {
+  return "Loading";
+} else {
+  return (
       <div className=" xl:mx-auto ">
         <div className="xl:flex xl:flex-no-wrap xl:m-auto">
           <div className="w-2/12 ml-8">
             <FilterDogs
-              onDisplayedFiltered={this.displayFiltered}
-              onResetFilter={this.resetFilter}
+              onDisplayedFiltered={displayFiltered}
+              onResetFilter={resetFilter}
             />
           </div>
 
           <div className="w-10/12 xl:mt-2">
-          {this.context.authParams.loggedIn && !this.context.authParams.userProfile.isPreferenceSet && (
+          {authContext.authParams.loggedIn && !authContext.authParams.userProfile.isPreferenceSet && (
             <div className="backgroundAllDogs">
               <div className="xl:flex xl:flex-no-wrap xl:m-auto background4">
                 <div className=" ml-64 mt-16">
@@ -79,25 +86,30 @@ class AllDogs extends Component {
                     Máme pre Vás dotazník, ktorý Vám môže pomôcť
                   </p>
                   <div className="mt-5">
-                  <button
-                className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
-                onClick={() => this.setState({isPreferencesWizzardOpen : true})}
-                >
-                Vyhľadať
-                </button>
+                    <button
+                    className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 inline-block"
+                    onClick={() => setIsPreferencesWizzardOpen({isPreferencesWizzardOpen : true})}
+                    >
+                    Vyplniť dotazník
+                    </button>
                   </div>
                  
                 </div>
               </div>
             </div>
           )}
-            {this.state.isPreferencesWizzardOpen && (
+            {isPreferencesWizzardOpen && (
               <div>
                 <PreferencesWizzardForm></PreferencesWizzardForm>
               </div>
             )}
+            {filteredDogs.length === 0 && authContext.authParams.loggedIn && authContext.authParams.userProfile.isPreferenceSet &&(
+              <div>
+                Je nám ľúto ale v databáze sa momentálne nenachádzajú žiadne psíky, ktoré by vyhovovali vašim kritériam.
+              </div>
+            )} 
             <div>
-              <DogsList dogs={this.state.dogs} />
+              <DogsList dogs={dogs} />
             </div>
           </div>
         </div>
@@ -105,5 +117,4 @@ class AllDogs extends Component {
     );
   }
 }
-AllDogs.contextType = AuthorizationContext;
 export default AllDogs;

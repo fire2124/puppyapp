@@ -37,7 +37,6 @@ function PreferencesWizzardForm(props) {
         if (values.numOfOtherAnimalsInHousehold > 0) {
             apiRequest.CompatibleWithOtherAnimals = true;
         }
-        window.alert(JSON.stringify(apiRequest, 0, 2))
     
         let response = await addUserPreference(apiRequest);
         authContext.loadProfileData();
@@ -47,7 +46,6 @@ function PreferencesWizzardForm(props) {
         return "Loading";
     } else {
         const lookupData = lookupDataContext.lookupData;
-        console.log(lookupData);
 
         return (
             <Wizard

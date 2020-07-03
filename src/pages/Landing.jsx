@@ -38,18 +38,16 @@ class Landing extends Component {
               </Link>
             </div>
           </div>
-          <div className="flex-none w-6/12 mx-auto ml-10 xl:mt-40">
-            <img src={ilustracia} alt="Logo" width="693px" />
+          <div className=" xl:flex-1  xl:w-6/12 xl:mt-40 xl:mr-64">
+            <img src={ilustracia} alt="Logo" className=" wid" />
           </div>
         </div>
         <div className="xl:flex  xl:mt-56 justify-center">
           <Video className="video"/>
         </div>
         <div className=" xl:flex xl:flex-no-wrap background2 xl:my-56 lg:my-24">
-          <div className="flex1 w-6/12 xl:ml-56 xl:mt-64 lg:ml-32 lg:mt-32">
-            <div className=" justify-left xl:flex1 ">
-              <img src={ilustracia2} alt="Logo" width="693px" />
-            </div>
+          <div className="xl:flex1 w-6/12 xl:ml-56 xl:mt-64 ">
+              <img src={ilustracia2} alt="Logo" className=" wid2" />
           </div>
           <div className="container-fluid flex1 w-6/12 xl:mt-48 xl:ml-20 
                                                         lg:mt-20 lg:ml-10">

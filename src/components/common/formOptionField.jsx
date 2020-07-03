@@ -8,7 +8,8 @@ class FormOptionField extends Component {
         <label className="font-bold">{this.props.label}</label>
         <div className="flex flex-wrap">
           {this.props.options.map((option) => (
-            <div className="mt-2 w-1/2">
+            // <div className="mt-2 w-1/2">
+            <div className={this.props.className2}>
               <label>
                 <Field
                   name={this.props.name}
@@ -18,8 +19,8 @@ class FormOptionField extends Component {
                   className={this.props.className}
                 />{" "}
                 {option.name}
-              </label>
-            </div>
+              </label>       
+            </div>      
           ))}
         </div>
       </div>

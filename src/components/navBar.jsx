@@ -107,7 +107,7 @@ const NavBar = () => {
                     </div>
                     <div className=" ">
                       <div className=" text-orange font-semibold text-center bg-orange-400 px-4 py-2 m-2 inline-block">
-                        {/*  {profile.profile.firstName} {profile.profile.lastName}*/}
+                        {profile != null && (profile.email)}
                       </div>
                       <div class="dropdown">
                         <img src={ilustracia2} alt="Logo" />

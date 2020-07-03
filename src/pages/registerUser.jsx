@@ -3,7 +3,6 @@ import authService from "../services/authService";
 import { Form } from "react-final-form";
 import FormTextField from "../components/common/formTextField";
 import { Link } from "react-router-dom";
-import PopupRegister from ".././components/popups/popupRegister";
 import ilustracia from "../staticImage/illustrations/Ilustracia_backgroundless3.png";
 import Popup from "reactjs-popup";
 import { NavLink } from "react-router-dom";

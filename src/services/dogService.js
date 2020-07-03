@@ -15,6 +15,17 @@ export async function getAllDogs() {
   }
 }
 
+export async function getDogsByUserPreference() {
+  try {
+    let response = await http.get(`${apiEndpoint}/dog/getFilteredByUserPreference`, http.getAuthHeader());
+    if (response.data.succeeded) {
+      return response;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export async function getFiltered(filterParams) {
   try {
     let response = await http.get(`${apiEndpoint}/dog/getFiltered`, {

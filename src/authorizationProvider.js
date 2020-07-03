@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import authService from "./services/authService";
+import { getUserProfile } from "./services/authService";
 
 const refreshTokenName = 'RefreshToken';
 const accessTokenName = 'AccessToken';
@@ -13,21 +14,22 @@ class AuthorizationProvider extends Component {
         this.logout = this.logout.bind(this);
         this.refreshTokens = this.refreshTokens.bind(this);
         this.setCurrentUserData = this.setCurrentUserData.bind(this);
+        this.loadProfileData = this.loadProfileData.bind(this);
     }
 
     state = {
         loggedIn: false,
-        userFirstName: null,
-        userLastName: null,
         userRole: null,
         userId: null,
         tokenExp: null,
+        userProfile: null
     }
 
     async componentDidMount() {
         let isRefreshSuccesful = await this.refreshTokens(); // TODO response
         if (isRefreshSuccesful) {
             this.setCurrentUserData();
+            this.loadProfileData();
         } else {
             this.logout();
         }
@@ -38,7 +40,8 @@ class AuthorizationProvider extends Component {
             <AuthorizationContext.Provider value={{
                 authParams: this.state,
                 login: this.login,
-                logout: this.logout
+                logout: this.logout,
+                loadProfileData: this.loadProfileData
             }}>
                 {this.props.children}
             </AuthorizationContext.Provider>
@@ -50,6 +53,7 @@ class AuthorizationProvider extends Component {
         if (response !== null) {
             this.setTokens(response.data.accessToken, response.data.refreshToken);
             this.setCurrentUserData();
+            this.loadProfileData();
             return true;
         } else {
             return false;
@@ -63,8 +67,6 @@ class AuthorizationProvider extends Component {
         this.setState({
             loggedIn: false,
             userRole: null,
-            userFirstName: null,
-            userLastName: null,
             userId: null
         });
     }
@@ -101,6 +103,15 @@ class AuthorizationProvider extends Component {
     setTokens(accessToken, refreshToken) {
         localStorage.setItem(accessTokenName, accessToken);
         localStorage.setItem(refreshTokenName, refreshToken);
+    }
+
+    async loadProfileData() {
+        let response = await getUserProfile(this.state.userId);
+        if (response.data) {
+            this.setState({
+                userProfile: response.data.userProfile
+            });
+        }
     }
 }
 

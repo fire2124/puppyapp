@@ -24,7 +24,7 @@ class AddDog extends Component {
     } else {
       const lookupData = this.context.lookupData;
       console.log(lookupData);
-      
+
       return (
         <Form
           onSubmit={this.onSubmit}
@@ -43,7 +43,7 @@ class AddDog extends Component {
               <label className="text-base font-bold text-2xl ml-10">
                 Pridať psa
               </label>
-              <div className="xl:flex xl:flex-no-wrap back ml-10 mr-10">
+              <div className="xl:flex xl:flex-no-wrap back ml-10 mr-10 mt-5">
                 <div className="xl:flex-none xl:w-4/12 xl:m-16 ml-32">
                   <div className="xl:flex xl:flex-no-wrap xl:m-auto">
                     <div className="w-3/12">
@@ -92,20 +92,18 @@ class AddDog extends Component {
                         label="Miesto nájdenia"
                       />
                     </div>
-                   
-                    <div>
-                      <SelectOptionField
-                        type="select"
-                        label="Rasa"
-                        options={lookupData.breedOptions}
-                        name="BreedId"
-                        placeholder="Rasa"
-                      />
-                    </div>
                   </div>
                 </div>
                 <div className="xl:flex-none xl:w-4/12 xl:ml-16 xl:mt-16">
-                  <div className=" mr-64">
+                  <div className=" mr-40">
+                    <SelectOptionField
+                      type="select"
+                      label="Plemeno"
+                      options={lookupData.breedOptions}
+                      name="BreedId"
+                    />
+                  </div>
+                  <div className="mt-10 mr-64">
                     <FormOptionField
                       type="radio"
                       options={lookupData.furTypeOptions}
@@ -180,6 +178,14 @@ class AddDog extends Component {
                         options={lookupData.attentionRequirementOptions}
                         label="Vyžaduje si pozornosť"
                         name="RequiredAttentionId"
+                      />
+                    </div>
+                    <div className="mt-10 mr-64">
+                      <FormOptionField
+                        type="radio"
+                        options={lookupData.requiredEnvironmentOptions}
+                        label="Pes je vhodný do"
+                        name="requiredEnvironmentId"
                       />
                     </div>
                   </div>

@@ -37,6 +37,7 @@ function FilterDogs(props) {
                   options={lookupData.colorOptions}
                   label="Farba srsti"
                   name="ColorIds"
+                  className2="mt-2 w-1/2"
                 />
               </div>
               <div className="mt-5 xl:mr-10">
@@ -45,7 +46,7 @@ function FilterDogs(props) {
                   options={lookupData.furTypeOptions}
                   label="Dĺžka srsti"
                   name="FurTypeId"
-                  
+                  className2="mt-2 w-1/2"
                 />
               </div>
               <div className="mt-5 xl:mr-10">
@@ -63,6 +64,7 @@ function FilterDogs(props) {
                   options={lookupData.genderOptions}
                   label="Pohlavie"
                   name="GenderId"
+                  className2="mt-2 w-1/2"
                 />
               </div>        
               <div className="mt-5 xl:mr-10">
@@ -71,6 +73,7 @@ function FilterDogs(props) {
                   options={lookupData.sizeOptions}
                   label="Veľkosť"
                   name="SizeIds"
+                  className2="mt-2 w-1/2"
                 />
               </div>
               <div className="mt-5 xl:mr-10">
@@ -79,6 +82,7 @@ function FilterDogs(props) {
                   options={lookupData.vaccinationTypeOptions}
                   label="Očkovaný"
                   name="VaccinationIds"
+                  className2="mt-2 w-1/2"
                 />
               </div>           
               <div className="mt-5 ">

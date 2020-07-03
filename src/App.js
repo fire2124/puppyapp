@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import "./assets/add.css";
+import "./assets/popup/index.css";
 import NotFound from "./pages/notFound";
 import NavBar from "./components/navBar";
 import Footer from "./components/footer";

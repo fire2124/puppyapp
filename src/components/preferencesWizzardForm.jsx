@@ -21,6 +21,34 @@ import bod1 from "../staticImage/dot/01.png";
 import bod2 from "../staticImage/dot/02.png";
 
 function PreferencesWizzardForm(props) {
+  var clicks = 0;
+
+  function click(e) {
+    console.log(e);
+    console.log(e.target);
+    if (e.target.className === "button hollow circle fa fa-minus") {
+      if (clicks <= 0) {
+        clicks = 0;
+        document.getElementsByName("numOfPeopleInHousehold")[0].value = 0;
+      } else {
+        clicks -= 1;
+        document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
+      }
+      console.log("this is Minus:", clicks);
+      return clicks;
+    } else if (e.target.className === "button hollow circle fa fa-plus") {
+      clicks += 1;
+      document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
+      console.log("this is Plus:", clicks);
+      return clicks;
+    }
+  }
+
+  function val() {
+    console.log("this is val:", clicks);
+    return clicks;
+  }
+
   const authContext = useContext(AuthorizationContext);
   const lookupDataContext = useContext(LookupDataContext);
 
@@ -157,12 +185,13 @@ function PreferencesWizzardForm(props) {
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button">
                   <button
+                    name="firstMinus"
                     type="button"
-                    className="button hollow circle flex1"
+                    className="button hollow circle fa fa-minus"
                     data-quantity="minus"
                     data-field="quantity"
+                    onClick={click}
                   >
-                    <i className="fa fa-minus" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>
@@ -171,26 +200,23 @@ function PreferencesWizzardForm(props) {
                   name="numOfPeopleInHousehold"
                   component="input"
                   type="number"
-                  step="1"
-                  min="0"
+                  step={1}
+                  min={0}
                   className="w-10 border-b border-black text-center"
+                  format={val}
+                  //value={val}
                 />
-                {/* <input
-                className="text-center input-group-field flex1"
-                type="number"
-                name="quantity"
-                value="0"
-              /> */}
+
               </div>
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button flex1">
                   <button
                     type="button"
-                    className="button hollow circle"
+                    className="button hollow circle fa fa-plus"
                     data-quantity="plus"
                     data-field="quantity"
+                    onClick={click}
                   >
-                    <i className="fa fa-plus" aria-hidden="true"></i>
                   </button>
                 </div>
               </div>

@@ -69,10 +69,11 @@ class HauTU extends Component {
                 Aké povinnosti sa spájajú s chovom zvieraťa?
               </h1>
               <p className="text-lg mt-5">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book.
+              V zmysle zákona už zviera nie je vec. Živé zviera má osobitný
+              význam a hodnotu ako živý tvor schopný vnímať. Vlastník je tak
+              povinný zabezpečiť mu ochranu a pohodu, dobrý zdravotný stav,
+              dostatočnú voľnosť pohybu, živé sociálne vzťahy a aktívne rozvíjať
+              jeho danosti.
               </p>
               <Link
                 to={`/article1`}

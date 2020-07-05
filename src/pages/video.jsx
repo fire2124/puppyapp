@@ -16,7 +16,7 @@ class Video extends React.Component {
       
     };
  
-    return <YouTube videoId="zrfUQsC7Yj0" opts={opts} onReady={this._onReady} className="video" />;
+    return <YouTube videoId="q6mZlo_omu0" opts={opts} onReady={this._onReady} className="video" />;
   }
  
   _onReady(event) {

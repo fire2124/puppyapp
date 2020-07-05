@@ -204,9 +204,7 @@ function PreferencesWizzardForm(props) {
                   min={0}
                   className="w-10 border-b border-black text-center"
                   format={val}
-                  //value={val}
                 />
-
               </div>
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button flex1">

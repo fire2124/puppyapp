@@ -1,12 +1,21 @@
 /*body{ min-width: 1920px}*/
 
-input::-webkit-outer-spin-button{
-  padding-top: 10%;
-}
+/* input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
-  /* -webkit-appearance: none; */
+  -webkit-appearance: none;
   margin-left: 0;
+} */
+
+input[type="number"] {
+  -webkit-appearance: textfield;
+     -moz-appearance: textfield;
+          appearance: textfield;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none;
+}
+
 /* Mobile */
 @media (min-width: 320px) {
   body {

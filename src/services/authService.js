@@ -94,6 +94,18 @@ export async function editUserProfile(values, id) {
   }
 }
 
+
+export async function createDogAdoption(values) {
+  try {
+    let response = await http.get(`${apiUrl}/adoption/create`,values, http.getAuthHeader());
+    if(response.data.succeeded){
+      return response;
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
 export default {
   login,
   registerUser,
@@ -102,4 +114,5 @@ export default {
   editUserProfile,
   forgotPassword,
   resetPassword,
+  createDogAdoption,
 };

@@ -19,7 +19,7 @@ class WorkingPage extends Component {
             </div>
 
             <div className="flex1 my-5 text-2xl text-black ">
-              Túto časť Vám v krátkom čase sprístupnime.
+              Túto časť Vám v krátkom čase sprístupníme.
             </div>
 
             <div className="flex flex-no-wrap mx-auto ">

@@ -15,7 +15,7 @@ class FormTextField extends Component {
             name={this.props.name}
             component="input"
             type={this.props.type}
-            placeholder={this.props.text}
+            // placeholder={this.props.text}
           />
         </div>
       </div>

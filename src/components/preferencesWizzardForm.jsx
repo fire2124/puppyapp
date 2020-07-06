@@ -3,6 +3,7 @@ import { Field } from "react-final-form";
 import Wizard from "./wizzardForm";
 import { LookupDataContext } from "../lookupDataProvider";
 import FormOptionField from "../components/common/formOptionField";
+import FormNumberField from "../components/common/formNumberField"
 import { addUserPreference } from "../services/userPreferencesService";
 import { AuthorizationContext } from "../authorizationProvider";
 import Popup from "reactjs-popup";
@@ -21,33 +22,34 @@ import bod1 from "../staticImage/dot/01.png";
 import bod2 from "../staticImage/dot/02.png";
 
 function PreferencesWizzardForm(props) {
-  var clicks = 0;
+  
+  // var clicks = 0;
 
-  function click(e) {
-    console.log(e);
-    console.log(e.target);
-    if (e.target.className === "button hollow circle fa fa-minus") {
-      if (clicks <= 0) {
-        clicks = 0;
-        document.getElementsByName("numOfPeopleInHousehold")[0].value = 0;
-      } else {
-        clicks -= 1;
-        document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
-      }
-      console.log("this is Minus:", clicks);
-      return clicks;
-    } else if (e.target.className === "button hollow circle fa fa-plus") {
-      clicks += 1;
-      document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
-      console.log("this is Plus:", clicks);
-      return clicks;
-    }
-  }
+  // function click(e) {
+  //   console.log(e);
+  //   console.log(e.target);
+  //   if (e.target.className === "button hollow circle fa fa-minus") {
+  //     if (clicks <= 0) {
+  //       clicks = 0;
+  //       document.getElementsByName("numOfPeopleInHousehold")[0].value = 0;
+  //     } else {
+  //       clicks -= 1;
+  //       document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
+  //     }
+  //     console.log("this is Minus:", clicks);
+  //     return clicks;
+  //   } else if (e.target.className === "button hollow circle fa fa-plus") {
+  //     clicks += 1;
+  //     document.getElementsByName("numOfPeopleInHousehold")[0].value = clicks;
+  //     console.log("this is Plus:", clicks);
+  //     return clicks;
+  //   }
+  // }
 
-  function val() {
-    console.log("this is val:", clicks);
-    return clicks;
-  }
+  // function val() {
+  //   console.log("this is val:", clicks);
+  //   return clicks;
+  // }
 
   const authContext = useContext(AuthorizationContext);
   const lookupDataContext = useContext(LookupDataContext);
@@ -181,7 +183,8 @@ function PreferencesWizzardForm(props) {
             <div className="xl:flex xl:flex-no-wrap xl:justify-center mt-5">
               <img src={ilustracia7} alt="Logo" width="auto" />
             </div>
-            <div className="xl:flex xl:flex-no-wrap xl:justify-center mt-5 ">
+            <FormNumberField/>
+            {/* <div className="xl:flex xl:flex-no-wrap xl:justify-center mt-5 ">
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button">
                   <button
@@ -218,7 +221,7 @@ function PreferencesWizzardForm(props) {
                   </button>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </Wizard.Page>
         <Wizard.Page>

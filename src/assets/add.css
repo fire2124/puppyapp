@@ -4,7 +4,7 @@
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin-left: 0;
-} */
+}
 
 input[type="number"] {
   -webkit-appearance: textfield;
@@ -14,7 +14,7 @@ input[type="number"] {
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
   -webkit-appearance: none;
-}
+} */
 
 /* Mobile */
 @media (min-width: 320px) {
@@ -722,7 +722,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
   }
   .modalDot {
-    position: relative;
+    position: absolute;
     z-index: 1;
     width: 700px;
     height: 500px;
@@ -738,11 +738,10 @@ input[type=number]::-webkit-outer-spin-button {
     align-self: center;
   }
   .modalDot-content {
-    
-    position: relative;
+    position: absolute;
     z-index: 1;
-    width: 100%;
-    height: 100%;
+    width: 700px;
+    height: 500px;
     /* WHITE  */
     background: #ffffff;
     /* BLUE 259DB5 */
@@ -755,6 +754,16 @@ input[type=number]::-webkit-outer-spin-button {
     align-self: center;
   }
 
+  .modalDot-overlay{
+    /* position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    z-index: 998; */
+  }
 
   .popup-content {
     margin: 0;  

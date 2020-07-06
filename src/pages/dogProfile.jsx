@@ -216,7 +216,7 @@ class DogProfile extends Component {
               <Link to="/allDogs"> {"<"} Späť </Link>
               <Link
               className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-10 ml-20"
-              to="/adoptionForm"
+              to={`/adoptionForm/${dog.id}`}
             >
               Adoptovať
             </Link>

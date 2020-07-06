@@ -5,6 +5,8 @@ import { Form } from "react-final-form";
 import FormTextField from "../components/common/formTextField";
 import ilustracia from "../staticImage/shallow/shallow-focus-photo-of-long-coated-dog-3361722 1.png";
 import useProfile from "../components/useProfile";
+import { createAdoption }from "../services/adoptionService";
+import { AuthorizationContext } from "../authorizationProvider";
 
 
 class AdoptionRequests extends Component {
@@ -12,17 +14,22 @@ class AdoptionRequests extends Component {
     dog: null,
   };
 
+  onSubmit (){}
 
-
-  onSubmit = async (values) => {
-    // try {
-    //   let response = await this.context.login(values);
-    //   if(response){
-    //     this.props.history.push("/");
-    //   }
-    // } catch (error) {
-    //   console.log(error);
-    // }
+  async createAdoption() {
+    try {
+      const adoption = {
+        userId : this.context.authParams.userId,
+        dogId: this.state.dog.dog.id
+      }
+      console.log(adoption);
+      let response = await createAdoption(adoption);
+      if(response){
+        this.props.history.push("/allDogs");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
   async componentDidMount() {
     const {
@@ -213,10 +220,6 @@ class AdoptionRequests extends Component {
                           onSubmit={this.onSubmit}
                           render={({
                             handleSubmit,
-                            form,
-                            submitting,
-                            pristine,
-                            values,
                           }) => (
                             <form onSubmit={handleSubmit}>
                               <div className="xl:flex mt-8">
@@ -312,12 +315,13 @@ class AdoptionRequests extends Component {
                 
                 <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 xl:w-6/12">
                   <Link to="/allDogs"> Späť </Link>
-                  <Link
-                    className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-10 ml-20"
-                    to="/adoptionForm"
+                  <button
+                    type="submit"
+                    className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 my-8 "
+                    onClick={() => this.createAdoption()}
                   >
-                    Odoslať
-                  </Link>
+                    Adoptovať
+                  </button>
                 </div>
               </div>
             </div>
@@ -327,4 +331,5 @@ class AdoptionRequests extends Component {
     }
   }
 }
+AdoptionRequests.contextType = AuthorizationContext;
 export default AdoptionRequests;

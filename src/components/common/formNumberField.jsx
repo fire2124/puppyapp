@@ -60,8 +60,8 @@ class FormNumberField extends Component {
             step={1}
             min={0}
             className="w-10 border-b border-black text-center"
-            value={this.state.value}
-            onChange={this.handleInputChange}
+            // value={this.state.value}
+            // onChange={this.handleInputChange}
             
           />
         </div>

@@ -20,8 +20,7 @@ export default {
       },
     },
     popupArrow: {
-      width: '500px',
-      width: '500px',
+     width: '500px',
       position: 'absolute',
       background: 'rgb(255, 255, 255)',
       transform: 'rotate(45deg)',
@@ -31,14 +30,14 @@ export default {
     },
     overlay: {
       tooltip: {
-        position: 'absolute',
+        position: 'fixed',
         top: '0',
         bottom: '0',
         left: '0',
         right: '0',
       },
       modal: {
-        position: 'absolute',
+        position: 'fixed',
         top: '0',
         bottom: '0',
         left: '0',

@@ -722,7 +722,7 @@ input[type=number]::-webkit-outer-spin-button {
     height: 100%;
   }
   .modalDot {
-    position: absolute;
+    position: relative;
     z-index: 1;
     width: 700px;
     height: 500px;
@@ -738,7 +738,7 @@ input[type=number]::-webkit-outer-spin-button {
     align-self: center;
   }
   .modalDot-content {
-    position: absolute;
+    position: relative;
     z-index: 1;
     width: 700px;
     height: 500px;
@@ -755,7 +755,7 @@ input[type=number]::-webkit-outer-spin-button {
   }
 
   .modalDot-overlay{
-    /* position: absolute;
+    /* position: relative;
     top: 0px;
     bottom: 0px;
     left: 0px;

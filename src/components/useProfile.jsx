@@ -9,6 +9,8 @@ function useProfile() {
     useEffect(() => {
         async function fetchData() {
             if (authContext.authParams.userId !== null) {
+                console.log(authContext);
+                
                 let response = await getUserProfile(authContext.authParams.userId);
                 if (response.data) {
                     setProfile(response.data.userProfile);

@@ -12,7 +12,10 @@ class Video extends React.Component {
         controls: 0,
         color: 'white',
         showinfo:0,
-        
+        // onPlaybackRateChange: true,
+        // onPlaybackQualityChange: true,
+        // onPlay: true,
+        // onEnd: false,
       
     };
  

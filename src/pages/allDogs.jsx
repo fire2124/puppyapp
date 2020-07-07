@@ -131,6 +131,13 @@ function AllDogs() {
                   psíky, ktoré by vyhovovali vašim kritériam.
                 </div>
               )}
+              {filteredDogs.length !== 0 &&
+              authContext.authParams.loggedIn &&
+              authContext.authParams.userProfile.isPreferenceSet && (
+                <div>
+                  <DogsList dogs={filteredDogs} />
+                </div>
+              )}
             <div>
               <DogsList dogs={dogs} />
             </div>

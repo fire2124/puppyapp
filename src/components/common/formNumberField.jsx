@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Field } from "react-final-form";
+import fnf  from "./fnf"
 
 var iPlus = 0;
 var iMinus = 0;
@@ -42,14 +43,14 @@ class FormNumberField extends Component {
       <div className="xl:flex xl:flex-no-wrap xl:justify-center mt-5 ">
         <div className="justify-between input-group plus-minus-input">
           <div className="input-group-button">
-            <button
+            {/* <button
               name="firstMinus"
               type="button"
               className="button hollow circle fa fa-minus"
               data-quantity="minus"
               data-field="quantity"
               onClick={this.handleMinus}
-            ></button>
+            ></button> */}
           </div>
         </div>
         <div className="justify-between">
@@ -59,7 +60,7 @@ class FormNumberField extends Component {
             type="number"
             step={1}
             min={0}
-            className="w-10 border-b border-black text-center"
+            className="w-10  border-b border-black text-center"
             // value={this.state.value}
             // onChange={this.handleInputChange}
             
@@ -67,13 +68,13 @@ class FormNumberField extends Component {
         </div>
         <div className="justify-between input-group plus-minus-input">
           <div className="input-group-button flex1">
-            <button
+            {/* <button
               type="button"
               className="button hollow circle fa fa-plus"
               data-quantity="plus"
               data-field="quantity"
               onClick={this.handlePlus}
-            ></button>
+            ></button> */}
           </div>
         </div>
       </div>

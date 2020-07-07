@@ -3,13 +3,23 @@ import { Link } from "react-router-dom";
 import { getDogDetail } from "../services/dogService";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import ilustracia from "../staticImage/shallow/shallow-focus-photo-of-long-coated-dog-3361722 1.png";
+import pic1 from "../staticImage/shallow/shallow-focus-photo-of-long-coated-dog-3361722 1.png";
+import pic2 from "../staticImage/shallow/shallow 3.png";
+import pic3 from "../staticImage/hautu/brown-and-white-short-coated-puppy-1805164.png";
+import pic4 from "../staticImage/hautu/close-up-photography-of-adult-black-and-white-short-coat-dog-733416.png";
+import pic5 from "../staticImage/shallow/shallow 2.png";
+import pic6 from "../staticImage/shallow/shallow 4.png";
+import pic7 from "../staticImage/shallow/shallow 5.png";
+
+
 import image from "../staticImage/shallow/shallow 2.png";
 import image2 from "../staticImage/shallow/shallow 3.png";
 import image3 from "../staticImage/shallow/shallow 4.png";
 import image4 from "../staticImage/shallow/shallow 5.png";
 import yes from "../staticImage/16px/Path.png";
 import no from "../staticImage/16px/icn-close.png";
+
+let ilustracia2 = "";
 
 const responsive = {
   superLargeDesktop: {
@@ -54,6 +64,45 @@ class DogProfile extends Component {
       const { dog } = this.state.dog;
       console.log(dog);
 
+      let i = Math.floor(Math.random() * 8); // returns a random integer from 0 to 9
+      console.log(i);
+
+      switch (i) {
+        case 0:
+          ilustracia2 = pic1;
+          break;
+        case 1:
+          ilustracia2 = pic2;
+          break;
+        case 2:
+          ilustracia2 = pic3;
+          break;
+        case 3:
+          ilustracia2 = pic4;
+          break;
+        case 4:
+          ilustracia2 = pic5;
+          break;
+        case 5:
+          ilustracia2 = pic6;
+          break;
+        case 6:
+          ilustracia2 = pic7;
+          break;
+        case 7:
+          ilustracia2 = pic1;
+          break;
+        case 8:
+          ilustracia2 = pic2;
+          break;
+        default:
+        // code block
+      }
+
+       if (dog.photo) {
+        ilustracia2 = `data:image/png;base64,${dog.photo};`;
+        console.log(ilustracia2);
+      } 
       return (
         <div className="dogProfile-full">
           <div className="dogProfile">
@@ -61,10 +110,10 @@ class DogProfile extends Component {
               <div className="xl:flex xl:flex-no-wrap xl:m-auto">
                 <div className="justify-start xl:ml-64 mb-64">
                   <img
-                    src={ilustracia}
+                    src={ilustracia2}
                     alt="Logo"
-                    width="auto"
-                    height="auto"
+                    width="448px"
+                    height="448px"
                     className=" xl:mt-20 xl:ml-32 max-w-none"
                   />
                 </div>
@@ -76,7 +125,11 @@ class DogProfile extends Component {
                     <div className="xl:text-left text-white text-justify mt-5 mr-64 w-7/12">
                       <p>
                         {" "}
-                         {dog.additionalInfo} {" "}
+                        {dog.additionalInfo}{" "}
+                        {/* Som veselá a hravá fenka, ktorá si vyžaduje veľa pozornosti.
+                         Som vhodná k ľuďom, ktorí majú čas sa mi naplno venovať a naučiť ma
+                         novým trikom. Rada skúmam svoje okolie a rozumiem si aj s inými domácimi
+                         zvieratkami. */}
                       </p>
                     </div>
                   </div>
@@ -106,7 +159,7 @@ class DogProfile extends Component {
                           <strong>Srsť:</strong> {dog.furTypeName}{" "}
                         </p>
                       </div>
-                    </div>                      
+                    </div>
                     <div className="justify-center ml-40 mt-2">
                       <div className="xl:text-left  ">
                         <div className="mt-4">
@@ -215,11 +268,11 @@ class DogProfile extends Component {
             <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 ml-64">
               <Link to="/allDogs"> {"<"} Späť </Link>
               <Link
-              className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-10 ml-20"
-              to={`/adoptionForm/${dog.id}`}
-            >
-              Adoptovať
-            </Link>
+                className="text-white font-semibold text-center bg-orange px-8 py-2 m-2 rounded-full py-2 px-8 mt-10 ml-20"
+                to={`/adoptionForm/${dog.id}`}
+              >
+                Adoptovať
+              </Link>
             </div>
           </div>
 

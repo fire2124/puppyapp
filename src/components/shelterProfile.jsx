@@ -1,5 +1,6 @@
 import React from "react";
-import useShelterProfileByAdmin from "./useShelterProfileByAdmin";
+// import useShelterProfileByAdmin from "./useShelterProfileByAdmin";
+import useShelterProfileByAdmin from "./useShelterProfile"
 import { Link } from "react-router-dom";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
@@ -33,6 +34,7 @@ const responsive = {
 
 function ShelterProfile() {
   const profile = useShelterProfileByAdmin();
+
   console.log(profile);
 
   if (profile === null) {

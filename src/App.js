@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import "./assets/add.css";
+import "./assets/style.less";
 import "./assets/popup/index.css";
 import NotFound from "./pages/notFound";
 import NavBar from "./components/navBar";
@@ -35,7 +36,7 @@ import HauTU from "./pages/HauTU";
 import Article1 from "./pages/articles/article1";
 import UpdatePassword from "./pages/updatePassword";
 import WorkingPage from "./pages/workingPage";
-
+import AllShelters from "./components/allShelters"
 import ShelterPROFILETOSEEFORYOUSER from "./components/SHELTERPROFILETOSEEFORYOUSER";
 
 logger.init();
@@ -90,8 +91,9 @@ class App extends Component {
                 <Route path="/registerShelter" component={RegisterShelter} />
                 <Route path="/shelterProfile" component={ShelterProfile} />
                 <Route path="/shelterProfileId" component={ShelterPROFILETOSEEFORYOUSER} />
-
+                <Route path="/allShelters" component={AllShelters} />
                 <Route path="/editShelterProfile" component={EditShelterProfile} />
+                {/* <Route path="/shelterProfile/:shelterId" component={ShelterProfile} /> */}
                 <Route path="/adoptionRequests" component={AdoptionRequests} />
 
                 <Route path="/shelterRequests" component={ShelterRequests} />

@@ -178,14 +178,14 @@ function PreferencesWizzardForm(props) {
             <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5 mt-5">
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button">
-                  <button
+                  {/* <button
                     type="button"
                     className="button hollow circle flex1"
                     data-quantity="minus"
                     data-field="quantity"
                   >
                     <i className="fa fa-minus" aria-hidden="true"></i>
-                  </button>
+                  </button> */}
                 </div>
               </div>
               <div className="justify-between">
@@ -201,14 +201,14 @@ function PreferencesWizzardForm(props) {
 
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button flex1">
-                  <button
+                  {/* <button
                     type="button"
                     className="button hollow circle"
                     data-quantity="plus"
                     data-field="quantity"
                   >
                     <i className="fa fa-plus" aria-hidden="true"></i>
-                  </button>
+                  </button> */}
                 </div>
               </div>
             </div>
@@ -239,14 +239,14 @@ function PreferencesWizzardForm(props) {
                 <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5 mt-5">
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle flex1"
                         data-quantity="minus"
                         data-field="quantity"
                       >
                         <i className="fa fa-minus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className="justify-between">
@@ -261,14 +261,14 @@ function PreferencesWizzardForm(props) {
                   </div>
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button flex1">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle"
                         data-quantity="plus"
                         data-field="quantity"
                       >
                         <i className="fa fa-plus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -284,14 +284,14 @@ function PreferencesWizzardForm(props) {
                 <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5 mt-5">
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle flex1"
                         data-quantity="minus"
                         data-field="quantity"
                       >
                         <i className="fa fa-minus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className="justify-between">
@@ -306,14 +306,14 @@ function PreferencesWizzardForm(props) {
                   </div>
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button flex1">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle"
                         data-quantity="plus"
                         data-field="quantity"
                       >
                         <i className="fa fa-plus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>
@@ -329,14 +329,14 @@ function PreferencesWizzardForm(props) {
                 <div className="xl:flex xl:flex-no-wrap xl:mx-auto  xl:justify-center mb-5 mt-5">
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle flex1"
                         data-quantity="minus"
                         data-field="quantity"
                       >
                         <i className="fa fa-minus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                   <div className="justify-between">
@@ -351,14 +351,14 @@ function PreferencesWizzardForm(props) {
                   </div>
                   <div className="justify-between input-group plus-minus-input">
                     <div className="input-group-button flex1">
-                      <button
+                      {/* <button
                         type="button"
                         className="button hollow circle"
                         data-quantity="plus"
                         data-field="quantity"
                       >
                         <i className="fa fa-plus" aria-hidden="true"></i>
-                      </button>
+                      </button> */}
                     </div>
                   </div>
                 </div>

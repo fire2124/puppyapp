@@ -15,6 +15,7 @@
         "lodash": "^4.17.15",
         "mdbootstrap": "^4.19.0",
         "mdbreact": "^4.27.0",
+        "node-base64-image": "^2.0.1",
         "node-sass": "^4.14.1",
         "postcss": "^7.0.32",
         "postcss-cli": "^7.1.1",

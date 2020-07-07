@@ -5,32 +5,31 @@ import { Form } from "react-final-form";
 import FormTextField from "../components/common/formTextField";
 import ilustracia from "../staticImage/shallow/shallow-focus-photo-of-long-coated-dog-3361722 1.png";
 import useProfile from "../components/useProfile";
-import { createAdoption }from "../services/adoptionService";
+import { createAdoption } from "../services/adoptionService";
 import { AuthorizationContext } from "../authorizationProvider";
-
 
 class AdoptionRequests extends Component {
   state = {
     dog: null,
   };
 
-  onSubmit (){}
+  onSubmit() {}
 
   async createAdoption() {
     try {
       const adoption = {
-        userId : this.context.authParams.userId,
-        dogId: this.state.dog.dog.id
-      }
+        userId: this.context.authParams.userId,
+        dogId: this.state.dog.dog.id,
+      };
       console.log(adoption);
       let response = await createAdoption(adoption);
-      if(response){
+      if (response) {
         this.props.history.push("/allDogs");
       }
     } catch (error) {
       console.log(error);
     }
-  };
+  }
   async componentDidMount() {
     const {
       match: { params },
@@ -218,66 +217,64 @@ class AdoptionRequests extends Component {
                       <div className="xl:text-left  ">
                         <Form
                           onSubmit={this.onSubmit}
-                          render={({
-                            handleSubmit,
-                          }) => (
+                          render={({ handleSubmit }) => (
                             <form onSubmit={handleSubmit}>
-                              <div className="xl:flex mt-8">
+                              <div className="xl:flex xl:flex-no-wrap mt-8">
                                 <div className="xl:w-6/12 flex-1 ">
-                                  <div>
+                                  <div className="w-full">
                                     <FormTextField
                                       name="UserName"
                                       label="Meno*"
                                       text="Meno"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
-                                  <div>
+                                  <div className="w-full">
                                     <FormTextField
                                       name="Adresa"
                                       label="Adresa"
                                       text="Adresa"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
-                                  <div>
+                                  <div className="w-full">
                                     <FormTextField
                                       name="Číslo OP"
                                       label="Číslo OP"
                                       text="Číslo"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
                                 </div>
                                 <div className="xl:w-6/12 flex-1 ml-8">
-                                  <div>
+                                <div className="w-full">
                                     <FormTextField
                                       name="Email"
                                       label="E-mail*"
                                       text="E-mail"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
-                                  <div>
+                                  <div className="w-full">
                                     <FormTextField
                                       name="Date of birth"
                                       label="Dátum narodenia"
                                       text="Dátum narodenia"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
-                                  <div>
+                                  <div className="w-full">
                                     <FormTextField
                                       name="Phone Number"
                                       label="Tel. č.*"
                                       text="Heslo"
                                       type="text"
-                                      className="bg-transparent  w-full text-gray-700 mr-3 py-1 px-2 focus:outline-none"
+                                      className="bg-transparent  w-full text-gray-700  py-1 px-2 focus:outline-none"
                                     />
                                   </div>
                                 </div>
@@ -295,15 +292,33 @@ class AdoptionRequests extends Component {
                     vyplniť dodatočne ručne priamo do zmluvy o adopcii
                   </p>
                 </div>
-                <div className="xl:flex-none xl:w-6/12 xl:m-auto xl:mt-8">
-                  <p className=" mt-5 mr-48 text-justify">
-                    Tieto podmienky som si prečítal, porozumel im a súhlasím s
-                    nimi.
-                  </p>
+                <div className="xl:flex xl:w-6/12 xl:m-auto xl:mt-8">
+                  <div className=" flex mt-5">
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="vehicle1"
+                      value="Bike"
+                    />
+                  </div>
+                  <div className="ml-2">
+                    <p className="flex  mt-5">
+                      Tieto podmienky som si prečítal, porozumel im a súhlasím s
+                      nimi.
+                    </p>
+                  </div>
                 </div>
 
-                <div className="xl:flex-none xl:w-6/12 xl:m-auto xl:mt-8">
-                  <p className="text-orange mt-5 mr-48 text-justify ">
+                <div className="xl:flex xl:w-6/12 xl:m-auto xl:mt-5">
+                  <div className=" flex mt-5">
+                    <input
+                      type="checkbox"
+                      id="vehicle1"
+                      name="vehicle1"
+                      value="Bike"
+                    />
+                  </div>
+                  <p className="text-orange mt-5 mr-48 text-justify ml-2">
                     Súhlasím so spracovaním osobných údajov, aby v zmysle zákona
                     č. 18/2018 Z. z. o ochrane osobných údajov a o zmene a
                     doplnení niektorých zákonov (ďalej len "zákon o ochrane
@@ -312,16 +327,18 @@ class AdoptionRequests extends Component {
                     adopcii.
                   </p>
                 </div>
-                
+
                 <div className="text-orange font-semibold font-sm text-center bg-orange-400 m-2 inline-block mt-20 xl:w-6/12">
                   <Link to="/allDogs"> Späť </Link>
                   <button
                     type="submit"
                     className="text-white font-semibold text-center bg-orange px-4 py-2 m-2 rounded-full py-2 px-4 my-8 "
                     onClick={() => this.createAdoption()}
+                    
                   >
                     Adoptovať
                   </button>
+                  
                 </div>
               </div>
             </div>

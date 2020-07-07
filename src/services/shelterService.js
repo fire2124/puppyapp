@@ -16,7 +16,7 @@ export async function getShelterApplications() {
 
 export async function getAllShelters() {
   try {
-    let response = await http.get(`${apiEndpoint}/shelter/allShelters`, http.getAuthHeader());
+    let response = await http.get(`${apiEndpoint}/shelter/allShelters`);
     if (response.data.succeeded) {
       return response;
     }

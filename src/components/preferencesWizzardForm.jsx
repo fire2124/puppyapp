@@ -20,6 +20,7 @@ import cat from "../staticImage/dot/CAT.png";
 import duck from "../staticImage/dot/DUCK.png";
 import bod1 from "../staticImage/dot/01.png";
 import bod2 from "../staticImage/dot/02.png";
+import NIClass from "../components/common/NIClass"
 
 function PreferencesWizzardForm(props) {
 
@@ -198,7 +199,7 @@ function PreferencesWizzardForm(props) {
                   className="w-10 border-b border-black text-center"
                 />
               </div>
-
+                <NIClass/>
               <div className="justify-between input-group plus-minus-input">
                 <div className="input-group-button flex1">
                   {/* <button

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Field } from "react-final-form";
-import fnf  from "./fnf"
 
 var iPlus = 0;
 var iMinus = 0;
